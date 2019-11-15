@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/layout/overview/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Composants et options pour mettre en page votre projet avec Bootstrap SNCF, notamment l&rsquo;encapsulage de containers, le puissant système de grille et les utilitaires de classes responsive.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Vue d&rsquo;ensemble · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/layout/overview/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#containers">Containers</a>
+<ul>
+<li><a href="#tout-en-un">« Tout en un »</a></li>
+<li><a href="#fluide">Fluide</a></li>
+<li><a href="#responsive"><em>Responsive</em></a></li>
+</ul></li>
+<li><a href="#breakpoints-responsive"><em>Breakpoints Responsive</em></a></li>
+<li><a href="#z-index">Z-index</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Vue d&rsquo;ensemble</h1>
+          <p class="bd-lead">Composants et options pour mettre en page votre projet avec Bootstrap SNCF, notamment l&rsquo;encapsulage de containers, le puissant système de grille et les utilitaires de classes <em>responsive</em>.</p>
+
+          
+
+<h2 id="containers">Containers</h2>
+
+<p>Les conteneurs sont les éléments de présentation les plus élémentaires de Bootstrap et sont <strong>obligatoires pour l’utilisation de notre système de grille par défaut</strong>. Bien que les conteneurs <em>puissent</em> être imbriqués, la plupart des mises en page ne nécessitent pas de conteneur imbriqué.</p>
+
+<h3 id="tout-en-un">« Tout en un »</h3>
+
+<p>Notre classe par défaut <code>.container</code> est un container <em>responsive</em>, à largeur fixe, ce qui signifie que sa largeur maximale varie à chaque <em>breakpoint</em>.</p>
+
+<div class="bd-example">
+  <div class="example-container-element col-6 p-3 mx-auto">
+    .container
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+  <span class="c">&lt;!-- Contenu ici --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="fluide">Fluide</h3>
+
+<p>Utilisez <code>.container-fluid</code> pour un container qui prenne toute la largeur de la vue ou de l&rsquo;écran.</p>
+
+<div class="bd-example">
+  <div class="example-container-element p-3">
+    .container-fluid
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="responsive"><em>Responsive</em></h3>
+
+<p>Les conteneurs réactifs sont nouveaux dans Bootstrap v4. Ils vous permettent de spécifier une classe pleine largeur jusqu&rsquo;à ce qu&rsquo;un <em>breakpoint</em> particulier soit atteint et qu&rsquo;une <code>max-width</code> soit appliquée. Par exemple, <code>.container-sm</code> a une largeur de 100% pour commencer, jusqu&rsquo;à ce que le <em>breakpoint</em> de <code>sm</code> soit atteint, où il restera jusqu&rsquo;aux <em>breakpoints</em> les plus élevés.</p>
+
+<div class="bd-example">
+  <div class="example-container-element p-3 mb-3">
+    .container-sm (100% wide until breakpoint)
+  </div>
+  <div class="example-container-element col-6 p-3 mx-auto">
+    .container-sm (With max-width at breakpoint)
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-sm&#34;</span><span class="p">&gt;</span>100% wide until small breakpoint<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-md&#34;</span><span class="p">&gt;</span>100% wide until medium breakpoint<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-lg&#34;</span><span class="p">&gt;</span>100% wide until large breakpoint<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-xl&#34;</span><span class="p">&gt;</span>100% wide until extra large breakpoint<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="breakpoints-responsive"><em>Breakpoints Responsive</em></h2>
+
+<p>Depuis que Bootstrap est développé pour être d&rsquo;abord mobile, nous utilisons quelques <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">requêtes média (<em>media queries</em>)</a> pour créer des <em>breakpoints</em> sensibles pour nos mises en page. et interfaces. Ces <em>breakpoints</em> sont principalement basés sur les largeurs minimales de la fenêtre d&rsquo;affichage et nous permettent de redimensionner des éléments lorsque la fenêtre d&rsquo;affichage change.</p>
+
+<p>Bootstrap utilise principalement les plages de requête média suivantes (ou <em>breakpoints</em>) dans nos fichiers Sass source pour notre structure, notre système de grille et nos composants.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Ecrans très petits (téléphones en mode portrait, moins de 576px)
+</span><span class="c1">// Pas de requêtes media (_media query_) pour `xs` puisque c&#39;est la taille par défaut dans Bootstrap
+</span><span class="c1"></span>
+<span class="c1">// Petits écrans (téléphones en mode paysage, 576px et au delà)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">576</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans de taille moyenne (tablettes, 768px et au delà)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">768</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans larges (ordinateurs de bureau, 1024px et au delà)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">1024</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans très larges (1280px and up)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">1280</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+
+<p>Comme nous écrivons notre code source CSS en Sass, toutes nos requêtes média sont disponibles depuis des mixins Sass :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Pas de requêtes média nécessaires pour le point de rupture `xs`, puisqu&#39;il s&#39;agît effectivement de `@media (min-width: 0) { ... }`
+</span><span class="c1"></span><span class="k">@include</span><span class="nd"> media-breakpoint-up</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-up</span><span class="p">(</span><span class="n">md</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-up</span><span class="p">(</span><span class="n">lg</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-up</span><span class="p">(</span><span class="n">xl</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Exemple : Masquer dès `min-width: 0`, et ensuite afficher au point de rupture `sm`
+</span><span class="c1"></span><span class="nc">.custom-class</span> <span class="p">{</span>
+  <span class="nt">display</span><span class="nd">:</span> <span class="nt">none</span><span class="o">;</span>
+<span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-up</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.custom-class</span> <span class="p">{</span>
+    <span class="nt">display</span><span class="nd">:</span> <span class="nt">block</span><span class="o">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Occasionnellement nous utilisons des requêtes media qui vont dans une autre direction (taille d&rsquo;écran donnée <em>ou plus petite</em>) :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Ecrans très petits (téléphones en mode portrait, moins de 576px)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">575</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Petits écrans (téléphones en mode paysage, moins de 768px)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">767</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans de taille moyenne (tablettes, moins de 1024px)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">1023</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans larges (ordinateurs de bureau, moins de 1280px)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">1279</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans très larges
+</span><span class="c1"></span><span class="o">//</span> <span class="nt">Pas</span> <span class="nt">de</span> <span class="nt">requêtes</span> <span class="nt">media</span> <span class="nt">puisque</span> <span class="nt">le</span> <span class="nt">point</span> <span class="nt">de</span> <span class="nt">rupture</span> <span class="nt">extra-large</span> <span class="nt">n</span><span class="s1">&#39;</span><span class="s2">a pas de limite à sa largeur</span></code></pre></div>
+
+<div class="bd-callout bd-callout-info">
+Notez qu&rsquo;à cause des navigateurs ne prenant actuellement pas en charge les [<em>range context queries</em>] <a href="https://www.w3.org/TR/mediaqueries-4/#range-context)">https://www.w3.org/TR/mediaqueries-4/#range-context)</a>, nous contournons les limitations des préfixes <a href="https://www.w3.org/TR/mediaqueries-4/#mq-min-max"><code>min-</code> et <code>max -</code></a> et des vues avec des fractions de largeurs (pouvant se produire dans certaines conditions sur des appareils à haute résolution (HiDPI), par exemple) en utilisant des valeurs avec une plus grande précision pour ces comparaisons.
+</div>
+
+
+<p>Une fois encore, ces requêtes média sont aussi disponibles avec des mixins Sass :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@include</span><span class="nd"> media-breakpoint-down</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-down</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-down</span><span class="p">(</span><span class="n">md</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-down</span><span class="p">(</span><span class="n">lg</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="c1">// Pas de requête média nécessaire pour les _breakpoints_ `xl` n&#39;ayant pas de limite de largeur
+</span><span class="c1"></span>
+<span class="c1">// Exemple : Style appliqué depuis le point de rupture moyen `md` et en dessous
+</span><span class="c1"></span><span class="k">@include</span><span class="nd"> media-breakpoint-down</span><span class="p">(</span><span class="n">md</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.custom-class</span> <span class="p">{</span>
+    <span class="nt">display</span><span class="nd">:</span> <span class="nt">block</span><span class="o">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Il existe également des requêtes médias et mixins pour cibler un segment simple de tailles d&rsquo;écrans en utilisant des largeurs minimales et maximales comme point de rupture.</p>
+
+<p>// Ecrans très petits (téléphones en mode portrait, moins de 576px)
+// Petits écrans (téléphones en mode paysage, 576px et au delà)
+// Écrans de taille moyenne (tablettes, 768px et au delà)
+// Écrans larges (ordinateurs de bureau, 1024px et au delà)
+// Écrans très larges (1280px and up)</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Ecrans très petits (téléphones en mode portrait, moins de 576px)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">575</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Petits écrans (téléphones en mode paysage, 576px et au delà)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">576</span><span class="kt">px</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">767</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans de taille moyenne (tablettes, 768px et au delà)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">768</span><span class="kt">px</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">991</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans larges (ordinateurs de bureau, 1024px et au delà)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">1024</span><span class="kt">px</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">1023</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="c1">// Écrans très larges (1280px and up)
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">1280</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+
+<p>Requêtes média aussi disponibles avec des mixins Sass :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@include</span><span class="nd"> media-breakpoint-only</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-only</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-only</span><span class="p">(</span><span class="n">md</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-only</span><span class="p">(</span><span class="n">lg</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@include</span><span class="nd"> media-breakpoint-only</span><span class="p">(</span><span class="n">xl</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+
+<p>De la même manière les requêtes média peuvent couvrir plusieurs largeurs de <em>breakpoints</em> :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Exemple
+</span><span class="c1">// Appliquer les styles depuis des écrans de taille moyenne jusqu&#39;à extra-large
+</span><span class="c1"></span><span class="k">@media</span> <span class="p">(</span><span class="no">min-width</span><span class="o">:</span> <span class="mi">768</span><span class="kt">px</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="no">max-width</span><span class="o">:</span> <span class="mi">1199</span><span class="mf">.98</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+
+<p>La mixin Sass pour cibler la même amplitude de tailles d&rsquo;écran serait :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@include</span><span class="nd"> media-breakpoint-between</span><span class="p">(</span><span class="n">md</span><span class="o">,</span> <span class="n">xl</span><span class="p">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+
+<h2 id="z-index">Z-index</h2>
+
+<p>Plusieurs composants Bootstrap utilisent <code>z-index</code>, la propriété CSS qui permet de contrôler la mise en page en fournissant un troisième axe pour organiser le contenu. Dans Bootstrap, nous utilisons une échelle d&rsquo;<code>index-z</code> conçue par défaut  pour superposer correctement la navigation, les info-bulles et les bulles contextuelles, fenêtres modales, etc.</p>
+
+<p>Les valeurs les plus élevées commencent par un nombre arbitraire, élevé et suffisamment spécifique pour éviter idéalement les conflits. Nous avons besoin d&rsquo;un ensemble standard de ces composants dans nos composants en couches (info-bulles, bulles contextuelles, fenêtres modales, barres de navigation, menus déroulants) pour que nous puissions être raisonnablement cohérents dans les comportements. Il n&rsquo;y a aucune raison pour laquelle nous n&rsquo;aurions pas pu utiliser <code>100</code> ou <code>500</code> par exemple.</p>
+
+<p>Nous n&rsquo;encourageons pas la personnalisation de ces valeurs individuelles : <strong>si vous en changez un, vous devrez probablement les changer tous</strong>.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$zindex-dropdown</span><span class="o">:</span>          <span class="mi">1000</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nv">$zindex-sticky</span><span class="o">:</span>            <span class="mi">1020</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nv">$zindex-fixed</span><span class="o">:</span>             <span class="mi">1030</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nv">$zindex-modal-backdrop</span><span class="o">:</span>    <span class="mi">1040</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nv">$zindex-modal</span><span class="o">:</span>             <span class="mi">1050</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nv">$zindex-popover</span><span class="o">:</span>           <span class="mi">1060</span> <span class="nv">!default</span><span class="p">;</span>
+<span class="nv">$zindex-tooltip</span><span class="o">:</span>           <span class="mi">1070</span> <span class="nv">!default</span><span class="p">;</span></code></pre></div>
+
+<p>Pour gérer les bordures qui se chevauchent dans les composants (par exemple, les boutons et les champs dans les groupes d&rsquo;entrées), nous utilisons des valeurs <code>z-index</code> à un seul chiffre de <code>1</code>, <code>2</code> et <code>3</code> pour les états par défaut, survolé et actif. En survol/focus/actif, nous mettons au premier plan un élément particulier avec une valeur <code>z-index</code> supérieure pour afficher sa bordure sur les éléments frères.</p>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

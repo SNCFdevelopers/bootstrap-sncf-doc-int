@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="fr" href="/fr/" title="Français">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SNCF Design&rsquo;s system integration, based on Bootstrap, the most popular HTML, CSS, and JS library in the world.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="4.3">
+
+<title>Bootstrap Métier · SNCF Design&rsquo;s system integration, based on Bootstrap, the most popular HTML, CSS, and JS library in the world.</title>
+
+
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/en/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Examples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Settings</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Dark mode</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Disabled</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Enabled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Source code</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Show</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Hide</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Language</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="en" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> English</label>
+                                </a>
+                                <a class="options-item option-language" href="/fr/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="en" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> French</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Download</a>
+</header>
+<main class="bd-masthead" id="content" role="main">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="mx-auto col-md-6 order-md-2">
+        <img class="img-fluid mb-3 mb-md-0" src="/assets/img/docs/designmetier-bootstrap.png" alt="" >
+      </div>
+      <div class="col-md-6 order-md-1 text-md-left pr-md-5">
+        <h2 class="lead mb-2 font-weight-medium text-muted">SNCF Bootstrap</h2>
+        <h1 class="mb-3 text-primary" style="font-size:42px;">Design Métier</h1>
+        <p class="">
+          This is a beta version of SNCF's Bootstrap based on original Twitter's Bootstrap (it's a fork!).
+        </p>
+        <p class="">
+          You are a designer and/or developer and you want to create an internal interface, dedicated to the production, and with no purpose of communication ?You are in the right place!
+        </p>
+        <p class="">
+          Otherwise, if you want to make an interface for internal communication purpose or just an interface for our customers, <a class="btn btn-link" href="https://design-bootstrap.sncf.fr" target="_blank"><span>you can go to the</span></a> <a class="btn btn-link" href="https://design-bootstrap.sncf.fr" target="_blank"><span>Bootstrap Communication</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>.
+        </p>
+        <p class="">
+          In recent years, many internal applications created have unfortunately resulted in websites or applications far from the graphic chart, even totally off the chart. Similarly, many developers have sometimes spent or wasting time coding already existing components. This Bootstrap is for you, and especially with you! <a class="btn btn-link" href="/docs/4.3/getting-started/how-to-contribute/">How to contribute?<i class="icons-arrow-next ml-2"></i></a>
+        </p>
+        <p class="">
+          For more informations, contact us at <a class="btn btn-link" href="mailto:design.fab@sncf.fr">design.fab@sncf.fr</a>, we'd love hear about your project and how we could help you!
+        </p>
+        <div class="d-flex flex-column flex-md-row lead mb-3">
+          <a href="/docs/4.3/getting-started/introduction/" class="btn btn-lg btn-primary mb-3 mb-md-0 mr-md-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Get started', 'Get started');">Get started</a>
+          <a href="/docs/4.3/getting-started/download/" class="btn btn-lg btn-secondary">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+    <footer class="bd-footer">
+  <div class="container-fluid p-3 p-md-5">
+    <ul class="bd-footer-links">
+      <li>
+        <p>
+          <a class="btn btn-link" href="https://github.com/SNCFdevelopers/bootstrap-sncf" target="_blank"><span>GitHub</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>
+        </p>
+      </li>
+      <li><a class="btn btn-link" href="https://design-bootstrap.sncf.fr" target="_blank"><span>Link to Bootstrap Communication</span><i class="icons-external-link icons-size-x75 ml-2"></i></a></li>
+      <li><a class="btn btn-link" href="https://digital.sncf.com" target="_blank"><span>Digital SNCF</span><i class="icons-external-link icons-size-x75 ml-2"></i></a></li>
+    </ul>
+    <p>Forked by <a class="btn btn-link" target="_blank" href="https://www.digital.sncf.com"><span>Fab Design SNCF</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>, with all our love.</p>
+    <p>Designed and built with all the love in the world by, <a href="https://twitter.com/mdo" target="_blank" rel="noopener">@mdo</a> and <a href="https://twitter.com/fat" target="_blank" rel="noopener">@fat</a>. Maintained by the <a class="btn btn-link" href="https://github.com/orgs/twbs/people"><span>core team</span><i class="icons-external-link icons-size-x75 ml-2"></i></a> with the help of <a class="btn btn-link" href="https://github.com/twbs/bootstrap/graphs/contributors" target="_blank"><span>our contributors</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>.</p>
+    <p>Currently <a class="btn btn-link" href="/docs/4.3/about/versions"><span>v4.3.1 r5</span><i class="icons-arrow-next icons-size-x75 ml-2"></i></a>. Code licensed <a class="btn btn-link" href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener"><span>MIT</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>, docs <a class="btn btn-link" href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"><span>CC BY 3.0</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>.</p>
+  </div>
+</footer>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

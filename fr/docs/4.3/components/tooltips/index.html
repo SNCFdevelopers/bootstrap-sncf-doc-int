@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/components/tooltips/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Documentation et exemples pour ajouter des info-bulles Bootstrap en CSS et JavaScript, avec CSS3 pour les animations, et des attributs data- pour le stockage local du titre.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Info-bulles · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/components/tooltips/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#vue-d-ensemble">Vue d&rsquo;ensemble</a></li>
+<li><a href="#exemple-activer-les-info-bulles-sur-toute-la-page">Exemple : Activer les info-bulles sur toute la page</a></li>
+<li><a href="#exemples">Exemples</a></li>
+<li><a href="#utilisation">Utilisation</a>
+<ul>
+<li><a href="#code-html">Code HTML</a></li>
+<li><a href="#éléments-inactifs">Éléments inactifs</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#methodes">Methodes</a>
+<ul>
+<li><a href="#tooltip-options"><code>$().tooltip(options)</code></a></li>
+<li><a href="#tooltip-show"><code>.tooltip('show')</code></a></li>
+<li><a href="#tooltip-hide"><code>.tooltip('hide')</code></a></li>
+<li><a href="#tooltip-toggle"><code>.tooltip('toggle')</code></a></li>
+<li><a href="#tooltip-dispose"><code>.tooltip('dispose')</code></a></li>
+<li><a href="#tooltip-enable"><code>.tooltip('enable')</code></a></li>
+<li><a href="#tooltip-disable"><code>.tooltip('disable')</code></a></li>
+<li><a href="#tooltip-toggleenabled"><code>.tooltip('toggleEnabled')</code></a></li>
+<li><a href="#tooltip-update"><code>.tooltip('update')</code></a></li>
+</ul></li>
+<li><a href="#évènements">Évènements</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Info-bulles</h1>
+          <p class="bd-lead">Documentation et exemples pour ajouter des info-bulles Bootstrap en CSS et JavaScript, avec CSS3 pour les animations, et des attributs <code>data-</code> pour le stockage local du titre.</p>
+
+          
+
+<h2 id="vue-d-ensemble">Vue d&rsquo;ensemble</h2>
+
+<p>Les info-bulles servent à fournir des informations supplémentaires sur les fonctionnalités disponibles sur le site Web. Ceux-ci peuvent améliorer l&rsquo;expérience utilisateur ou simplement afficher des informations supplémentaires. Les info-bulles apparaissent lorsque l&rsquo;utilisateur survole ou clique dessus (pour un contenu plus long).</p>
+
+<p>Ce qu&rsquo;il faut savoir pour utiliser les info-bulles :</p>
+
+<p>Une info-bulle est utile pour fournir des informations additionnelles sur des éléments disponibles sur un site web. Elles peuvent améliorer l&rsquo;expérience utilisateur ou simplement montrer une information supplémentaire. Les info-bulles apparaissent généralement au survol d&rsquo;un objet voire au clic (pour des contenus plus longs).</p>
+
+<p>Deux trois choises à savoir si vous utilisez les info-bulles :</p>
+
+<ul>
+<li>Elles dépendent de la librairie <a href="https://popper.js.org/">Popper.js</a> pour le positionnement. La librairie est déjà incluse dans la distribution <code>bootstrap-sncf.min.js</code>.</li>
+<li>Elles ne sont pas initialisées par défaut, <strong>vous devez le faire vous-même</strong>.</li>
+<li>Des info-bulles avec un titre vide ne seront pas affichées.</li>
+<li>Spécifiez <code>container: 'body'</code> pour éviter des problèmes de rendus dans des composants plus complexes tels que les groupes d&rsquo;entrées, de boutons, etc.</li>
+<li>Déclencher une info-bulle sur un élément masqué ne fonctionnera pas.</li>
+<li>Les info-bulles sur des éléments <code>.disabled</code> ou <code>disabled</code> doivent être liés sur un élément parent.</li>
+<li>Quand déclenché depuis des ancres qui encapsulent plusieurs lignes, les info-bulles seront centrées. Utilisez <code>white-space: nowrap;</code> sur les balises <code>&lt;a&gt;</code> pour empêcher ce comportement.</li>
+<li>Les info-bulles doivent être masquées avant que leurs éléments correspondants aient été supprimés du DOM.</li>
+</ul>
+
+<p>Tout est ok ? Super ! Maintenant, quelques exemples.</p>
+
+<h2 id="exemple-activer-les-info-bulles-sur-toute-la-page">Exemple : Activer les info-bulles sur toute la page</h2>
+
+<p>Une manière d&rsquo;initialiser toutes les info-bulles sur une page est de les sélectionner à travers leur attribut <code>data-toggle</code> :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-toggle=&#34;tooltip&#34;]&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div>
+
+<h2 id="exemples">Exemples</h2>
+
+<p>Survolez les liens ci-dessous pour voir les info-bulles :</p>
+
+<div class="bd-example tooltip-demo">
+  <p class="muted">
+    Donec luctus turpis urna, <a href="#" data-toggle="tooltip" title="Info-bulle par défaut">quis lacinia</a> massa pretium quis.<br>
+    Mauris nulla magna, placerat sed ex ut, condimentum porta ipsum. Cras efficitur metus id lectus congue sodales. Aenean tempus sem vel libero tincidunt, quis vulputate ex consequat. Proin <a href="#" data-toggle="tooltip" title="Une autre info-bulle">luctus facilisis enim ac vestibulum</a>. Vestibulum interdum neque velit, eget <a href="#" data-toggle="tooltip" title="Encore une autre ici">dapibus</a> massa pharetra eget. Morbi lobortis rhoncus nulla et euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc tristique, elit eget fringilla hendrerit, libero <a href="#" data-toggle="tooltip" title="Et la dernière !">lectus molestie</a> tellus, venenatis dapibus nibh elit sit amet lorem.
+  </p>
+</div>
+
+<p>Survolez les boutons ci-dessous pour découvrir les quatres directions possibles pour une info-bulle : <code>top</code>, <code>right</code>, <code>bottom</code>, et <code>left</code>.</p>
+
+<div class="bd-example tooltip-demo">
+  <div class="bd-example-tooltips">
+    <button type="button" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="top" title="Info-bulle en haut">Info-bulle en haut</button>
+    <button type="button" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="right" title="Info-bulle à droite">Info-bulle à droite</button>
+    <button type="button" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="bottom" title="Info-bulle en bas">Info-bulle en bas</button>
+    <button type="button" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="left" title="Info-bulle à gauche">Info-bulle à gauche</button>
+    <button type="button" class="btn btn-secondary mb-1" data-toggle="tooltip" data-html="true" title="<em>Info-bulle</em> <u>avec</u> <b>de l'HTML</b>">Info-bulle avec de l'HTML</button>
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span> <span class="na">data-placement</span><span class="o">=</span><span class="s">&#34;top&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Info-bulle en haut&#34;</span><span class="p">&gt;</span>
+  Info-bulle en haut
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span> <span class="na">data-placement</span><span class="o">=</span><span class="s">&#34;right&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Info-bulle à droite&#34;</span><span class="p">&gt;</span>
+  Info-bulle à droite
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span> <span class="na">data-placement</span><span class="o">=</span><span class="s">&#34;bottom&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Info-bulle en bas&#34;</span><span class="p">&gt;</span>
+  Info-bulle en bas
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span> <span class="na">data-placement</span><span class="o">=</span><span class="s">&#34;left&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Info-bulle à gauche&#34;</span><span class="p">&gt;</span>I
+  nfo-bulle à gauche
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
+
+<p>Avec du code HTML dans le contenu :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span> <span class="na">data-html</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;&lt;em&gt;Info-bulle&lt;/em&gt; &lt;u&gt;avec&lt;/u&gt; &lt;b&gt;de l&#39;HTML&#34;</span><span class="p">&gt;</span>
+  Info-bulle avec de l&#39;HTML
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="utilisation">Utilisation</h2>
+
+<p>Le composant info-bulles génère le contenu et code HTML à la demande, et place par défaut celui-ci juste après l&rsquo;élément qui l&rsquo;a déclenché.</p>
+
+<p>Pour appeler une info-bulle avec JavaScript :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#example&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="code-html">Code HTML</h3>
+
+<p>Le code requis pour une info-bulle consiste en un simple attribut <code>data</code> et un <code>title</code> renseigné sur l&rsquo;élément HTML auquel vous voudriez attacher une info-bulle. Le code HTML ainsi généré est plutôt simple, il peut nécessiter une information de position (en haut <code>top</code> par défaut).</p>
+
+<div class="bd-callout bd-callout-warning">
+<h5 id="faire-fonctionner-une-info-bulle-avec-la-navigation-au-clavier-et-les-technologies-d-assistance-aux-utilisateurs">Faire fonctionner une info-bulle avec la navigation au clavier et les technologies d&rsquo;assistance aux utilisateurs</h5>
+
+<p>Vous ne devriez ajouter des info-bulles qu&rsquo;aux éléments HTML qui sont traditionnellement capable d&rsquo;être <em>focus</em> via le clavier et interactifs (comme par exemple les liens ou contrôles de formulaires). Bien que des éléments HTML arbitraires peuvent être <em>focus</em> avec le clavier (comme un <code>&lt;span&gt;</code>) en ajoutant l&rsquo;attribut <code>tabindex=&quot;0&quot;</code>, cela peut potentiellement ajouter des césures dans la navigation avec <kbd>TAB</kbd> pouvant s&rsquo;avérer pénibles ou source de confusion pour des éléments non interactifs.
+De plus, la plupart des technologies d&rsquo;assistance n&rsquo;annoncent pas, encore actuellement, une info-bulle dans cette situation.</p>
+
+<p>Enfin, ne vous fiez pas uniquement à <code>hover</code> pour déclencher votre info-bulle, cela la rendrait impossible à déclencher pour la navigation au clavier.</p>
+
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- HTML to write --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Some tooltip text!&#34;</span><span class="p">&gt;</span>Hover over me<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Generated markup by the plugin --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;tooltip bs-tooltip-top&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arrow&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;tooltip-inner&#34;</span><span class="p">&gt;</span>
+    Some tooltip text!
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="éléments-inactifs">Éléments inactifs</h3>
+
+<p>Les éléments avec l&rsquo;attribut <code>disabled</code> ne sont pas interactifs, ce qui signifie que les utilisateurs ne peuvent pas survoler, obtenir le focus, ou cliquer sur ceux-ci pour déclencher une info-bulle ou bulle contextuelle. Pour contourner ce problème, vous pourriez vouloir déclencher l&rsquo;info-bulle depuis une encapsulation par une balise <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code>, idéalement lui permettre d&rsquo;obtenir le focus au clavier avec <code>tabindex=&quot;0&quot;</code>, et passer outre <code>pointer-events</code> sur l&rsquo;élément inactif.</p>
+
+<div class="tooltip-demo">
+<div class="bd-example">
+<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+  <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
+</span>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;tooltip&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Disabled tooltip&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;pointer-events: none;&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">disabled</span><span class="p">&gt;</span>Disabled button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span></code></pre></div>
+</div>
+
+<h3 id="options">Options</h3>
+
+<p>Les options peuvent être passées par des attributs <code>data-</code> ou en JavaScript. Pour les attributs, ajoutez simplement le nom de l&rsquo;option à l&rsquo;attribut <code>data-</code>, comme par exemple <code>data-animation=&quot;&quot;</code>.</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 100px;">Name</th>
+      <th scope="col" style="width: 100px;">Type</th>
+      <th scope="col" style="width: 50px;">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>animation</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Applique une transition de fondu à l'info-bulle</td>
+    </tr>
+    <tr>
+      <td>container</td>
+      <td>string | element | false</td>
+      <td>false</td>
+      <td>
+        <p>Lie l'info-bulle à un élément spécifique. Par exemple : <code>container: 'body'</code>. Cette option est particulièrement pratique dans le sens où elle vous permet de positionner l'info-bulle dans le flux du document, proche de l'élément déclencheur — ce qui empêche celle-ci d'apparaître ailleurs ou loin de son origine désirée, notamment lors d'un redimmensionnement de fenêtre.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>number | object</td>
+      <td>0</td>
+      <td>
+        <p>Délai pour afficher/masquer l'info-bulle en ms — ne s'applique pas au déclenchement manuel.</p>
+        <p>Si un chiffre est renseigné, le délai s'applique simultanément à l'apparition et la disparaition.</p>
+        <p>La structure de l'objet est : <code>delay: { "show": 500, "hide": 100 }</code></p>
+      </td>
+    </tr>
+    <tr>
+      <td>html</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>
+        <p>Autoriser du code HTML dans l'info-bulle.</p>
+        <p>Si `true`, le contenu HTML présent dans <code>title</code> sera interprété en HTML dans l'info-bulle. Si `false`, la méthode _jQuery_ <code>text</code> sera utilisée pour insérer du contenu dans le DOM.</p>
+        <p>Utilisez <code>text</code> si vous craignez les attaques XSS.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td>string | function</td>
+      <td>'top'</td>
+      <td>
+        <p>Comment positionner l'info-bulle : auto | top | bottom | left | right.<br>Si <code>auto</code> est spécifié, l'info-bulle sera dynamiquement orientée.</p>
+        <p>Si une fonction est utilisée pour déterminer le positionnement, elle sera appelée par le nœud DOM de l'info-bulle comme premier argument, et l'élément déclencheur comme second argument. Le contexte <code>this</code> contiendra l'instance de l'info-bulle.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>selector</td>
+      <td>string | false</td>
+      <td>false</td>
+      <td>Si un sélecteur est fourni, l'objet de l'info-bulle sera délégué à une cible spécifiée. En pratique, cela est utilisé pour permettre l'ajout de bulles contextuelles à du contenu HTML dynamique. Consultez <a href="https://github.com/twbs/bootstrap/issues/4215">ceci</a> et <a href="https://jsbin.com/zopod/1/edit">cet exemple informatif</a>.</td>
+    </tr>
+    <tr>
+      <td>template</td>
+      <td>string</td>
+      <td><code>'&lt;div class="tooltip" role="tooltip"&gt;&lt;div class="arrow"&gt;&lt;/div&gt;&lt;div class="tooltip-inner"&gt;&lt;/div&gt;&lt;/div&gt;'</code></td>
+      <td>
+
+        <p>Code HTML de référence à utiliser quand vous créez une info-bulle.</p>
+        <p>Le titre de l'info-bulle <code>title</code> sera injecté dans <code>.tooltip-inner</code>.</p>
+        <p><code>.arrow</code> deviendra la flèche de l'info-bulle.</p>
+        <p>L'élément le plus extérieur de l'info-bulle doit avoir la classe <code>.tooltip</code> et l'attribut <code>role="tooltip"</code>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>string | element | function</td>
+      <td>''</td>
+      <td>
+        <p>Valeur de titre par défaut si l'attribut <code>title</code> n'est pas présent.</p>
+        <p>Si une fonction est donnée, elle sera appelée avec <code>this</code> comme référence définie pour l'élement auquel l'info-bulle est attachée..</p>
+      </td>
+    </tr>
+    <tr>
+      <td>trigger</td>
+      <td>string</td>
+      <td>'hover focus'</td>
+      <td>
+        <td>Manières de déclencher l'info-bulle :click | hover | focus | manual. Il est possible d'en choisir plusieurs, séparés par un espace.</td>
+        <p><code>'manual'</code> indique que l'info-bulle sera déclenchée de manière programmatique via les méthodes <code>.tooltip('show')</code>, <code>.tooltip('hide')</code> et <code>.tooltip('toggle')</code> ; cette valeur ne peut être combinée avec une autre.</p>
+        <p><code>'hover'</code> sur une info-bulle la rendra non déclénchable au clavier et ne devrait être utilisée que si d'autres méthodes peuvent fournir la même information en navigation au clavier.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>number | string</td>
+      <td>0</td>
+      <td>Décalage de l'info-bulle relative à sa cible. Pour plus d'informations, veuillez vous référer à <a href="https://popper.js.org/popper-documentation.html#modifiers..offset.offset">la documentation de popper.js sur le décalage</a>.</td>
+    </tr>
+    <tr>
+      <td>fallbackPlacement</td>
+      <td>string | array</td>
+      <td>'flip'</td>
+      <td>Permet de spécifier quelle position _Popper_ utilisera par défaut. Pour plus d'informations, veuillez consulter <a href="https://popper.js.org/popper-documentation.html#modifiers..flip.behavior">la documentation de popper.js sur le comportement</a></td>
+    </tr>
+    <tr>
+      <td>boundary</td>
+      <td>string | element</td>
+      <td>'scrollParent'</td>
+      <td>Zone de contrainte de dépassement des info-bulles. Accepte les valeurs <code>'viewport'</code>, <code>'window'</code>, <code>'scrollParent'</code>, ou une référence HTMLElement (JavaScript seulement). Pour plus d'informations, veuillez vous référer à <a href="https://popper.js.org/popper-documentation.html#modifiers..preventOverflow.boundariesElement">la documentation de popper.js sur ce point</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bd-callout bd-callout-info">
+<h4 id="attributs-data-pour-les-info-bulles-individuelles">Attributs <code>data-</code> pour les info-bulles individuelles</h4>
+
+<p>Les options pour les info-bulles individuelles peuvent alternativement être spécifiées via des attributs <code>data-</code> comme expliqué plus haut.
+</div>
+
+<h3 id="methodes">Methodes</h3>
+
+<div class="bd-callout bd-callout-danger">
+<h4 id="méthodes-asynchrones-et-transitions">Méthodes asynchrones et transitions</h4>
+
+<p>Toutes les méthodes API sont <strong>asynchrones</strong> et démarrent une <strong>transition</strong>. Elles font un retour aussitôt que la transaction a démarré mais <strong>avant qu&rsquo;elle termine</strong>. De plus, un appel à une méthode sur un <strong>composant de transition sera ignorée</strong>.</p>
+
+<p><a href="/docs/4.3/getting-started/javascript/">Consultez la documentation JavaScript pour plus d&rsquo;informations</a>.</p>
+
+</div>
+
+<h4 id="tooltip-options"><code>$().tooltip(options)</code></h4>
+
+<p>Initialise les info-bulles pour une collection d&rsquo;éléments.</p>
+
+<h4 id="tooltip-show"><code>.tooltip('show')</code></h4>
+
+<p>Affiche une info-bulle. <strong>Le retour à la fonction appelante se fait avant que l&rsquo;info-bulle ne soit visible</strong> (par exemple, avant que l&rsquo;évènement <code>shown.bs.tooltip</code> soit déclenché). Cela est considéré comme un déclenchement manuel — si le titre <code>title</code> est vide, l&rsquo;info-bulle n&rsquo;est jamais affichée.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="tooltip-hide"><code>.tooltip('hide')</code></h4>
+
+<p>Masque une info-bulle. <strong>Le retour à la fonction appelante se fait avant que l&rsquo;info-bulle ne soit masquée</strong> (par exemple, avant que l&rsquo;évènement <code>hidden.bs.tooltip</code> soit déclenché). Cela est considéré comme un déclenchement manuel.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;hide&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="tooltip-toggle"><code>.tooltip('toggle')</code></h4>
+
+<p>Alterne la visibilité d&rsquo;une info-bulle. <strong>Le retour à la fonction appelante se fait avant que l&rsquo;info-bulle soit visible ou masquée</strong> (par exemple, avant que l&rsquo;évènement <code>shown.bs.tooltip</code> ou <code>hidden.bs.tooltip</code> soient déclenchés). Cela est considéré comme un déclenchement manuel.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;toggle&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="tooltip-dispose"><code>.tooltip('dispose')</code></h4>
+
+<p>Masque et détruit le composant info-bulle. Ceux qui utilisent une délégation (créés avec <a href="#options">l&rsquo;option <code>selector</code></a>) ne peuvent pas être individuellement détruit sur les éléments déclenchant descendant.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;dispose&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="tooltip-enable"><code>.tooltip('enable')</code></h4>
+
+<p>Donne à une info-bulle la capacité d&rsquo;être affichée. <strong>Les info-bulles sont activées par défaut.</strong></p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;enable&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="tooltip-disable"><code>.tooltip('disable')</code></h4>
+
+<p>Enlève la capacité à une info-bulle d&rsquo;être affichée. Il faudra l&rsquo;activer à nouveau pour pouvoir être déclenchée.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;disable&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="tooltip-toggleenabled"><code>.tooltip('toggleEnabled')</code></h4>
+
+<p>Alterne la possibilité d&rsquo;une info-bulle d&rsquo;être affichée ou masquée.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;toggleEnabled&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="tooltip-update"><code>.tooltip('update')</code></h4>
+
+<p>Met à jour la position d&rsquo;un élément d&rsquo;info-bulle.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="évènements">Évènements</h3>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 150px;">Event Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>show.bs.tooltip</td>
+      <td>Cet évènement se déclenche immédiatement quand la méthode d'instance <code>show</code> a été appelée.</td>
+    </tr>
+    <tr>
+      <td>shown.bs.tooltip</td>
+      <td>Cet évènement se déclenche quand l'info-bulle est devenue visible pour l'utilisateur, transitions CSS terminées.</td>
+    </tr>
+    <tr>
+      <td>hide.bs.tooltip</td>
+      <td>Cet évènement se déclenche immédiatement quand la méthode d'instance <code>hide</code> a été appelée.</td>
+    </tr>
+    <tr>
+      <td>hidden.bs.tooltip</td>
+      <td>Cet évènement se déclenche uand l'info-bulle est devenue masquée pour l'utilisateur, transitions CSS terminées.</td>
+    </tr>
+    <tr>
+      <td>inserted.bs.tooltip</td>
+      <td>Cet évènement se déclenche après l'évènement <code>show.bs.tooltip</code>, quand le code HTML de l'info-bulle ait été ajouté au DOM.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myTooltip&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.tooltip&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Fait quelque chose…
+</span><span class="c1"></span><span class="p">})</span>
+</code></pre></div>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

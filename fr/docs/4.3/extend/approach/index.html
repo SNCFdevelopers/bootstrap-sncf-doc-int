@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/extend/approach/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Découvrez les principes directeurs, les stratégies et les techniques utilisés pour créer et gérer Bootstrap afin que vous puissiez plus facilement le personnaliser et l&rsquo;étendre vous-même.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Approche · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/extend/approach/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#sommaire">Sommaire</a></li>
+<li><a href="#responsive"><em>Responsive</em></a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#échelles-z-index">Échelles <code>z-index</code></a>
+<ul>
+<li><a href="#éléments-de-composant">Éléments de composant</a></li>
+<li><a href="#composants-de-substitutions">Composants de substitutions</a></li>
+</ul></li>
+<li><a href="#html-et-css-plutôt-que-javascript">HTML et CSS plutôt que JavaScript</a></li>
+<li><a href="#utilitaires">Utilitaires</a></li>
+<li><a href="#html-flexible">HTML flexible</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Approche</h1>
+          <p class="bd-lead">Découvrez les principes directeurs, les stratégies et les techniques utilisés pour créer et gérer Bootstrap afin que vous puissiez plus facilement le personnaliser et l&rsquo;étendre vous-même.</p>
+
+          
+
+<p>Bien que les pages de démarrage fournissent une introduction au projet et à ce qu&rsquo;il offre, le présent document est consacré à pourquoi nous faisons ce que nous faisons dans Bootstrap. Cela explique notre philosophie de construire le Web afin que d&rsquo;autres puissent apprendre de nous, contribuer avec nous et nous aider à nous améliorer.</p>
+
+<p>Vous voyez quelque chose qui ne sonne pas bien ou qui pourrait peut-être être mieux fait ? <a href="https://github.com/SNCFdevelopers/bootstrap-sncf/issues/new">Ouvrir une issue</a>
+— nous serions ravis d&rsquo;en discuter avec vous.</p>
+
+<h2 id="sommaire">Sommaire</h2>
+
+<p>Nous allons approfondir chacun des points suivants :</p>
+
+<ul>
+<li>Les composants doivent être <em>responsive</em> et pensés <em>mobile first</em> (pour le mobile en premier)</li>
+<li>Les composants doivent être construits avec une classe de base puis étendus via des classes de modificateurs</li>
+<li>Les états des composants doivent obéir à une échelle commune de <code>z-index</code></li>
+<li>Dans la mesure du possible, préférez une implémentation HTML et CSS au JavaScript</li>
+<li>Dans la mesure du possible, utilisez des utilitaires plutôt que des styles personnalisés</li>
+<li>Dans la mesure du possible, évitez d&rsquo;imposer des exigences HTML strictes (sélecteurs enfants)</li>
+</ul>
+
+<h2 id="responsive"><em>Responsive</em></h2>
+
+<p>Les styles de Bootstrap sont conçus pour être <em>Responsive</em>, une approche à laquelle on attribue souvent le qualificatif de <em>mobile-first</em> (pensée pour le mobile en premier). Nous utilisons ce terme dans nos documents et nous sommes en grande partie en accord avec lui, mais il peut parfois être trop large. Bien que tous les composants <em>ne doivent pas</em> être entièrement <em>Responsive</em> dans Bootstrap, cette approche consiste à réduire les substitutions CSS en vous poussant à ajouter des styles à mesure que la fenêtre d&rsquo;affichage s&rsquo;agrandit.</p>
+
+<p>À travers Bootstrap, vous le verrez plus clairement dans nos requêtes médias. Dans la plupart des cas, nous utilisons des requêtes <code>min-width</code> qui commencent à s’appliquer à un <em>breakpoint</em> spécifique et continuent aux <em>breakpoints</em> supérieurs. Par exemple, un <code>.d-none</code> s&rsquo;applique de<code>min-width: 0</code> jusqu&rsquo;à l&rsquo;infini. Par ailleurs, un <code>.d-md-none</code> s’applique à partir du point d’arrêt moyen.</p>
+
+<p>Nous utilisons parfois <code>max-width</code> lorsque la complexité inhérente à un composant l&rsquo;exige. Parfois, ces substitutions sont plus simples à mettre en œuvre et à prendre en charge sur les plans fonctionnel et mental que la réécriture des fonctionnalités essentielles de nos composants. Nous nous efforçons de limiter cette approche, mais l’utilisons de temps à autre.</p>
+
+<h2 id="classes">Classes</h2>
+
+<p>Mis à part notre feuille de style de normalisation multi-navigateurs, <em>Reboot</em> ou réinitialisation, tous nos styles visent à utiliser les classes comme sélecteurs. Cela signifie éviter les sélecteurs de type (par exemple, <code>input[type=&quot;text&quot;]</code>) et les classes parent étrangères (par exemple, <code>.parent .child</code>) qui rendent les styles trop spécifiques pour pouvoir être facilement remplacés.</p>
+
+<p>En tant que tels, les composants doivent être construits avec une classe de base contenant des paires propriété/valeur communes à ne pas remplacer. Par exemple, <code>.btn</code> et<code>.btn-primary</code> : nous utilisons <code>.btn</code> pour tous les styles courants tels que<code>display</code>, <code>padding</code> et<code>border-width</code>. Nous utilisons ensuite des modificateurs tels que <code>.btn-primary</code> pour ajouter la couleur, la couleur de fond, la couleur de bordure, etc.</p>
+
+<p>Les classes de modificateur ne doivent être utilisées que s&rsquo;il existe plusieurs propriétés ou valeurs à modifier dans plusieurs variantes. Les modificateurs ne sont pas toujours nécessaires. Veillez donc à ne pas multiplier les lignes de code et à éviter les remplacements inutiles lors de leur création. Nos classes de couleur et variantes de taille sont de bons exemples de modificateurs.</p>
+
+<h2 id="échelles-z-index">Échelles <code>z-index</code></h2>
+
+<p>Il existe deux échelles <code>z-index</code> dans les éléments de Bootstrap : dans les éléments de composant et dans les composants de superposition.</p>
+
+<h3 id="éléments-de-composant">Éléments de composant</h3>
+
+<ul>
+<li>Certains composants dans Bootstrap sont construits avec des éléments qui se chevauchent pour empêcher les doubles bordures sans modifier la propriété <code>border</code>. Par exemple les groupes de boutons, les groupes de saisie et et la pagination.</li>
+<li>Ces composants partagent une échelle standard <code>z-index</code> de <code>0</code> à <code>3</code>.</li>
+<li><code>0</code> est la valeur par défaut (initiale), <code>1</code> correspond au survolk <code>hover</code>, <code>2</code> est <code>actif</code>/<code>.active</code> et <code>3</code> est <code>:focus</code>.</li>
+<li>Cette approche correspond à nos attentes concernant la plus grande priorité des utilisateurs. Si un élément est <code>focus</code>, il est visible et à l&rsquo;attention de l&rsquo;utilisateur. Les éléments actifs occupent le deuxième rang en raison de leur état. Le survol est le troisième plus haut parce qu&rsquo;il indique l&rsquo;intention de l&rsquo;utilisateur, mais <em>presque tout</em> peut être survolé.</li>
+</ul>
+
+<h3 id="composants-de-substitutions">Composants de substitutions</h3>
+
+<p>Bootstrap comprend plusieurs composants qui fonctionnent comme une superposition. Cela inclut, par ordre des <code>z-index</code> les plus élevés, les menus déroulants, les barres de navigation fixes et collantes, les fenêtres modales, les info-bulles et les bulles contextuelles. Ces composants ont leur propre échelle <code>z-index</code> qui commence à <code>1000</code>. Ce numéro de départ a été choisi arbitrairement et sert de petit tampon entre nos styles et les styles personnalisés de votre projet.</p>
+
+<p>Chaque composant de superposition augmente légèrement sa valeur <code>z-index</code> de telle sorte que les principes d&rsquo;interface utilisateur courants permettent aux éléments centrés sur l&rsquo;utilisateur ou survolés de rester visibles à tout moment. Par exemple, une fenêtre modale bloque le document (par exemple, vous ne pouvez effectuer aucune action autre que celle du modal), nous le plaçons donc au-dessus de notre barre de navigation.</p>
+
+<p>Apprenez-en plus à ce sujet dans notre <a href="/fr/docs/4.3/layout/overview/#z-index">page sur la mise en page avec <code>z-index</code></a>.</p>
+
+<h2 id="html-et-css-plutôt-que-javascript">HTML et CSS plutôt que JavaScript</h2>
+
+<p>Dans la mesure du possible, nous préférons écrire en HTML et CSS plutôt que du JavaScript. En général, HTML et CSS sont plus prolifiques et accessibles à plus de gens de tous les niveaux d&rsquo;expérience. Le HTML et le CSS sont également plus rapides dans votre navigateur que le JavaScript et votre navigateur offre généralement suffisamment de fonctionnalités pour vous.</p>
+
+<p>Ce principe est que notre API JavaScript de première classe est constituée des attributs <code>data</code>. Vous n&rsquo;avez presque pas besoin d&rsquo;écrire du JavaScript pour utiliser nos plugins JavaScript; écrivez plutôt en HTML.</p>
+
+<p>Enfin, nos styles s’appuient sur les comportements fondamentaux des composants Web natifs. Dans la mesure du possible, nous préférons utiliser les informations fournies par le navigateur. Par exemple, vous pouvez placer une classe <code>.btn</code> sur presque n&rsquo;importe quel élément, mais la plupart des éléments ne fournissent aucune valeur sémantique ni fonctionnalité du navigateur. Donc, à la place, nous utilisons les classes <code>&lt;button&gt;</code> et <code>&lt;a&gt;</code>.</p>
+
+<p>Il en va de même pour les composants plus complexes. Bien que <em>nous pourrions écrire</em> notre propre système de validation de formulaire pour ajouter des classes à un élément parent en fonction de l&rsquo;état d&rsquo;une entrée, nous permettant ainsi de styliser le texte en rouge, nous préférons utiliser les pseudo-éléments <code>:valid</code>/<code>:invalid</code> que les navigateurs fournissent.</p>
+
+<h2 id="utilitaires">Utilitaires</h2>
+
+<p>Les classes d’utilitaires — les utilitaires dans Bootstrap 3 — constituent un puissant allié dans la lutte contre le mauvais CSS et les pauvres performances des pages. Une classe d&rsquo;utilitaires est généralement un simple appariement immuable propriété-valeur exprimé en classe (par exemple, <code>.d-block</code> représente <code>display: block;</code>). Leur principal attrait est la rapidité d’utilisation lors de l’écriture HTML et la limitation de la quantité de CSS personnalisée que vous devez écrire.</p>
+
+<p>En ce qui concerne plus particulièrement le code CSS personnalisé, les utilitaires peuvent aider à lutter contre l’augmentation de la taille du fichier en réduisant vos paires propriété/valeur les plus souvent répétées en classes simples. Cela peut avoir un effet dramatique à grande échelle dans vos projets !</p>
+
+<h2 id="html-flexible">HTML flexible</h2>
+
+<p>Bien que cela ne soit pas toujours possible, nous nous efforçons d&rsquo;éviter d&rsquo;être excessivement dogmatique dans nos exigences HTML pour les composants. Ainsi, nous nous concentrons sur des classes uniques dans nos sélecteurs CSS et essayons d&rsquo;éviter les sélecteurs enfants immédiats (<code>&gt;</code>). Cela vous donne plus de flexibilité dans votre implémentation et aide à garder notre CSS plus simple et moins spécifique.</p>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

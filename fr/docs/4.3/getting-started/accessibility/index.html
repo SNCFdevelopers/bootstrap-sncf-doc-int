@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/getting-started/accessibility/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Un bref aperçu des fonctionnalités et des limitations de Bootstrap pour la création de contenu accessible.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Accessibilité · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/getting-started/accessibility/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#charte-sncf">Charte SNCF</a></li>
+<li><a href="#vue-d-ensemble-et-limitations">Vue d&rsquo;ensemble et limitations</a>
+<ul>
+<li><a href="#balisage-structurel">Balisage structurel</a></li>
+<li><a href="#composants-interactifs">Composants interactifs</a></li>
+<li><a href="#contraste-de-couleur">Contraste de couleur</a></li>
+<li><a href="#contenu-masqué-visuellement">Contenu masqué visuellement</a></li>
+</ul></li>
+<li><a href="#ressources-additionnelles">Ressources additionnelles</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Accessibilité</h1>
+          <p class="bd-lead">Un bref aperçu des fonctionnalités et des limitations de Bootstrap pour la création de contenu accessible.</p>
+
+          
+
+<p>Bootstrap fournit un cadre convivial de styles prédéfinis, d&rsquo;outils de présentation et de composants interactifs, permettant aux développeurs de créer des sites Web et des applications attrayantes visuellement, riches en fonctionnalités et accessibles immédiatement.</p>
+
+<h2 id="charte-sncf">Charte SNCF</h2>
+
+<p>En 2016, la SNCF a signé un pacte visant à faire respecter les engagements découlant du standard RGAA. <br />
+Cette signature n’est que l’incarnation légale d’un engagement, un devoir éthique de la part de tous, qui permet à tous vos utilisateurs de consulter votre interface sans discrimination.</p>
+
+<p>Le pacte est basé sur le respect minimum du niveau de conformité &ldquo;AA&rdquo; du <a href="https://www.w3.org/TR/WCAG20"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</a>.</p>
+
+<p>Comme indiqué dans la documentation technique ci-après, Bootstrap est &ldquo;prêt à l&rsquo;emploi&rdquo; mais ne porte pas l&rsquo;entière responsabilité de ce niveau de conformité. <br />
+Les composants sont en effet réalisés dans ce sens, optimisés (à quelques exceptions près, spécifiquement annoncés quand il le est), que ce soit en termes de code, mais également en termes de design. <br />
+Par contre, le travail appartient à l’équipe qui implémente le code, et donc les composants un par un, qui définit les couleurs de son interface et donc la personnalisation du design numérique de la SNCF, qui est de garantir l’accessibilité des logiciels.</p>
+
+<p>Vous trouverez les consignes d&rsquo;accessibilité sur la plate-forme Digital SNCF, afin de vous donner tous les détails nécessaires à ce processus :</p>
+
+<ul>
+<li><a href="https://www.digital.sncf.com/ressources/accessibilite-numerique-design">Accessibilité numérique pour les designers</a></li>
+<li><a href="https://www.digital.sncf.com/ressources/accessibilite-numerique-developpement">Accessibilité numérique pour les développeurs</a></li>
+</ul>
+
+<p>Nous avons également produit un <a href="https://www.digital.sncf.com/system/files/document/livre_blanc_initiation_a_laccessibilite_numerique.pdf">livre blanc de l&rsquo;accessibilité chez SNCF</a> avec notre partenaire <a href="https://access42.net/">Access42</a>.</p>
+
+<p>En parallèle, n&rsquo;hésitez pas à demander à nos équipes de vous aider si vous avez besoin sur <a href="mailto:design.fab@sncf.fr?subject=Bootstrap - Accessibilité">design.fab@sncf.fr</a>, avec comme objet &ldquo;Bootstrap - Accessibilité&rdquo;.
+Nous pouvons également vous guider ou recommander des partenaires de confiance pour des questions spécifiques.</p>
+
+<h2 id="vue-d-ensemble-et-limitations">Vue d&rsquo;ensemble et limitations</h2>
+
+<p>L&rsquo;accessibilité globale de tout projet construit avec Bootstrap dépend en grande partie du balisage de l&rsquo;auteur, du style supplémentaire et des scripts inclus. Cependant, à condition que ceux-ci aient été correctement implémentés, il devrait être parfaitement possible de créer des sites Web et des applications avec Bootstrap <a href="https://www.w3.org/TR/WCAG20/"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</a> (A/AA/AAA), <a href="https://www.section508.gov/">Section 508</a> et des normes d&rsquo;accessibilité similaires.</p>
+
+<h3 id="balisage-structurel">Balisage structurel</h3>
+
+<p>Le style et la présentation de Bootstrap peuvent être appliqués à une large gamme de structures de balisage. Cette documentation vise à fournir aux développeurs des exemples de meilleures pratiques pour illustrer l&rsquo;utilisation de Bootstrap et illustrer le balisage sémantique approprié, y compris les moyens de résoudre les problèmes d&rsquo;accessibilité potentiels.</p>
+
+<h3 id="composants-interactifs">Composants interactifs</h3>
+
+<p>Les composants interactifs de Bootstrap, tels que les boîtes de dialogue modales, les menus déroulants et les info-bulles personnalisées, sont conçus pour fonctionner avec les utilisateurs tactiles, souris et clavier. Grâce à l&rsquo;utilisation des roles et attributs de <a href="https://www.w3.org/WAI/intro/aria"><abbr title="Web Accessibility Initiative">WAI</abbr>-<abbr title="Accessible Rich Internet Applications">ARIA</abbr></a>, ces composants doivent également être compréhensibles et utilisables à l&rsquo;aide de technologies d&rsquo;assistance (telles que des lecteurs d&rsquo;écran).</p>
+
+<p>Les composants de Bootstrap étant volontairement conçus pour être assez génériques, les auteurs peuvent avoir besoin d&rsquo;inclure davantage de rôles et d&rsquo;attributs <abbr title = "Applications Internet riches accessibles">ARIA</abbr>, ainsi que le comportement JavaScript, pour en préciser la nature et la fonctionnalité de leur composant. Ceci est généralement noté dans la documentation.</p>
+
+<h3 id="contraste-de-couleur">Contraste de couleur</h3>
+
+<p>La plupart des couleurs qui constituent actuellement la palette par défaut de Bootstrap SNCF respectent les besoins en contraste pour assurer le niveau « AA » du WCAG.</p>
+
+<h3 id="contenu-masqué-visuellement">Contenu masqué visuellement</h3>
+
+<p>Le contenu qui doit être masqué visuellement, tout en restant accessible aux technologies d&rsquo;assistance telles que les lecteurs d&rsquo;écran, peut être stylisé à l&rsquo;aide de la classe <code>.sr-only</code>. Cela peut être utile dans les situations où des informations visuelles supplémentaires (telles que la signification indiquée par l&rsquo;utilisation de couleurs) doivent également être transmises aux utilisateurs non-voyants.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-danger&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Danger: <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  Cette action n&#39;est pas réversible
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code></pre></div>
+
+<p>Pour les contrôles interactifs visuellement masqués, tels que les liens traditionnels &ldquo;de saut&rdquo;, <code>.sr-only</code> peut être combiné à la classe<code>.sr-only-focusable</code>. Cela garantira que le contrôle devient visible une fois la mise au point effectuée (pour les utilisateurs de clavier voyants).</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only sr-only-focusable&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#content&#34;</span><span class="p">&gt;</span>Skip to main content<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="ressources-additionnelles">Ressources additionnelles</h2>
+
+<ul>
+<li><a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a></li>
+<li><a href="http://a11yproject.com/">The A11Y Project</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">MDN accessibility documentation</a></li>
+<li><a href="https://tenon.io/">Vérificateur d&rsquo;accessibilité Tenon.io</a></li>
+<li><a href="https://contrast-ratio.com/">Testeur de ratio de contraste de couleur</a></li>
+<li><a href="https://developer.paciellogroup.com/resources/contrastanalyser/">Analyse du contraste de couleur (CCA)</a></li>
+<li><a href="https://github.com/squizlabs/HTML_CodeSniffer">&ldquo;HTML Codesniffer&rdquo; bookmarklet for identifying accessibility issues</a></li>
+</ul>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

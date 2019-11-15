@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/layout/dark-mode/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Thème sombre pour tous les composants et exemples.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Mode sombre · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/layout/dark-mode/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#pourquoi-un-mode-sombre">Pourquoi un mode sombre ?</a></li>
+<li><a href="#une-démarche-accessible">Une démarche accessible</a></li>
+<li><a href="#comment-cela-se-traduit">Comment cela se traduit ?</a>
+<ul>
+<li><a href="#fonds">Fonds</a></li>
+<li><a href="#navigations">Navigations</a></li>
+<li><a href="#textes-liens">Textes &amp; Liens</a></li>
+<li><a href="#boutons-tags">Boutons &amp; Tags</a></li>
+<li><a href="#champs">Champs</a></li>
+</ul></li>
+<li><a href="#une-version-alpha">Une version « Alpha »</a></li>
+<li><a href="#implémentation-technique">Implémentation technique</a>
+<ul>
+<li><a href="#css-html">CSS, HTML</a></li>
+<li><a href="#implémentation-native-dans-le-navigateur">Implémentation native dans le navigateur</a></li>
+<li><a href="#js">JS</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Mode sombre</h1>
+          <p class="bd-lead">Thème sombre pour tous les composants et exemples.</p>
+
+          
+
+<h2 id="pourquoi-un-mode-sombre">Pourquoi un mode sombre ?</h2>
+
+<p>Le mode sombre a été créé pour deux raisons principales :</p>
+
+<ol>
+<li><p><strong>Répondre à un cas d&rsquo;usage métier</strong><br />
+Plusieurs de nos agents travaillent dans des environnements à faible luminosité, à l&rsquo;intérieur comme à l&rsquo;extérieur. Le mode sombre rend la lisibilité plus importante dans ce type d&rsquo;environnements.</p></li>
+
+<li><p><strong>Faire de notre Design un Design Éthique</strong><br />
+Si la notion d’éthique est assurément bien plus vaste que la simple limitation de la consommation énergétique des écrans internes à l’entreprise, c’est déjà un premier pas. Nous souhaitons nous engager, comme d’autres entités le font, dans les économies d’énergie réalisées par l’entreprise, en s’inscrivant pleinement dans notre devise « Apporter la liberté à chacun de circuler facilement en préservant la planète ».<br />
+Ce mode sombre est au-delà de cela une opportunité que saisissent les plus grands concepteurs d’interfaces et entreprises afin de répondre à cette nouvelle demande de l’utilisateur, bien au-delà de SNCF. Cette utilisation permettrait notamment à l’utilisateur de consommer 6 fois moins de batterie qu’un écran blanc. Une expérience a été réalisée sur Youtube, prouvant qu’un mode sombre actif (luminosité à 100%) permettait de consommer 60% de moins d’énergie. Moins d’énergie dépensée, moins de recharge, une batterie avec une durée de vie plus longue, un cercle vertueux.\</p></li>
+</ol>
+
+<h2 id="une-démarche-accessible">Une démarche accessible</h2>
+
+<p>Si la réalisation du mode sombre est une évidence, répondant donc à un cas d’usage métier, il s’inscrit encore plus dans une logique de Design Éthique car pleinement accessible.<br />
+Les couleurs ont été repensées en ce sens : certaines sont inchangées, d’autres ont été adaptées (éclaircies ou assombries) et enfin d’autres ont été tout simplement supprimées car non accessibles et qui ne peuvent être adaptées.</p>
+
+<p>Attention, le mode sombre n’est pas à confondre avec une inversion de contrastes, qui lui répond totalement à une logique d’accessibilité. Ici, nous parlons bien d’un « Design Sombre », c’est-à-dire un design adapté comme évoqué précédemment.</p>
+
+<h2 id="comment-cela-se-traduit">Comment cela se traduit ?</h2>
+
+<p>Dans les grandes lignes, les adaptations en terme de Design qui ont été réalisées sont les suivantes.</p>
+
+<h3 id="fonds">Fonds</h3>
+
+<p>Le fond blanc <code>FFF</code> de la page devient un fond noir <code>000</code>.
+Les fonds colorés (aplats de couleurs) sont inchangés.
+Le fond gris cool gray 1 <code>F2F2F2</code> sur fond blanc devient un fond carbone <code>333</code>.
+Le fond carbone <code>333</code> sur fond blanc devient un fond gris cool gray 1 <code>F2F2F2</code>.</p>
+
+<h3 id="navigations">Navigations</h3>
+
+<p>La couleur de la barre galactique et du footer sur fond carbone <code>333</code> est inchangée.
+La navigation principale <code>FFF</code> passe sur un fond carbone <code>333</code>.</p>
+
+<h3 id="textes-liens">Textes &amp; Liens</h3>
+
+<p>Les textes dans les différentes teintes de gris, du carbone <code>333</code> au cool gray 1 <code>F2F2F2</code> sur fond blanc passent en cool gray 3 <code>D7D7D7</code>.
+A l’inverse, les textes blancs sur les fonds des différentes teintes de gris passent en noir <code>000</code>.</p>
+
+<p>Le texte bleu primaire <code>0088CE</code> sur fond blanc devient <code>00A1FF</code> sur fonds foncés.
+Le texte orange <code>E05206</code> sur fond blanc devient <code>FF6E20</code> sur fonds foncés.
+Le texte bleu canard <code>009AA6</code> sur fond blanc devient <code>00ABB9</code> sur fonds foncés.</p>
+
+<p>Le texte jaune safran <code>FFB612</code> sur fond blanc est inchangé sur fonds foncés.
+Le texte vert anis <code>D2E100</code> sur fond blanc est inchangé sur fonds foncés.
+Le texte vert pomme <code>82BE00</code> sur fond blanc est inchangé sur fonds foncés.</p>
+
+<p>Le texte violet <code>6E1E78</code> sur fond blanc ne serait pas accessible sur fond noir 8% <code>191919</code>. Ce texte passe en bleu primaire <em>adapté</em> <code>00A1FF</code>.
+Le texte prune <code>A1006B</code> sur fond blanc ne serait pas accessible sur fond noir 8% <code>191919</code>. Ce texte passe en bleu primaire <em>adapté</em> <code>00A1FF</code>.
+Le texte framboise <code>CD0037</code> sur fond blanc ne serait pas accessible sur fond noir 8% <code>191919</code>. Ce texte passe en bleu primaire <em>adapté</em> <code>00A1FF</code>.</p>
+
+<p>Lorsqu’un bloc utilisera un texte rouge assistance, l’ensemble du bloc sera inchangé (fond et couleur du texte).</p>
+
+<h3 id="boutons-tags">Boutons &amp; Tags</h3>
+
+<p>Les couleurs des boutons sont fonction de la couleur principale utilisée et seront les mêmes que celles définies pour les textes.
+Le bouton carbone se transforme en cool gray 1 <code>F2F2F2</code>.
+Le texte du bouton sera quant à lui toujours en noir <code>000</code>.</p>
+
+<h3 id="champs">Champs</h3>
+
+<p>Les champs blancs <code>FFF</code> sur fond gris cool gray 1 <code>F2F2F2</code> passent en noir <code>000</code> sur fond carbone <code>333</code>.
+Les champs gris cool gray 1 <code>F2F2F2</code> sur fond blanc <code>FFF</code> passent en carbone <code>333</code> sur fond noir <code>000</code>.</p>
+
+<p><em>NB : d’autres adaptations ont été réalisées à la marge pour des cas particuliers, celles-ci sont intégrées dans cette version</em></p>
+
+<h2 id="une-version-alpha">Une version « Alpha »</h2>
+
+<p>Une version « Alpha » est une version primaire, que nous lançons dans une logique d’expérimentation.
+Elle n’a pas la vocation d’être la plus intégrée possible. C’est pour cela que nous avons besoin de vous, de vos cas d’usage, que nous vous invitons à nous faire remonter soit via GitHub, soit via notre adresse email <a href="mailto:design.fab@sncf.fr?subject=Bootstrap - Dark mode">design.fab@sncf.fr</a> avec pour objet « Bootstrap - Mode sombre ».</p>
+
+<p>Cette version est disponible sur nos deux versions de Bootstrap (Communication &amp; Métier).
+Nous vous invitons à consulter l’ensemble de la documentation technique ci-dessous pour implémenter le mode sombre, et permettre son activation sur votre interface.</p>
+
+<p>Nous avons d’ores et déjà entamé des réflexions concernant l’amélioration de cette fonctionnalité : doit-on le laisser tel quel en laissant le soin à l’utilisateur de l’activer ou non ? Doit-on lui faciliter sa visibilité durant des créneaux horaire spécifiques et le proposer sur l’interface (à l’instar des cookies) voire même l’activer par défaut ? N’hésitez pas à nous donner votre avis sur le sujet <a href="mailto:design.fab@sncf.fr?subject=Bootstrap - Dark mode">par mail</a> ou sur le <a href="https://www.yammer.com/sncf.fr/#/threads/inGroup?type=in_group&amp;feedId=11125103">Yammer dédié</a>.</p>
+
+<p>N’hésitez pas à nous donner votre feedback sur cette fonctionnalité en nous donnant votre retour sur Usabilla (la languette de droite située à droite de l’interface).</p>
+
+<h2 id="implémentation-technique">Implémentation technique</h2>
+
+<p>La distribution Bootstrap SNCF distribution inclut deux fichiers CSS (normal &amp; minifié):</p>
+
+<ul>
+<li><code>bootstrap-sncf.(min.)css</code></li>
+<li><code>bootstrap-sncf.darkmode.(min.)css</code></li>
+</ul>
+
+<blockquote>
+<p>Ils sont automatiquement généré au moment de la compilation SASS.</p>
+</blockquote>
+
+<p>Vous pouvez utiliser l&rsquo;un ou l&rsquo;autre pour votre projet mais <strong>pas en même temps</strong> : chaque fichier intègre l&rsquo;ensemble du Bootstrap SNCF, l&rsquo;un en mode normal, clair, l&rsquo;autre avec le côté obscur du même design.</p>
+
+<p>Il est possible de <em>permuter</em> d&rsquo;une version à l&rsquo;autre avec la méthode native du navigateur Firefox, ou avec un peu de JavaScript, voir plus bas.</p>
+
+<h3 id="css-html">CSS, HTML</h3>
+
+Pour le <em>Design Métier</em> l'interrupteur devrait être inclus dans le menu déroulant des paramètres personnels, en haut à droite de la barre de navigation. Cet exemple de barre de navigation contient un interrupteur fonctionnel, essayez-le tout de suite !<div class="bd-example">
+  <div class="mastheader">
+    <div class="mastheader-logo">
+      <a href="/docs">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+      </a>
+    </div>
+    <header role="banner" class="mastheader-title d-none d-xl-block">
+      <h1 class="text-uppercase text-white pt-2 pl-3 mb-0">Nom application</h1>
+    </header>
+    <div class="mastheader-search pr-md-4 pl-md-4" data-component="searchbar">
+      <label for="galacticbar-search-input" class="font-weight-medium text-white pr-3 mb-0">Rechercher</label>
+      <div class="input-group align-items-center">
+        <div class="form-control-container" data-component="control" data-clear-option="true" role="search">
+          <input id="galacticbar-search-input" type="search" class="form-control clear-option" data-role="input" data-placeholder="Rechercher" />
+          <span class="form-control-state"></span>
+          <button type="button" class="btn-clear btn-primary d-none" data-btn="clear">
+            <span class="sr-only">Clear text</span>
+            <i class="icons-close" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="input-group-append input-group-last">
+          <button type="button" class="btn btn-primary btn-only-icon">
+            <span class="sr-only">Rechercher</span>
+            <i class="icons-search" aria-hidden="true"></i>
+          </button>
+        </div>
+        <button type="button" class="btn btn-only-icon btn-white d-block d-md-none" data-role="close">
+          <span class="sr-only">Close search</span>
+          <i class="icons-close icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <ul class="mastheader-toolbar toolbar mb-0">
+      <li class="toolbar-item separator-gray-500 d-none d-md-flex">
+        <a href="#" class="btn btn-only-icon btn-notif toolbar-item-spacing">
+          <span class="sr-only">Alert</span>
+          <i class="icons-alert-notification icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+          <span class="notif">1</span>
+        </a>
+      </li>
+      <li class="toolbar-item separator-gray-500 no-separator d-flex d-md-none">
+        <button type="button" class="btn btn-only-icon toolbar-item-spacing" data-component="searchbar-toggle">
+          <span class="sr-only">Open search</span>
+          <i class="icons-search icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item separator-gray-500">
+        <div class="btn-group dropdown">
+          <button class="btn btn-transparent dropdown-toggle toolbar-item-spacing" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+            <i class="icons-menu-account icons-size-1x25 icons-md-size-1x5 mr-xl-2" aria-hidden="true"></i>
+            <span class="d-none d-xl-block">Pierre Dumont</span>
+            <i class="icons-arrow-down d-none d-xl-block" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" id="mycontrol">
+            <ul>
+              <li class="dropdown-item"><a href="#">Paramètre du compte</a></li>
+              <li class="dropdown-item"><a href="#">Préférences</a></li>
+              <li class="dropdown-item darkmode-btn"><a href="#">Mode clair/sombre</a></li>
+              <li class="dropdown-item"><a href="#">Se déconnecter</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<h3 id="implémentation-native-dans-le-navigateur">Implémentation native dans le navigateur</h3>
+
+<p>La méthode la plus simples est d&rsquo;utiliser les <a href="https://www.w3.org/Style/Examples/007/alternatives.en.html">recommandations du W3C</a>.
+Ajoutez les lignes suivantes à votre projet :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Light mode&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;bootstrap-sncf.min.css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Dark mode&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;bootstrap-sncf.darkmode.min.css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet alternate&#34;</span><span class="p">&gt;</span></code></pre></div>
+<p>Sur Opera, Internet Explorer et Firefox vous allez pouvoir trouver la liste des styles disponibles dans une page dans le menu « Affichage » (Chrome nécessite une extension spécifique pour prendre en compte cette norme).</p>
+
+<p>Et oui, c&rsquo;est aussi simple que ça !</p>
+
+<h3 id="js">JS</h3>
+
+<div class="bd-callout bd-callout-info">
+L&rsquo;approche suivante n&rsquo;est pas une référence mais une proposition d&rsquo;implémentation de l&rsquo;interrupteur mode sombre dans votre projet.
+Si votre design est en mode « page unique » sans rechargement, il ne vous sera notamment pas nécessaire de sauvegarder l&rsquo;état de l&rsquo;interrupteur.
+</div>
+
+<p>D&rsquo;abord, il faut initialiser et choisir quel fichier CSS nous voulons charger et tester si le mode sombre doit être activé par défaut.
+Sinon, la valeur par défaut sera la version claire. Veuillez notez que le code JavaScript suivant doit être placé à l&rsquo;intérieur de la balise <code>&lt;head&gt;</code> de façon à éviter un <a href="https://fr.wikipedia.org/wiki/FOUC">FOUC</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">initDarkmode</span><span class="p">()</span>
+
+<span class="kd">function</span> <span class="nx">initDarkmode</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="nx">mode</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;bootstrap-sncf-css-name&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">mode</span> <span class="o">===</span> <span class="s1">&#39;dark&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; title=&#34;Mode sombre&#34; name=&#34;dark&#34; href=&#34;/bootstrap-sncf.darkmode.min.css&#34; id=&#34;activecss&#34;&gt;&#39;</span><span class="p">)</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&#34;stylesheet alternate&#34; type=&#34;text/css&#34; title=&#34;Style classique&#34; name=&#34;light&#34; href=&#34;/bootstrap-sncf.min.css&#34; id=&#34;inactivecss&#34;&gt;&#39;</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; title=&#34;Style classique&#34; name=&#34;light&#34; href=&#34;/bootstrap-sncf.min.css&#34; id=&#34;activecss&#34;&gt;&#39;</span><span class="p">)</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&#34;stylesheet alternate&#34; type=&#34;text/css&#34; title=&#34;Mode sombre&#34; name=&#34;dark&#34; href=&#34;/bootstrap-sncf.darkmode.min.css&#34; id=&#34;inactivecss&#34;&gt;&#39;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Après cela, ajoutez un bouton, lien, pour basculer entre les modes normal ou sombre, avec par exemple un id <code>darkmode-btn</code> et le script suivant pourra changer la valeur de l&rsquo;attribut <code>href</code> entre <code>stylesheet</code> et <code>stylesheet alternate</code>. Idéalement, essayez d&rsquo;utiliser le design d&rsquo;implémentation que nous avons choisi pour chaque variante du socle design SNCF (Communication ou Métier).</p>
+
+<p>Pour conserver le choix de l&rsquo;utilisateur, vous pouvez enregistrer cette valeur par exemple dans un objet <em>local storage</em> et récupérer sa valeur à sa prochaine visite pour lui proposer le bon mode.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;darkmode-btn&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">toggleDarkmode</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">toggleDarkmode</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="nx">activecss</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;activecss&#39;</span><span class="p">)</span>
+  <span class="k">const</span> <span class="nx">inactivecss</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;inactivecss&#39;</span><span class="p">)</span>
+  <span class="k">const</span> <span class="nx">oldhref</span> <span class="o">=</span> <span class="nx">activecss</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+  <span class="k">const</span> <span class="nx">newhref</span> <span class="o">=</span> <span class="nx">inactivecss</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+  <span class="k">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">inactivecss</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+  <span class="nx">activecss</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="nx">newhref</span><span class="p">)</span>
+  <span class="nx">inactivecss</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="nx">oldhref</span><span class="p">)</span>
+  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;bootstrap-sncf-css-name&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

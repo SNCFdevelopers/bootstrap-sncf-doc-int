@@ -1,0 +1,1459 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/components/icons/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exemples et guide d&rsquo;utilisation des icones, pictogrammes.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Icones · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/components/icons/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#markup">Markup</a></li>
+<li><a href="#liste">Liste</a></li>
+<li><a href="#tailles-basées-sur-la-taille-de-la-fontes">Tailles basées sur la taille de la fontes</a></li>
+<li><a href="#tailles-spécifiques">Tailles spécifiques</a></li>
+<li><a href="#rotation">Rotation</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Icones</h1>
+          <p class="bd-lead">Exemples et guide d&rsquo;utilisation des icones, pictogrammes.</p>
+
+          
+
+<h2 id="markup">Markup</h2>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-30px" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-30px&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="liste">Liste</h2>
+
+<div class="row mt-4">
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-add icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-add</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-admin icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-admin</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-alert-notification icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-alert-notification</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-ambulant-sales icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-ambulant-sales</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-arrow-double icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-arrow-double</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-arrow-down icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-arrow-down</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-arrow-next icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-arrow-next</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-arrow-prev icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-arrow-prev</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-arrow-real icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-arrow-real</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-arrow-up icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-arrow-up</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-booking icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-booking</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-bookmark-off icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-bookmark-off</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-bookmark icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-bookmark</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-bypass icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-bypass</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-calendar-time icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-calendar-time</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-calendar icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-calendar</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-checked icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-checked</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-account-connected icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-account-connected</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-arrow icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-arrow</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-back-top icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-back-top</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-cancelled icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-cancelled</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-delay icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-delay</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-delete icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-delete</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-disruption icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-disruption</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-facebook icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-facebook</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-flux-rss icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-flux-rss</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-google-plus icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-google-plus</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-information icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-information</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-instagram icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-instagram</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-linkedin icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-linkedin</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-mail icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-mail</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-pinterest icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-pinterest</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-print icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-print</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-reverse icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-reverse</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-tooltip icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-tooltip</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-twitter icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-twitter</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-circle-works icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-circle-works</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-clock icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-clock</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-close icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-close</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-disabled-service icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-disabled-service</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-distribution icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-distribution</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-document icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-document</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-document2 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-document2</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-download icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-download</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-eco-consumption icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-eco-consumption</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-external-link icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-external-link</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-facebook icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-facebook</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-file icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-file</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-filters icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-filters</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-free-bike icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-free-bike</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-instagram icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-instagram</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-bike icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-bike</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-bullet icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-bullet</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-bus-2 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-bus-2</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-bus icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-bus</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-car icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-car</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-a icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-a</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-b icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-b</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-c icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-c</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-d icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-d</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-e icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-e</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-h icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-h</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-j icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-j</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-k icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-k</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-l icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-l</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-n icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-n</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-p icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-p</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-r icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-r</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-idf-u icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-idf-u</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-1 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-1</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-2 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-2</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-3 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-3</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-3bis icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-3bis</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-4 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-4</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-5 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-5</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-6 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-6</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-7 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-7</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-7bis icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-7bis</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-8 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-8</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-9 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-9</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-10 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-10</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-11 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-11</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-12 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-12</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-13 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-13</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-metro-14 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-metro-14</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-1 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-1</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-2 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-2</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-3 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-3</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-3a icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-3a</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-3b icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-3b</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-3est icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-3est</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-4 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-4</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-5 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-5</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-6 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-6</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-7 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-7</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-8 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-8</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-9 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-9</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-10 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-10</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-11 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-11</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-12 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-12</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-line-tram-13 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-line-tram-13</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-metro icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-metro</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-pedestrian icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-pedestrian</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-rer icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-rer</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-train-station icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-train-station</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-train icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-train</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-tram icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-tram</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-itinerary-tramway icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-itinerary-tramway</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-label icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-label</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-building icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-building</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-clock icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-clock</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-conversation icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-conversation</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-creditcard icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-creditcard</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-france icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-france</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-group icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-group</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-headphones icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-headphones</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-information icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-information</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-bike icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-bike</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-bus-2 icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-bus-2</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-bus icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-bus</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-car icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-car</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-metro icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-metro</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-pedestrian icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-pedestrian</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-rer icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-rer</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-train-station icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-train-station</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-train icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-train</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-tram icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-tram</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-itinerary-tramway icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-itinerary-tramway</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-lightbulb icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-lightbulb</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-luggage icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-luggage</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-mail icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-mail</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-phone icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-phone</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-search-recent icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-search-recent</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-seat icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-seat</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-skateboard icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-skateboard</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-smartphone icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-smartphone</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-sncf icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-sncf</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-stroller icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-stroller</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-suitcase icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-suitcase</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-swipecard icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-swipecard</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-ticket icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-ticket</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-truck icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-truck</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-large-warning icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-large-warning</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-list icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-list</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-localisation-pin icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-localisation-pin</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-lounge-car icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-lounge-car</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-menu-account icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-menu-account</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-menu-burger icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-menu-burger</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-menu-searchbar icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-menu-searchbar</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-message icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-message</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-mosaic icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-mosaic</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-nursery-service icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-nursery-service</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-options icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-options</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-pause icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-pause</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-pencil icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-pencil</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-play-area icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-play-area</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-play icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-play</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-position icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-position</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-print icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-print</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-professionnal-area icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-professionnal-area</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-quiet-area icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-quiet-area</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-refresh icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-refresh</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-rent-bike icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-rent-bike</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-sami-confused icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-sami-confused</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-sami-grin icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-sami-grin</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-sami-sad icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-sami-sad</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-sami-smile icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-sami-smile</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-search-recent icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-search-recent</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-search icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-search</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-share icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-share</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-slider-off icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-slider-off</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-slider-on icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-slider-on</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-sort icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-sort</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-support icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-support</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-tag icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-tag</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-tgv-family icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-tgv-family</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-toolbar-bold icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-toolbar-bold</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-toolbar-center icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-toolbar-center</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-toolbar-italic icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-toolbar-italic</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-toolbar-left icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-toolbar-left</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-toolbar-list icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-toolbar-list</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-toolbar-underline icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-toolbar-underline</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-twitter icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-twitter</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-volume-down icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-volume-down</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-volume-up icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-volume-up</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-warning icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-warning</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-wifi-area icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-wifi-area</p>
+  </div><div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <div class="text-center mb-2">
+      <i class="icons-young-service icons-size-50px" aria-hidden="true"></i>
+    </div>
+    <p class="text-center">icons-young-service</p>
+  </div>
+</div>
+
+<h2 id="tailles-basées-sur-la-taille-de-la-fontes">Tailles basées sur la taille de la fontes</h2>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-x5" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-x5&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-x75" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-x75&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-1x" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-1x&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-1x25" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-1x25&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-1x5" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-1x5&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-1x75" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-1x75&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-2x" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-2x&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-3x" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-3x&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="tailles-spécifiques">Tailles spécifiques</h2>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-30px" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-30px&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-50px" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-50px&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-66px" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-66px&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-90px" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-90px&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-96px" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-96px&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<i class="icons-checked icons-size-140px" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-checked icons-size-140px&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="rotation">Rotation</h2>
+
+<div class="bd-callout bd-callout-warning">
+<p>La rotation ne doit être utilisée que lorsqu&rsquo;elle est inévitable, par exemple, pour signaler un tri inverse d&rsquo;une liste dans une table. Chaque utilisation de la rotation doit être correctement étudiée et justifiée.</p>
+
+<p><em>Pro tip</em> : en cas de doute, pas de rotation ! Et <a href="mailto:design.fab@sncf.fr">contactez-nous</a> si besoin qu&rsquo;on vous accompagne</p>
+
+</div>
+
+<div class="bd-example">
+<i class="icons-sort" aria-hidden="true"></i>
+<i class="icons-sort icons-rotate-180" aria-hidden="true"></i>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-sort&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-sort icons-rotate-180&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span></code></pre></div>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="fr" href="/fr/docs/4.3/components/forms/" title="Français">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="4.3">
+
+<title>Forms · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/en/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Examples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Settings</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Dark mode</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Disabled</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Enabled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Source code</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Show</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Hide</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Language</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="en" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> English</label>
+                                </a>
+                                <a class="options-item option-language" href="/fr/docs/4.3/components/forms/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="en" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> French</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Download</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Search for..." aria-label="Search for..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/getting-started/introduction/">
+          <div>Getting started</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/download/">Download</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/accessibility/">Accessibility</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/how-to-contribute/">How to contribute</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/layout/overview/">
+          <div>Layout</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/layout/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/layout/grid/">Grid</a>
+            </li><li>
+              <a href="/docs/4.3/layout/dark-mode/">Dark mode</a>
+            </li><li>
+              <a href="/docs/4.3/layout/utilities-for-layout/">Utilities for layout</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navbars/">Navbars</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navs/">Navs</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/content/reboot/">
+          <div>Content</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/docs/4.3/content/typography/">Typography</a>
+            </li><li>
+              <a href="/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/components/alerts/">
+          <div>Components</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/components/alerts/">Alerts</a>
+            </li><li>
+              <a href="/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/docs/4.3/components/breadcrumb/">Breadcrumb</a>
+            </li><li>
+              <a href="/docs/4.3/components/buttons/">Buttons</a>
+            </li><li>
+              <a href="/docs/4.3/components/cards/">Cards</a>
+            </li><li>
+              <a href="/docs/4.3/components/charts/">Charts</a>
+            </li><li>
+              <a href="/docs/4.3/components/checkboxes-and-radios/">Checkboxes and radios</a>
+            </li><li>
+              <a href="/docs/4.3/components/dropdowns/">Dropdowns</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/docs/4.3/components/forms/">Forms</a>
+            </li><li>
+              <a href="/docs/4.3/components/icons/">Icons</a>
+            </li><li>
+              <a href="/docs/4.3/components/input-group/">Input group</a>
+            </li><li>
+              <a href="/docs/4.3/components/list-group/">List group</a>
+            </li><li>
+              <a href="/docs/4.3/components/modal/">Modal</a>
+            </li><li>
+              <a href="/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/docs/4.3/components/picker/">Picker</a>
+            </li><li>
+              <a href="/docs/4.3/components/popovers/">Popovers</a>
+            </li><li>
+              <a href="/docs/4.3/components/progress/">Progress</a>
+            </li><li>
+              <a href="/docs/4.3/components/sami/">Sami</a>
+            </li><li>
+              <a href="/docs/4.3/components/select/">Select</a>
+            </li><li>
+              <a href="/docs/4.3/components/tooltips/">Tooltips</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/utilities/clearfix/">
+          <div>Utilities</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/close-icon/">Close icon</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/colors/">Colors</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/display/">Display</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/embed/">Embed</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/image-replacement/">Image replacement</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/position/">Position</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/screenreaders/">Screenreaders</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/sizing/">Sizing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/spacing/">Spacing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/text/">Text</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/vertical-align/">Vertical align</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/visibility/">Visibility</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/extend/approach/">
+          <div>Extend</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/extend/approach/">Approach</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/about/overview/">
+          <div>About</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/about/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/about/versions/">Versions</a>
+            </li><li>
+              <a href="/docs/4.3/about/license/">License</a>
+            </li><li>
+              <a href="/docs/4.3/about/translations/">Translations</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#inputs">Inputs</a>
+<ul>
+<li><a href="#input-small">Input small</a></li>
+<li><a href="#inputs-with-icon">Inputs with icon</a></li>
+<li><a href="#readonly-inputs">Readonly inputs</a></li>
+<li><a href="#required-inputs">Required inputs</a></li>
+<li><a href="#input-with-clear-option">Input with clear option</a></li>
+<li><a href="#input-for-standardized-data">Input for standardized data</a></li>
+</ul></li>
+<li><a href="#textarea-options">Textarea options</a>
+<ul>
+<li><a href="#auto-sizing">Auto sizing</a></li>
+<li><a href="#textarea-with-counter">Textarea with counter</a></li>
+<li><a href="#multi-line-text-field-with-a-toolbar">Multi-line text field with a toolbar</a></li>
+</ul></li>
+<li><a href="#range-slider">Range slider</a></li>
+<li><a href="#chips">Chips</a></li>
+<li><a href="#help-text">Help text</a>
+<ul>
+<li><a href="#inside-field">Inside field</a></li>
+<li><a href="#outside-field">Outside field</a></li>
+</ul></li>
+<li><a href="#validation">Validation</a>
+<ul>
+<li><a href="#server-side">Server side</a></li>
+<li><a href="#error-message">Error message</a></li>
+<li><a href="#browser-defaults">Browser defaults</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Forms</h1>
+          <p class="bd-lead">Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
+
+          
+
+<h2 id="overview">Overview</h2>
+
+<p>Below are components for forms (input fields, sliders, chips, help text, error management). However, note that buttons are in the “Buttons” section, menu-buttons are in the “Drop-downs” section and pickers are in the “Pickers” section.</p>
+
+<p>Bootstrap&rsquo;s form controls expand on <a href="/docs/4.3/content/reboot/#forms">our Rebooted form styles</a> with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.</p>
+
+<p>Be sure to use an appropriate <code>type</code> attribute on all inputs (e.g., <code>email</code> for email address or <code>number</code> for numerical information) to take advantage of newer input controls like email verification, number selection, and more.</p>
+
+<h2 id="inputs">Inputs</h2>
+
+<p>Single-line text boxes are used in forms or for other functional purposes.</p>
+
+<p>A label must indicate the information to be filled in (example: Enter a job title), as well as the required format. The field can be pre-filled with an example (example: 10 rue Saint-Exupéry or DD/MM).
+Two criteria determine the length of fields: the longest possible wording and respecting the grid.</p>
+
+<p>Textual form controls—like <code>&lt;input&gt;</code>s, <code>&lt;select&gt;</code>s, and <code>&lt;textarea&gt;</code>s—are styled with the <code>.form-control</code> class. Included are styles for general appearance, focus state, sizing, and more.</p>
+
+<div class="bd-example">
+<form>
+  <div class="form-group">
+    <label for="inputEmail1">Example label</label>
+    <div class="form-control-container ">
+  <input type="email" class="form-control " id="inputEmail1" title="Example input" placeholder="Example input" value="" id >
+  <span class="form-control-state"></span></div>
+
+  </div>
+  <div class="form-group">
+    <label for="textarea1">Example textarea</label>
+    <div class="form-control-container">
+  <textarea class="form-control " id="textarea1" placeholder="Example textarea" ZgotmplZ></textarea>
+  <span class="form-control-state"></span>
+</div>
+
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;inputEmail1&#34;</span><span class="p">&gt;</span>Example label<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container &#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;email&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputEmail1&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Example input&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Example input&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">id</span> <span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;textarea1&#34;</span><span class="p">&gt;</span>Example textarea<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;textarea1&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Example textarea&#34;</span> <span class="na">ZgotmplZ</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="input-small">Input small</h3>
+
+<div class="bd-example">
+<form>
+  <div class="form-group">
+    <label for="inputSmall1">Small input</label>
+    <div class="form-control-container ">
+  <input type="email" class="form-control form-control-sm" id="inputSmall1" title="Small input" placeholder="Small input" value="" id >
+  <span class="form-control-state"></span></div>
+
+  </div>
+</form>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;inputSmall1&#34;</span><span class="p">&gt;</span>Small input<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container &#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;email&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control form-control-sm&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputSmall1&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Small input&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Small input&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">id</span> <span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="inputs-with-icon">Inputs with icon</h3>
+
+<p>Use <code>.has-left-icon</code> class on <code>.form-control</code> element. Then use <code>.form-control-icon</code> element with an fonticon element inside.</p>
+
+<div class="bd-example">
+<div class="form-control-container has-left-icon">
+  <input type="" class="form-control " id="inputIcon1" title="Example for auto-completion" placeholder="Example for auto-completion" value="" id >
+  <span class="form-control-state"></span><span class="form-control-icon"><i class="icons-search"></i></span></div>
+
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container has-left-icon&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputIcon1&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Example for auto-completion&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Example for auto-completion&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">id</span> <span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-icon&#34;</span><span class="p">&gt;&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-search&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="readonly-inputs">Readonly inputs</h3>
+
+<p>Add the <code>readonly</code> boolean attribute on an input to prevent modification of the input&rsquo;s value.</p>
+
+<div class="bd-example">
+<label for="readonly1">Readonly input</label>
+<div class="form-control-container ">
+  <input type="text" class="form-control " id="readonly1" title="Readonly input here..." placeholder="Readonly input here..." value="" readonly >
+  <span class="form-control-state"></span></div>
+
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;readonly1&#34;</span><span class="p">&gt;</span>Readonly input<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container &#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;readonly1&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Readonly input here...&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Readonly input here...&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">readonly</span> <span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<label for="readonly2">Readonly textarea</label>
+<div class="form-control-container">
+  <textarea class="form-control " id="readonly2" placeholder="Readonly textarea here..." readonly></textarea>
+  <span class="form-control-state"></span>
+</div>
+
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;readonly2&#34;</span><span class="p">&gt;</span>Readonly textarea<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;readonly2&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Readonly textarea here...&#34;</span> <span class="na">readonly</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="required-inputs">Required inputs</h3>
+
+<p>Add the <code>required</code> boolean attribute on an input.</p>
+
+<div class="bd-callout bd-callout-warning">
+For accessibility reasons, you <strong>have to</strong> put indication on <code>*</code> signification <strong>before</strong> any occurence of required fields.
+</div>
+
+<div class="bd-example">
+<p class="mt-3">Fields marked with * are required.</p>
+<label for="required1" class="required">Required input</label>
+<div class="form-control-container ">
+  <input type="text" class="form-control " id="required1" title="Required input here..." placeholder="Required input here..." value="" required >
+  <span class="form-control-state"></span></div>
+
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mt-3&#34;</span><span class="p">&gt;</span>Fields marked with * are required.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;required1&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;required&#34;</span><span class="p">&gt;</span>Required input<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container &#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;required1&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Required input here...&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Required input here...&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">required</span> <span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="input-with-clear-option">Input with clear option</h3>
+
+<p>The clear text behavior is made of <code>javascript</code>. Use <code>data-component=&quot;control&quot;</code> with <code>data-clear-option=&quot;true&quot;</code> to enable it. Don&rsquo;t forget to add the <code>button</code> element.</p>
+
+<div class="bd-example">
+<div class="form-control-container" data-component="control" data-clear-option="true">
+  <input class="form-control clear-option " id="readonly2" title="Search..." placeholder="Search..." data-role="input">
+  <span class="form-control-state"></span>
+  <button type="button" class="btn-clear btn-primary d-none" data-btn="clear">
+    <span class="sr-only">Clear text</span>
+    <i class="icons-close" aria-hidden="true"></i>
+  </button>
+</div>
+
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;control&#34;</span> <span class="na">data-clear-option</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control clear-option &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;readonly2&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Search...&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Search...&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;input&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn-clear btn-primary d-none&#34;</span> <span class="na">data-btn</span><span class="o">=</span><span class="s">&#34;clear&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Clear text<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-close&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="input-for-standardized-data">Input for standardized data</h3>
+
+<p>In some cases, fields can contain standardized data. Unmodifiable characters can be taken out of the input area, and the display varies depending on the data.</p>
+
+<div class="bd-example">
+<fieldset>
+  <legend class="text-base font-weight-medium mb-2">Numéro de transfert</legend>
+  <div class="row align-items-center">
+    <div class="col-4">
+      <div class="form-control-container">
+        <input class="form-control" type="text" maxlength="4" title="4 premiers caractères">
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+    <div class="col-1 text-center font-weight-medium">
+      TX
+    </div>
+    <div class="col-4">
+      <div class="form-control-container">
+        <input class="form-control" type="text" maxlength="4" title="4 derniers caractères après TX">
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+  </div>
+</fieldset>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">legend</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-base font-weight-medium mb-2&#34;</span><span class="p">&gt;</span>Numéro de transfert<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row align-items-center&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-4&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&#34;4&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;4 premiers caractères&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-1 text-center font-weight-medium&#34;</span><span class="p">&gt;</span>
+      TX
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-4&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&#34;4&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;4 derniers caractères après TX&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="textarea-options">Textarea options</h2>
+
+<h3 id="auto-sizing">Auto sizing</h3>
+
+<p>Add a <code>stretchy</code> class on <code>textarea</code> element.</p>
+
+<div class="bd-example">
+<label for="stretchyTextarea1">Auto sizing textarea</label>
+<div class="form-control-container">
+  <textarea class="form-control stretchy" id="stretchyTextarea1" placeholder="Auto sizing" ZgotmplZ></textarea>
+  <span class="form-control-state"></span>
+</div>
+
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;stretchyTextarea1&#34;</span><span class="p">&gt;</span>Auto sizing textarea<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control stretchy&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;stretchyTextarea1&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Auto sizing&#34;</span> <span class="na">ZgotmplZ</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="textarea-with-counter">Textarea with counter</h3>
+
+<div class="bd-example">
+<div class="form-control-container" data-component="control">
+  <label for="countTextarea1">Character counter</label>
+  <textarea class="form-control stretchy " id="countTextarea1" placeholder="Character counter" data-role="input" aria-describedby="charcounter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex illum aliquid, quis, labore sed ullam porro quam dolor error enim fuga et. Ratione assumenda, facilis illum placeat eligendi animi architecto.</textarea>
+  <span class="form-control-state"></span>
+</div>
+<div class="mt-2 font-weight-medium" data-role="counter" data-limit="200" id="charcounter"><span data-role="counter-value">0</span>/200 caractères</div>
+
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;control&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;countTextarea1&#34;</span><span class="p">&gt;</span>Character counter<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control stretchy &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;countTextarea1&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Character counter&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;input&#34;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;charcounter&#34;</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex illum aliquid, quis, labore sed ullam porro quam dolor error enim fuga et. Ratione assumenda, facilis illum placeat eligendi animi architecto.<span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mt-2 font-weight-medium&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;counter&#34;</span> <span class="na">data-limit</span><span class="o">=</span><span class="s">&#34;200&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;charcounter&#34;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;counter-value&#34;</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>/200 caractères<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="multi-line-text-field-with-a-toolbar">Multi-line text field with a toolbar</h3>
+
+<p>We recommend limiting toolbars to one line and putting secondary tools in a context menu if needed.</p>
+
+<div class="bd-example">
+<div class="form-group">
+  <label for="exampleFormControlTextarea3">Example textarea</label>
+  <div class="form-toolbar">
+    <div class="form-toolbar-content">
+      <button type="button" class="form-toolbar-item">
+        <span class="sr-only">Bold</span>
+        <i class="icons-toolbar-bold" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="form-toolbar-item">
+        <span class="sr-only">Italic</span>
+        <i class="icons-toolbar-italic" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="form-toolbar-item">
+        <span class="sr-only">Underline</span>
+        <i class="icons-toolbar-underline" aria-hidden="true"></i>
+      </button>
+      <span class="form-toolbar-separator"></span>
+      <button type="button" class="form-toolbar-item">
+        <span class="sr-only">Text align left</span>
+        <i class="icons-toolbar-left icons-size-1x25" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="form-toolbar-item">
+        <span class="sr-only">Text align center</span>
+        <i class="icons-toolbar-center icons-size-1x25" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="form-toolbar-item">
+        <span class="sr-only">List</span>
+        <i class="icons-toolbar-list icons-size-1x25" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="form-toolbar-right">
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-options dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button">Option 1</button>
+          <button class="dropdown-item" type="button">Option 2</button>
+          <button class="dropdown-item" type="button">Option 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-control-container">
+    <textarea id="exampleFormControlTextarea3" class="form-control" title="Comment" placeholder="Comment"></textarea>
+    <span class="form-control-state"></span>
+  </div>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;exampleFormControlTextarea3&#34;</span><span class="p">&gt;</span>Example textarea<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-content&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-item&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Bold<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-toolbar-bold&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-item&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Italic<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-toolbar-italic&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-item&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Underline<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-toolbar-underline&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-separator&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-item&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Text align left<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-toolbar-left icons-size-1x25&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-item&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Text align center<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-toolbar-center icons-size-1x25&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-item&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>List<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-toolbar-list icons-size-1x25&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-toolbar-right&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn-group dropdown&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-options dropdown-toggle&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;dropdown&#34;</span> <span class="na">aria-haspopup</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-options icons-size-1x75&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dropdown-menu dropdown-menu-right&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dropdown-item&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>Option 1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dropdown-item&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>Option 2<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dropdown-item&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>Option 3<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleFormControlTextarea3&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Comment&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Comment&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="range-slider">Range slider</h2>
+
+<p>Sliders let users define and adjust a value or a range along a pre-defined span of values. There are two types of sliders: single-value and dual-point. When necessary, display a minimum and maximum value at each end of the line.</p>
+
+<p>With a slider, users can choose an approximate value, i.e., a value considered to be relative.</p>
+
+<div class="bd-example">
+<div class="range-slider" data-component="range-slider" data-target="#range_01">
+  <i class="icons-interrogation icons-size-1x25 pr-2" aria-hidden="true"></i>
+  <div id="range_01" data-min="25" data-max="125" data-hide-from-to="true">
+  </div>
+  <i class="icons-interrogation icons-size-1x25 pl-2" aria-hidden="true"></i>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;range-slider&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;range-slider&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#range_01&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-interrogation icons-size-1x25 pr-2&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;range_01&#34;</span> <span class="na">data-min</span><span class="o">=</span><span class="s">&#34;25&#34;</span> <span class="na">data-max</span><span class="o">=</span><span class="s">&#34;125&#34;</span> <span class="na">data-hide-from-to</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-interrogation icons-size-1x25 pl-2&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<div class="range-slider" data-component="range-slider" data-target="#range_02">
+  <span class="d-inline-block pr-2">25</span>
+  <div id="range_02" data-min="25" data-max="125" data-type="double" data-from="50" data-to="100">
+  </div>
+  <span class="d-inline-block pl-2">125</span>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;range-slider&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;range-slider&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#range_02&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block pr-2&#34;</span><span class="p">&gt;</span>25<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;range_02&#34;</span> <span class="na">data-min</span><span class="o">=</span><span class="s">&#34;25&#34;</span> <span class="na">data-max</span><span class="o">=</span><span class="s">&#34;125&#34;</span> <span class="na">data-type</span><span class="o">=</span><span class="s">&#34;double&#34;</span> <span class="na">data-from</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">data-to</span><span class="o">=</span><span class="s">&#34;100&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block pl-2&#34;</span><span class="p">&gt;</span>125<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<div class="range-slider is-disabled" data-component="range-slider" data-target="#range_03">
+  <span class="d-inline-block pr-2">25</span>
+  <div id="range_03" data-min="25" data-max="125" data-type="double" data-from="50" data-to="100">
+  </div>
+  <span class="d-inline-block pl-2">125</span>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;range-slider is-disabled&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;range-slider&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#range_03&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block pr-2&#34;</span><span class="p">&gt;</span>25<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;range_03&#34;</span> <span class="na">data-min</span><span class="o">=</span><span class="s">&#34;25&#34;</span> <span class="na">data-max</span><span class="o">=</span><span class="s">&#34;125&#34;</span> <span class="na">data-type</span><span class="o">=</span><span class="s">&#34;double&#34;</span> <span class="na">data-from</span><span class="o">=</span><span class="s">&#34;50&#34;</span> <span class="na">data-to</span><span class="o">=</span><span class="s">&#34;100&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block pl-2&#34;</span><span class="p">&gt;</span>125<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="chips">Chips</h2>
+
+<p>Chips are compact components that appear after entering or selecting items as tags in a field. They can be used for various item types (contacts, concepts, etc.) and are predefined or can be adjusted for specific needs.</p>
+
+<div class="bd-example">
+<div role="list">
+  <div class="chips-group" role="listitem">
+    <span class="chips chips-label">Mathéo Mercier</span>
+    <button type="button" class="chips chips-btn chips-only-icon">
+      <span class="sr-only">Remove Mathéo Mercier</span>
+      <i class="icons-close" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;list&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chips-group&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;listitem&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chips chips-label&#34;</span><span class="p">&gt;</span>Mathéo Mercier<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chips chips-btn chips-only-icon&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>Remove Mathéo Mercier<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-close&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<label class="font-weight-medium mb-2" for="addreceivers1">Add receivers</label>
+<div class="form-control-container form-chips-container" data-component="chips">
+  <input data-role="typewriter" type="text" class="chips-input stretchy" id="addreceivers1" />
+  <label class="font-weight-medium mb-2 sr-only" for="receivers1">Receivers</label>
+  <select class="sr-only" data-role="input" tabindex="-1" aria-hidden="true" id="receivers1" multiple>
+    <option selected>Sem Inceptos Tellus</option>
+    <option>Amet Porta</option>
+    <option selected>Pharetra Fusce Venenatis</option>
+  </select>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;addreceivers1&#34;</span><span class="p">&gt;</span>Add receivers<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container form-chips-container&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;chips&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;typewriter&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chips-input stretchy&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;addreceivers1&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 sr-only&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;receivers1&#34;</span><span class="p">&gt;</span>Receivers<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;input&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;receivers1&#34;</span> <span class="na">multiple</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">selected</span><span class="p">&gt;</span>Sem Inceptos Tellus<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>Amet Porta<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">selected</span><span class="p">&gt;</span>Pharetra Fusce Venenatis<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-callout bd-callout-warning">
+<h3 id="alternatives-to-hidden-labels">Alternatives to hidden labels</h3>
+
+<p>Assistive technologies such as screen readers will have trouble with your forms if you don&rsquo;t include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class. There are further alternative methods of providing a label for assistive technologies, such as the <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attribute. If none of these are present, assistive technologies may resort to using the <code>placeholder</code> attribute, if present, but note that use of <code>placeholder</code> as a replacement for other labelling methods is not advised.
+</div>
+
+<h2 id="help-text">Help text</h2>
+
+<h3 id="inside-field">Inside field</h3>
+
+<p>You can precise what do you expect directly inside the input field with <code>placeholder=&quot;Help text&quot;</code>.
+The placeholder disappear when you enter a character.</p>
+
+<div class="bd-example">
+<label class="font-weight-medium mb-2" for="inputPassword4">Password</label>
+<div class="form-control-container">
+  <input type="password" id="inputPassword4" class="form-control" title="Password must be 50 characters long, and contain emojis"  placeholder="Password must be 50 characters long, and contain emojis">
+  <span class="form-control-state"></span>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;inputPassword4&#34;</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputPassword4&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Password must be 50 characters long, and contain emojis&#34;</span>  <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Password must be 50 characters long, and contain emojis&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="outside-field">Outside field</h3>
+
+<p>Block-level help text in forms can be created using <code>.form-text</code> (previously known as <code>.help-block</code> in v3). Inline help text can be flexibly implemented using any inline HTML element and utility classes like <code>.text-muted</code>.</p>
+
+<div class="bd-callout bd-callout-warning">
+<h4 id="associating-help-text-with-form-controls">Associating help text with form controls</h4>
+
+<p>Help text should be explicitly associated with the form control it relates to using the <code>aria-describedby</code> attribute. This will ensure that assistive technologies—such as screen readers—will announce this help text when the user focuses or enters the control.
+</div>
+
+<p>Help text below inputs can be styled with <code>.form-text</code>. This class includes <code>display: block</code> and adds some top margin for easy spacing from the inputs above.</p>
+
+<div class="bd-example">
+<label class="font-weight-medium mb-2" for="inputPassword5">Password</label>
+<div class="form-control-container">
+  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" title="Password">
+  <span class="form-control-state"></span>
+</div>
+<small id="passwordHelpBlock" class="form-text text-muted">
+    Your password must be 230 characters long, without letters and numbers.
+</small>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;inputPassword5&#34;</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputPassword5&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;passwordHelpBlock&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Password&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">small</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;passwordHelpBlock&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-text text-muted&#34;</span><span class="p">&gt;</span>
+    Your password must be 230 characters long, without letters and numbers.
+<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span></code></pre></div>
+
+<p>Inline text can use any typical inline HTML element (be it a <code>&lt;small&gt;</code>, <code>&lt;span&gt;</code>, or something else) with nothing more than a utility class.</p>
+
+<div class="bd-example">
+<form class="form-inline">
+  <div class="form-group">
+    <label class="font-weight-medium" for="inputPassword6">Password</label>
+    <div class="form-control-container mx-sm-3">
+      <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" title="Password">
+      <span class="form-control-state"></span>
+    </div>
+    <small id="passwordHelpInline" class="text-muted">
+      Must be 8-20 characters long.
+    </small>
+  </div>
+</form>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-inline&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;inputPassword6&#34;</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container mx-sm-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputPassword6&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;passwordHelpInline&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Password&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">small</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;passwordHelpInline&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-muted&#34;</span><span class="p">&gt;</span>
+      Must be 8-20 characters long.
+    <span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="validation">Validation</h2>
+
+<p>Provide valuable, actionable feedback to your users with HTML5 form validation–<a href="https://caniuse.com/#feat=form-validation">available in all our supported browsers</a>. Choose from the browser default validation feedback, or implement custom messages with our built-in classes and starter JavaScript.</p>
+
+<div class="bd-callout bd-callout-warning">
+We <strong>highly recommend</strong> pouet custom validation styles as native browser defaults are not announced to screen readers.
+</div>
+
+<div class="bd-callout bd-callout-info">
+The checkmarks <i class="text-primary icons-check"></i> are not mandatory (and even not included in SNCF&rsquo;s guidelines), but it is a interesting way to show users that a field is validated. Use it if you want.
+</div>
+
+<h3 id="server-side">Server side</h3>
+
+<p>We recommend using client side validation, but in case you require server side, you can indicate invalid form fields with <code>.is-invalid</code>. Note that <code>.invalid-feedback</code> is also supported with these classes.</p>
+
+<div class="bd-example">
+<form class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationCustom01">First name</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationCustom02">Last name</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationCustomUsername">Username</label>
+      <div class="form-control-container is-invalid">
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+        <span class="form-control-state"></span>
+      </div>
+      <div class="invalid-feedback" id="inputGroupPrepend">
+        Please choose a username.
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationCustom03">City</label>
+      <div class="form-control-container is-invalid">
+        <input type="text" class="form-control" id="validationCustom03" placeholder="City" aria-describedby="inputGroupPrepend2" required>
+        <span class="form-control-state"></span>
+      </div>
+      <div class="invalid-feedback" id="inputGroupPrepend2">
+        Please provide a valid city.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;needs-validation&#34;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-row&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationCustom01&#34;</span><span class="p">&gt;</span>First name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationCustom01&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;First name&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Mark&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationCustom02&#34;</span><span class="p">&gt;</span>Last name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationCustom02&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Last name&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Otto&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationCustomUsername&#34;</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container is-invalid&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationCustomUsername&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Username&#34;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;inputGroupPrepend&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;invalid-feedback&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputGroupPrepend&#34;</span><span class="p">&gt;</span>
+        Please choose a username.
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-row&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-6 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationCustom03&#34;</span><span class="p">&gt;</span>City<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container is-invalid&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationCustom03&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;City&#34;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;inputGroupPrepend2&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;invalid-feedback&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputGroupPrepend2&#34;</span><span class="p">&gt;</span>
+        Please provide a valid city.
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span>Submit form<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="error-message">Error message</h3>
+
+<div class="bd-example">
+<form class="needs-validation" novalidate>
+  <div class="form-error mb-3">
+    <h2 class="text-white text-uppercase">Oouups ! Vous avez une erreur</h2>
+    <ul class="mt-1 mb-0">
+      <li>Veuillez vérifier l'adresse email saisie</li>
+    </ul>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationCustom03">City</label>
+      <div class="form-control-container is-invalid">
+        <input type="text" class="form-control" id="validationCustom03" placeholder="City" aria-describedby="iputGroupPrepend3" required>
+        <span class="form-control-state"></span>
+      </div>
+      <div class="invalid-feedback" id="iputGroupPrepend3">
+        Please provide a valid city.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;needs-validation&#34;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-error mb-3&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-white text-uppercase&#34;</span><span class="p">&gt;</span>Oouups ! Vous avez une erreur<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mt-1 mb-0&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Veuillez vérifier l&#39;adresse email saisie<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-row&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-6 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationCustom03&#34;</span><span class="p">&gt;</span>City<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container is-invalid&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationCustom03&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;City&#34;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;iputGroupPrepend3&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;invalid-feedback&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;iputGroupPrepend3&#34;</span><span class="p">&gt;</span>
+        Please provide a valid city.
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span>Submit form<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="browser-defaults">Browser defaults</h3>
+
+<p>Not interested in custom validation feedback messages or writing JavaScript to change form behaviors? All good, you can use the browser defaults. Try submitting the form below. Depending on your browser and OS, you&rsquo;ll see a slightly different style of feedback.</p>
+
+<p>While these feedback styles cannot be styled with CSS, you can still customize the feedback text through JavaScript.</p>
+
+<div class="bd-example">
+<form>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationDefault01">First name</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationDefault02">Last name</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationDefaultUsername">Username</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationDefault03">City</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationDefault04">State</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label class="font-weight-medium mb-2 required" for="validationDefault05">Zip</label>
+      <div class="form-control-container">
+        <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+        <span class="form-control-state"></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="custom-control custom-checkbox mb-2 mr-sm-2">
+      <input class="custom-control-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="custom-control-label font-weight-medium" for="invalidCheck2">Agree to terms and conditions</label>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-row&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationDefault01&#34;</span><span class="p">&gt;</span>First name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationDefault01&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;First name&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Mark&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationDefault02&#34;</span><span class="p">&gt;</span>Last name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationDefault02&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Last name&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Otto&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationDefaultUsername&#34;</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationDefaultUsername&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Username&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-row&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-6 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationDefault03&#34;</span><span class="p">&gt;</span>City<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationDefault03&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;City&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-3 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationDefault04&#34;</span><span class="p">&gt;</span>State<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationDefault04&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;State&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-3 mb-3&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-medium mb-2 required&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;validationDefault05&#34;</span><span class="p">&gt;</span>Zip<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;validationDefault05&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Zip&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;custom-control custom-checkbox mb-2 mr-sm-2&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;custom-control-input&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;checkbox&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;invalidCheck2&#34;</span> <span class="na">required</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;custom-control-label font-weight-medium&#34;</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;invalidCheck2&#34;</span><span class="p">&gt;</span>Agree to terms and conditions<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span>Submit form<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span></code></pre></div>
+
+
+          
+            <div class="mt-5">
+    Did you find what you’re looking for ? If not, <a class="btn btn-link" href="/docs/4.3/getting-started/how-to-contribute/">please tell us <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

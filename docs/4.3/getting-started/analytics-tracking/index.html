@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="fr" href="/fr/docs/4.3/getting-started/analytics-tracking/" title="Français">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Good practices to implement analytics &amp; events tracking">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="4.3">
+
+<title>Analytics tracking · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/en/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Examples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Settings</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Dark mode</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Disabled</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Enabled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Source code</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Show</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Hide</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Language</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="en" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> English</label>
+                                </a>
+                                <a class="options-item option-language" href="/fr/docs/4.3/getting-started/analytics-tracking/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="en" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> French</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Download</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Search for..." aria-label="Search for..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/getting-started/introduction/">
+          <div>Getting started</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/download/">Download</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/accessibility/">Accessibility</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/how-to-contribute/">How to contribute</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/layout/overview/">
+          <div>Layout</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/layout/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/layout/grid/">Grid</a>
+            </li><li>
+              <a href="/docs/4.3/layout/dark-mode/">Dark mode</a>
+            </li><li>
+              <a href="/docs/4.3/layout/utilities-for-layout/">Utilities for layout</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navbars/">Navbars</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navs/">Navs</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/content/reboot/">
+          <div>Content</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/docs/4.3/content/typography/">Typography</a>
+            </li><li>
+              <a href="/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/components/alerts/">
+          <div>Components</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/components/alerts/">Alerts</a>
+            </li><li>
+              <a href="/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/docs/4.3/components/breadcrumb/">Breadcrumb</a>
+            </li><li>
+              <a href="/docs/4.3/components/buttons/">Buttons</a>
+            </li><li>
+              <a href="/docs/4.3/components/cards/">Cards</a>
+            </li><li>
+              <a href="/docs/4.3/components/charts/">Charts</a>
+            </li><li>
+              <a href="/docs/4.3/components/checkboxes-and-radios/">Checkboxes and radios</a>
+            </li><li>
+              <a href="/docs/4.3/components/dropdowns/">Dropdowns</a>
+            </li><li>
+              <a href="/docs/4.3/components/forms/">Forms</a>
+            </li><li>
+              <a href="/docs/4.3/components/icons/">Icons</a>
+            </li><li>
+              <a href="/docs/4.3/components/input-group/">Input group</a>
+            </li><li>
+              <a href="/docs/4.3/components/list-group/">List group</a>
+            </li><li>
+              <a href="/docs/4.3/components/modal/">Modal</a>
+            </li><li>
+              <a href="/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/docs/4.3/components/picker/">Picker</a>
+            </li><li>
+              <a href="/docs/4.3/components/popovers/">Popovers</a>
+            </li><li>
+              <a href="/docs/4.3/components/progress/">Progress</a>
+            </li><li>
+              <a href="/docs/4.3/components/sami/">Sami</a>
+            </li><li>
+              <a href="/docs/4.3/components/select/">Select</a>
+            </li><li>
+              <a href="/docs/4.3/components/tooltips/">Tooltips</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/utilities/clearfix/">
+          <div>Utilities</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/close-icon/">Close icon</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/colors/">Colors</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/display/">Display</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/embed/">Embed</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/image-replacement/">Image replacement</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/position/">Position</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/screenreaders/">Screenreaders</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/sizing/">Sizing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/spacing/">Spacing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/text/">Text</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/vertical-align/">Vertical align</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/visibility/">Visibility</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/extend/approach/">
+          <div>Extend</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/extend/approach/">Approach</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/about/overview/">
+          <div>About</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/about/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/about/versions/">Versions</a>
+            </li><li>
+              <a href="/docs/4.3/about/license/">License</a>
+            </li><li>
+              <a href="/docs/4.3/about/translations/">Translations</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#why-do-you-need-an-analytics-solution">Why do you need an Analytics solution</a>
+<ul>
+<li><a href="#presentation">Presentation</a></li>
+<li><a href="#what-do-we-track">What do we track?</a></li>
+<li><a href="#analytics-basement">Analytics basement</a></li>
+</ul></li>
+<li><a href="#technical-implant-and-contacts">Technical implant and contacts</a>
+<ul>
+<li><a href="#sncf-analytics-basement">SNCF Analytics Basement</a></li>
+<li><a href="#other-tools">Other tools</a></li>
+<li><a href="#for-more-informations-please-contact-fab-design">For more informations, please contact Fab design</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Analytics tracking</h1>
+          <p class="bd-lead">Good practices to implement analytics &amp; events tracking</p>
+
+          
+
+<h2 id="why-do-you-need-an-analytics-solution">Why do you need an Analytics solution</h2>
+
+<p>Data Analytics has become a strong subject on continuous improvement within the SNCF Group.</p>
+
+<p>Analytics tools are already used by <em>B2C</em> entities and start to be used by <em>B2E</em> entities. We need to improve this maturity and behaviour around performance management with agents working with digital tools.</p>
+
+<h3 id="presentation">Presentation</h3>
+
+<p>It is important to have concrete and measurable insights based on behaviors to keep an eye on your tool performance (Website, App or IoT).</p>
+
+<p>In a continuous improvement case of users experience, how to manage an app/website evolution if:</p>
+
+<ul>
+<li>You don’t know how often it is used</li>
+<li>You don’t know how it is used</li>
+<li>You don’t know if it is correctly used</li>
+</ul>
+
+<p>An Analytics solution can provide aswers to questions like:</p>
+
+<ul>
+<li>Is my user journey is understood by my users ? (Have i determined a Journey ?)</li>
+<li>At which stage of my business journey did I lost the most users ?</li>
+<li>What is the ratio between A content vs B content in volume of visits ?</li>
+<li>Does my users staid more than 3 minutes on mycontent pages ?</li>
+<li>What is the average lead volume by month ?</li>
+<li>How many clicks on my specific button ?</li>
+</ul>
+
+<p>Does informations allows to take actions to improve your platform, thanks to your users actions.</p>
+
+<h3 id="what-do-we-track">What do we track?</h3>
+
+<p>It will track multiples informations scoped on 3 types of datas :</p>
+
+<table>
+<thead>
+<tr>
+<th>Users data</th>
+<th>Session data</th>
+<th>Action data</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>User ID</td>
+<td>Time on site</td>
+<td>Pages visited</td>
+</tr>
+
+<tr>
+<td>Visits volume</td>
+<td>Page views</td>
+<td>Action events hitted by user’s clicks</td>
+</tr>
+
+<tr>
+<td>Total time on site</td>
+<td>Conversions</td>
+<td>e-commerce transaction</td>
+</tr>
+
+<tr>
+<td>Total page views</td>
+<td>Source (marketing lever used to catch users)</td>
+<td>Goals hitted</td>
+</tr>
+
+<tr>
+<td>Total conversions</td>
+<td>Geographic location based on IP Adress</td>
+<td>Internal search keywords</td>
+</tr>
+
+<tr>
+<td>Geographic location list</td>
+<td>Device + OS version + Screenresolution</td>
+<td>Custom Datas</td>
+</tr>
+
+<tr>
+<td>Device list</td>
+<td>Custom Datas</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="analytics-basement">Analytics basement</h3>
+
+<p>The Analytics basement deployed into the SNCF Group is:</p>
+
+<p><img class="img-fluid" src="/analytics-tracking.png"></p>
+
+<ul>
+<li>Website : The project set up what nest a Tag Manager</li>
+<li>Tag Management System : The Tag Manager that nest marketing tags</li>
+<li>Marketing tags : Analytics tools, medias tags for advertising and marketing tools for continuous improvement</li>
+</ul>
+
+<h2 id="technical-implant-and-contacts">Technical implant and contacts</h2>
+
+<h3 id="sncf-analytics-basement">SNCF Analytics Basement</h3>
+
+<p><a href="https://developers.google.com/analytics">https://developers.google.com/analytics</a></p>
+
+<p><a href="https://support.google.com/tagmanager/answer/6103696?hl=fr">https://support.google.com/tagmanager/answer/6103696?hl=fr</a></p>
+
+<p><a href="https://developers.google.com/tag-manager/devguide">https://developers.google.com/tag-manager/devguide</a></p>
+
+<h3 id="other-tools">Other tools</h3>
+
+<p><a href="mailto:metrologie_applicative@sncf.fr">metrologie_applicative@sncf.fr</a> (Fab IT)</p>
+
+<h3 id="for-more-informations-please-contact-fab-design">For more informations, please contact Fab design</h3>
+
+<p><a href="mailto:design.fab@sncf.fr">design.fab@sncf.fr</a></p>
+
+<p><a href="https://www.digital.sncf.com/ressources/analytics">https://www.digital.sncf.com/ressources/analytics</a></p>
+
+
+          
+            <div class="mt-5">
+    Did you find what you’re looking for ? If not, <a class="btn btn-link" href="/docs/4.3/getting-started/how-to-contribute/">please tell us <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

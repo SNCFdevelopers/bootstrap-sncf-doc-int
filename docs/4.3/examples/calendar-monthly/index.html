@@ -1,0 +1,1277 @@
+
+
+<html lang="<no value>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Monthly calendar layout</title>
+
+    <script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+  </head>
+  <body>
+    <nav role="navigation" class="mastnav">
+  <ul class="mastnav-top">
+    <li>
+      <a href="#" class="mastnav-item active">
+        <i class="icons-bookmark icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Favoris</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-file icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Collections</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-document icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Ma base documentaire</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-distribution icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Distribution</span>
+      </a>
+    </li>
+    <li class="d-none d-lg-flex">
+      <a href="#" class="mastnav-item">
+        <i class="icons-admin icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Admin</span>
+      </a>
+    </li>
+    <li class="d-lg-none">
+      <button type="button" class="mastnav-item options-menu-btn" data-component="state" data-state="active, active" data-behaviour="toggle, toggle" data-target=".options-menu-btn, .options-menu">
+        <i class="icons-options icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Plus</span>
+      </button>
+    </li>
+  </ul>
+  <div class="mastnav-bottom d-none d-lg-block">
+    <a href="#" class="mastnav-item mastnav-item-horizontal">
+      <i class="icons-support icons-size-1x5" aria-hidden="true"></i>
+      <span class="font-weight-medium">Support</span>
+    </a>
+  </div>
+</nav>
+    <div class="mastheader">
+  <div class="mastheader-logo">
+    <a href="/docs/4.3/examples">
+      <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" />
+    </a>
+  </div>
+  <header role="banner" class="mastheader-title d-none d-xl-block">
+    <h1 class="text-white text-uppercase pt-2 pl-3 mb-0">Nom application</h1>
+  </header>
+  <div class="mastheader-search pr-md-4 pl-md-4" data-component="searchbar">
+    <label class="font-weight-medium text-white pr-3 mb-0">Rechercher</label>
+    <div class="input-group align-items-center">
+      <div class="form-control-container" data-component="control" data-clear-option="true">
+        <input role="search" type="search" class="form-control clear-option" data-role="input" data-placeholder="Rechercher" />
+        <span class="form-control-state"></span>
+        <button type="button" class="btn-clear btn-primary d-none" data-btn="clear">
+          <span class="sr-only">Clear text</span>
+          <i class="icons-close" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="input-group-append input-group-last">
+        <button type="button" class="btn btn-primary btn-only-icon">
+            <span class="sr-only">Search</span>
+          <i class="icons-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <button type="button" class="btn btn-only-icon btn-white d-block d-md-none" data-role="close">
+        <span class="sr-only">Close search</span>
+        <i class="icons-close icons-size-1x25" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <ul class="mastheader-toolbar toolbar mb-0">
+    <li class="toolbar-item separator-gray-500 d-none d-md-flex">
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-transparent dropdown-toggle btn-notif toolbar-item-spacing" type="button" id="notifMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="-4, 0">
+          <span class="sr-only">Alert</span>
+          <i class="icons-alert-notification icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+          <span class="notif">1</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg" aria-labelledby="notifMenuButton">
+          <div class="d-flex justify-content-between gx-3 gy-2">
+            <div class="font-weight-medium text-uppercase">Notifications</div>
+            <a href="#">Paramètres</a>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </li>
+    <li class="toolbar-item separator-gray-500 no-separator d-flex d-md-none">
+      <button type="button" class="btn btn-only-icon toolbar-item-spacing" data-component="searchbar-toggle">
+        <span class="sr-only">Open search</span>
+        <i class="icons-search icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+      </button>
+    </li>
+    <li class="toolbar-item separator-gray-500">
+      <div class="btn-group dropdown">
+        <button class="btn btn-transparent dropdown-toggle toolbar-item-spacing" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="1, 5" aria-controls="mycontrol">
+          <i class="icons-menu-account icons-size-1x25 icons-md-size-1x5 mr-xl-2" aria-hidden="true"></i>
+          <span class="d-none d-xl-block">Pierre Dumont</span>
+          <i class="icons-arrow-down d-none d-xl-block" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownMenuButton" id="mycontrol">
+          <ul>
+            <li class="dropdown-item"><a href="#">Paramètre du compte</a></li>
+            <li class="dropdown-item"><a href="#">Préférences</a></li>
+            <li id="darkmode-btn" class="dropdown-item darkmode-btn"><a href="#">Mode sombre/clair</a></li>
+            <li class="dropdown-item"><a href="#">Se déconnecter</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="actionbar">
+  <div class="actionbar-head">
+    <h1 class="mb-0">Titre section</h1>
+    <div class="d-flex align-items-center">
+      <div class="d-none d-md-flex align-items-center pr-2">
+        <button type="button" class="btn btn-only-icon btn-white">
+          <span class="sr-only">Juin 2017</span>
+          <i class="icons-arrow-prev icons-size-1x text-primary pb-1" aria-hidden="true"></i>
+        </button>
+        <div class="mb-0 h1 font-weight-medium text-primary pr-3 pl-3">Juin 2017</div>
+        <button type="button" class="btn btn-only-icon btn-white">
+          <span class="sr-only">Juin 2017</span>
+          <i class="icons-arrow-next icons-size-1x text-primary pb-1" aria-hidden="true"></i>
+        </button>
+      </div>
+      <ul class="toolbar mb-0">
+        <li class="toolbar-item d-none d-lg-block">
+          <div class="toolbar-item-spacing">
+            <div class="options-links">
+              <a href="/docs/4.3/examples/calendar-monthly/" class="options-item active">Mois</a>
+              <a href="/docs/4.3/examples/calendar-weekly/" class="options-item">Semaine</a>
+              <a href="/docs/4.3/examples/calendar-daily/" class="options-item">Jour</a>
+              <a href="/docs/4.3/examples/calendar-planning/" class="options-item">Planning</a>
+            </div>
+          </div>
+        </li>
+        <li class="toolbar-item toolbar-item-spacing toolbar-item-no-spacing-right-lg no-separator separator-lg">
+          <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
+        </li>
+        <li class="toolbar-item d-lg-none">
+          <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing collapseScheduleFiltersButton" data-component="state" data-state="active, active" data-behaviour="add, add" data-target="#collapseScheduleFiltersMenu, .collapseScheduleFiltersButton">
+            <span class="sr-only">Options</span>
+            <i class="icons-options icons-size-1x25" aria-hidden="true"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <main class="mastcontainer h-100 d-flex flex-column">
+      <div class="schedule-grid" data-component="schedule">
+        <div class="schedule-sidebar schedule-sidebar-filters bg-white border-top border-right border-light">
+          
+
+<div id="collapseScheduleFiltersMenu" class="schedule-filters">
+  <div class="schedule-filters-head">
+    <div class="schedule-filters-title">Afficher les agendas</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-component="state" data-state="active, active" data-behaviour="toggle, toggle" data-target="#collapseScheduleFiltersMenu, .collapseScheduleFiltersButton" data-closeonclickoutside="true, true">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="schedule-filters-menu">
+    <div class="filters-group">
+      <div class="filters-group-head" data-toggle="collapse" data-target="#collapseExample1">
+        <div class="filters-group-title text-uppercase">Mes agendas</div>
+        <div class="filters-group-toggle text-primary">
+          <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div id="collapseExample1" class="collapse show filters-group-content">
+        <div class="filters-menu-item">
+          
+          
+          
+          
+          <div class="custom-control custom-checkbox is-green">
+  <input type="checkbox" name="filters" class="custom-control-input" id="agenda01" ZgotmplZ>
+  <label class="custom-control-label" for="agenda01">Agenda 01</label>
+</div>
+
+        </div>
+        <div class="filters-menu-item">
+          
+          
+          
+          <div class="custom-control custom-checkbox is-yellow">
+  <input type="checkbox" name="filters" class="custom-control-input" id="agenda02" ZgotmplZ>
+  <label class="custom-control-label" for="agenda02">Agenda 02</label>
+</div>
+
+        </div>
+        <div class="filters-menu-item">
+          
+          
+          
+          <div class="custom-control custom-checkbox is-gray">
+  <input type="checkbox" name="filters" class="custom-control-input" id="agenda03" ZgotmplZ>
+  <label class="custom-control-label" for="agenda03">Agenda 03</label>
+</div>
+
+        </div>
+        <div class="filters-menu-item">
+          
+          
+          
+          <div class="custom-control custom-checkbox is-pink">
+  <input type="checkbox" name="filters" class="custom-control-input" id="agenda04" ZgotmplZ>
+  <label class="custom-control-label" for="agenda04">Agenda 04</label>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="filters-group">
+      <div class="filters-group-head" data-toggle="collapse" data-target="#collapseExample2">
+        <div class="filters-group-title text-uppercase">Autres</div>
+        <div class="filters-group-toggle text-primary">
+          <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div id="collapseExample2" class="collapse show filters-group-content">
+        <div class="filters-menu-item has-hover">
+          
+          
+          
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="filters" class="custom-control-input" id="filter3" ZgotmplZ>
+  <label class="custom-control-label" for="filter3">Gaspard Morin</label>
+</div>
+
+        </div>
+        <div class="filters-menu-item has-hover">
+          
+          
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="filters" class="custom-control-input" id="filter4" ZgotmplZ>
+  <label class="custom-control-label" for="filter4">Antoine Colin</label>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="schedule-maincontent">
+          <div class="d-flex d-md-none align-items-center justify-content-between px-4 py-4">
+            <button type="button" class="btn btn-only-icon btn-white">
+              <span class="sr-only">Juin 2017 .Sem 20</span>
+              <i class="icons-arrow-prev icons-size-1x text-primary pb-1" aria-hidden="true"></i>
+            </button>
+            <div class="mb-0 h1 font-weight-medium text-primary pr-3 pl-3">Juin 2017 <small class="lead d-none d-lg-inline">.Sem 21</small></div>
+            <button type="button" class="btn btn-only-icon btn-white">
+              <span class="sr-only">Juin 2017 .Sem 22</span>
+              <i class="icons-arrow-next icons-size-1x text-primary pb-1" aria-hidden="true"></i>
+            </button>
+          </div>
+          
+
+<div class="schedule schedule-monthly">
+  <div class="schedule-head schedule-row">
+    <div class="schedule-col-head">
+      <span class="schedule-daylabel d-none d-md-inline-flex">Lundi</span>
+      <span class="schedule-daylabel d-md-none">L</span>
+    </div>
+    <div class="schedule-col-head">
+      <span class="schedule-daylabel current d-none d-md-inline-flex">Mardi</span>
+      <span class="schedule-daylabel current d-md-none">M</span>
+    </div>
+    <div class="schedule-col-head">
+      <span class="schedule-daylabel d-none d-md-inline-flex">Mercredi</span>
+      <span class="schedule-daylabel d-md-none">M</span>
+    </div>
+    <div class="schedule-col-head">
+      <span class="schedule-daylabel d-none d-md-inline-flex">Jeudi</span>
+      <span class="schedule-daylabel d-md-none">J</span>
+    </div>
+    <div class="schedule-col-head">
+      <span class="schedule-daylabel d-none d-md-inline-flex">Vendredi</span>
+      <span class="schedule-daylabel d-md-none">V</span>
+    </div>
+    <div class="schedule-col-head">
+      <span class="schedule-daylabel d-none d-md-inline-flex">Samedi</span>
+      <span class="schedule-daylabel d-md-none">S</span>
+    </div>
+    <div class="schedule-col-head">
+      <span class="schedule-daylabel d-none d-md-inline-flex">Dimanche</span>
+      <span class="schedule-daylabel d-md-none">D</span>
+    </div>
+  </div>
+  <div class="schedule-content">
+    <div class="schedule-row">
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber disabled"><span><i>1</i></span></div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          8:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          9:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-color-1 event-month d-none d-md-flex">
+          10:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber current"><span><i>2</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>3</i></span></div>
+        <div data-role="event" class="event event-color2 event-month d-none d-md-flex">
+          9:30 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>4</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>5</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>6</i></span></div>
+        <div data-role="event" class="event event-color2 event-month d-none d-md-flex">
+          8:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          9:30 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-color2 event-month d-none d-md-flex">
+          14:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>7</i></span></div>
+      </div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>8</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>9</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>10</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>11</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>12</i></span></div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          8:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          9:30 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          14:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>13</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>14</i></span></div>
+      </div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>15</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>16</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>17</i></span></div>
+        <div data-role="event" class="event event-color2 event-month d-none d-md-flex">
+          8:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          9:30 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          12:55 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>18</i></span></div>
+        <div data-role="event" class="event event-color2 event-month d-none d-md-flex">
+          8:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-month d-none d-md-flex">
+          9:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <button type="button" class="btn-link event-more d-none d-md-inline-block">+ 3 évènements</button>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>19</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>20</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>21</i></span></div>
+      </div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>22</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>23</i></span></div>
+        <div data-role="event" class="event event-color3 event-month d-none d-md-flex">
+          8:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-color3 event-month d-none d-md-flex">
+          9:30 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-color3 event-month d-none d-md-flex">
+          12:55 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal right" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>24</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>25</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>26</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>27</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>28</i></span></div>
+      </div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>29</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>30</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber"><span><i>31</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber disabled"><span><i>1</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber disabled"><span><i>2</i></span></div>
+        <div data-role="event" class="event event-color3 event-month d-none d-md-flex">
+          8:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-color3 event-month d-none d-md-flex">
+          9:30 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+        <div data-role="event" class="event event-color3 event-month d-none d-md-flex">
+          14:00 <span class="pl-1 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+          <div class="event-modal left" data-role="event-modal">
+  <div class="event-modal-head d-lg-none">
+    <div class="event-modal-title">Titre de l'évènement</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-role="modal-event-close">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-modal-content">
+    <h2 class="h1 mb-2 d-none d-lg-block">Titre de l'évènement</h2>
+    <h3 class="mt-4 mb-1 schedule-chip">Agenda</h3>
+    <span>Agenda 2</span>
+    <h3 class="mt-4 mb-1">Date</h3>
+    <span>Lundi 1er Juin 2017</span><br/>
+    <span>8:00 - 9:00</span>
+    <h3 class="mt-4 mb-1">Description</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h3 class="mt-4 mb-1">Participants</h3>
+    <span>Gaspard MORIN, Léon MICHEL</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber disabled"><span><i>3</i></span></div>
+      </div>
+      <div class="schedule-col-content">
+        <div class="schedule-daynumber disabled"><span><i>4</i></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </main>
+
+    <script src="/bootstrap-sncf.js"></script>
+    </body>
+</html>
+
+

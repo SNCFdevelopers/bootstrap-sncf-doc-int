@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/getting-started/introduction/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Débutez avec Bootstrap, le framework CSS le plus répandu au monde pour la création de sites réactifs axés sur le mobile, avec des exemples spécifiques à SNCF.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Introduction · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/getting-started/introduction/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#démarrage-rapide">Démarrage rapide</a>
+<ul>
+<li><a href="#css">CSS</a></li>
+<li><a href="#javascript">JavaScript</a></li>
+</ul></li>
+<li><a href="#kit-de-démarrage">Kit de démarrage</a></li>
+<li><a href="#éléments-globaux-importants">Éléments globaux importants</a>
+<ul>
+<li><a href="#doctype-html5">doctype HTML5</a></li>
+<li><a href="#meta-tag-responsive">Meta tag <em>responsive</em></a></li>
+<li><a href="#taille-des-boîtes-box-sizing">Taille des boîtes (<em>Box-sizing</em>)</a></li>
+<li><a href="#remise-à-plat-reboot">Remise à plat (<em>Reboot</em>)</a></li>
+</ul></li>
+<li><a href="#communauté">Communauté</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Introduction</h1>
+          <p class="bd-lead">Débutez avec Bootstrap, le framework CSS le plus répandu au monde pour la création de sites réactifs axés sur le mobile, avec des exemples spécifiques à SNCF.</p>
+
+          
+
+<h2 id="démarrage-rapide">Démarrage rapide</h2>
+
+<p>Vous souhaitez ajouter rapidement Bootstrap à votre projet ? Il suffit de télécharger et décompresser le Bootstrap SNCF <a href="https://github.com/SNCFdevelopers/bootstrap-sncf/archive/master.zip">téléchargeable ici</a> dans le répertoire de votre projet et de suivre les étapes suivantes.</p>
+
+<h3 id="css">CSS</h3>
+
+<p>Copiez-collez la feuille de style <code>&lt;link&gt;</code> dans la partie <code>&lt;head&gt;</code> avant tout autre feuille de style pour charger notre CSS.</p>
+
+<p>La feuille de style alternative est optionnelle, utilisez-la si votre projet a besoin d&rsquo;un <a href="/fr/docs/4.3/layout/dark-mode/">mode sombre</a>.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/bootstrap-sncf.min.css&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet alternate&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/bootstrap-sncf.darkmode.min.css&#34;</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="javascript">JavaScript</h3>
+
+<p>Plusieurs de nos composants nécessitent l&rsquo;utilisation de JavaScript pour fonctionner. De plus, ils dépendent des librairies suivantes :</p>
+
+<ul>
+<li><a href="https://jquery.com">jQuery</a></li>
+<li><a href="https://popper.js.org/">Popper.js</a></li>
+<li><a href="https://flatpickr.js.org/">Flatpickrjs</a></li>
+<li><a href="https://www.chartjs.org/">Chart.js</a></li>
+<li>et nos propres plugins JavaScript plugins (inclus dans in tous les fichiers .js)</li>
+</ul>
+
+<div class="bd-callout bd-callout-info">
+Pour plus de commidités, <strong>nous avons intégré</strong> <em>jQuery</em> et <em>popper</em> dans <code>bootstrap-sncf.min.js</code>.
+</div>
+
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/bootstrap-sncf.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
+
+<p>Curieux de connaître quels composants nécessitent explicitement ces librairies ? En voici la liste. <br />
+N&rsquo;oubliez pas que <strong>toutes ces librairies sont déjà incluses</strong> dans nos versions principales par défaut.</p>
+
+<ul>
+<li>Alertes pour l&rsquo;effacement</li>
+<li>Boutons pour les changements d&rsquo;état et les fonctionnalités type cases à cocher</li>
+<li>Caroussel pour les comportements de diaporama, les contrôles et indicateurs</li>
+<li>Graphiques (nécessitent également <a href="https://www.chartjs.org/">Chart.js</a>)</li>
+<li><em>Chips</em> pour la saisie et la suppression des éléments</li>
+<li><em>Collapse</em> pour la bascule de visibilité du contenu</li>
+<li>Menus déroulants pour l&rsquo;affichage et le positionnement (nécessite également <a href="https://popper.js.org/">Popper.js</a>)</li>
+<li>Modales pour l&rsquo;affichage, le positionnement et le comportement au défilement</li>
+<li>Barre de navigation pour étendre le plugin <em>Collapse</em> et implémenter le comportement <em>responsive</em></li>
+<li>Sélecteurs de date &amp; heure (nécessite également <a href="https://flatpickr.js.org/">Flatpickrjs</a>)</li>
+<li>Barres de progression</li>
+<li><em>Scrollspy</em> pour le comportement au défilement et mises à jour de la navigation</li>
+<li>Barre de rechercher pour effacer avec le bouton</li>
+<li>Selecteurs pour tous les éléments</li>
+<li>Tables</li>
+<li>Infos-bulles et <em>popovers</em> pour l&rsquo;affichage et le positionnement (nécessite également <a href="https://popper.js.org/">Popper.js</a>)</li>
+</ul>
+
+<h2 id="kit-de-démarrage">Kit de démarrage</h2>
+
+<div class="bd-callout bd-callout-warning">
+<h3 id="compatibilité-ie11">Compatibilité IE11</h3>
+
+<p>Pour assurer la compatibilité avec IE11, vous devez ajouter la ligne <code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</code> immédiatement après <code>&lt;head&gt;</code>.
+De plus, la configuration IE11 chez SNCF utilise le mode de compatibilité IE7par défaut : réglez le sur le mode IE11.
+</div>
+
+
+<p>Assurez-vous que vos pages sont configurées avec les normes de conception et de développement les plus récentes. Cela signifie qu’il est nécessaire d’utiliser un <code>doctype HTML5</code> et d’inclure une balise méta <code>viewport</code> pour obtenir les comportements réactifs appropriés. Si vous mettez le tout ensemble, vos pages devraient ressembler à ceci:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- compatibilité IE 11 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Meta tags requis --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- CSS Bootstrap --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;dist/bootstrap-sncf.min.css&#34;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hello, world!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Coucou !<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;dist/bootstrap-sncf.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
+
+<p>C&rsquo;est tout ce dont vous avez besoin en terme d&rsquo;éléments requis ! Consultez la <a href="/fr/docs/4.3/layout/overview/">documentation de mise en page</a> ou nos <a href="/fr/docs/4.3/examples/">exemples officiels</a> pour commencer à mettre en page le contenu de votre site et ses composants.</p>
+
+<h2 id="éléments-globaux-importants">Éléments globaux importants</h2>
+
+<p>Bootstrap utilise une poignée de styles et de paramètres globaux importants dont vous devrez tenir compte lors de son utilisation, qui sont tous presque exclusivement orientés vers la <em>normalisation</em> des styles de navigateurs. Allons-y !</p>
+
+<h3 id="doctype-html5">doctype HTML5</h3>
+
+<p>Bootstrap nécessite l&rsquo;utilisation du doctype HTML5. Sans cela, vous verrez un style incomplet et quelque peu funky. Son inclusion ne devrait pas causer de problème majeur.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;fr&#34;</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="meta-tag-responsive">Meta tag <em>responsive</em></h3>
+
+<p>Bootstrap est développé <em>mobile first</em>, une stratégie dans laquelle nous optimisons d’abord le code pour les appareils mobiles, puis mettons à l’échelle les composants à l’aide de requêtes multimédia CSS. Pour que le rendu et le zoom tactile soient corrects pour tous les périphériques, <strong>ajoutez la balise méta responsive de la fenêtre d&rsquo;affichage</strong> à votre <code>&lt;tête&gt;</code>.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;</span><span class="p">&gt;</span></code></pre></div>
+
+<p>Vous pouvez voir un exemple de cela en action dans le <a href="#starter-template">kit de démarrage de base</a>.</p>
+
+<h3 id="taille-des-boîtes-box-sizing">Taille des boîtes (<em>Box-sizing</em>)</h3>
+
+<p>Pour un dimensionnement plus simple en CSS, nous passons la valeur globale de <code>box-sizing</code> de<code>content-box</code> à <code>border-box</code>. Cela garantit que le <code>padding</code> n&rsquo;affecte pas la largeur finale calculée d&rsquo;un élément, mais peut causer des problèmes avec certains logiciels tiers tels que <em>Google Maps</em> et le moteur de recherche personnalisé <em>Google</em>.</p>
+
+<p>Dans les rares cas où vous devez le remplacer, utilisez l&rsquo;une des méthodes suivantes :</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">selector-for-some-widget</span> <span class="p">{</span>
+  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">content-box</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Avec l&rsquo;extrait de code ci-dessus, les éléments imbriqués, y compris le contenu généré via <code>:: before</code> et <code>:: après</code> hériteront du <code>box-sizing</code> spécifié pour le <code>.selector-for-some-widget</code>.</p>
+
+<p>En savoir plus sur <a href="https://css-tricks.com/box-sizing/">le modèle de boîte et de taille sur les CSS Tricks</a>.</p>
+
+<h3 id="remise-à-plat-reboot">Remise à plat (<em>Reboot</em>)</h3>
+
+<p>Pour améliorer le rendu sur tous les navigateurs, nous utilisons <a href="/fr/docs/4.3/content/reboot/">la « remise à plat » ou « Reboot »</a> pour corriger les incohérences entre les navigateurs et les périphériques tout en fournissant des réinitialisations légèrement plus radicales aux éléments HTML courants.</p>
+
+<h2 id="communauté">Communauté</h2>
+
+<p>Restez à jour sur le développement de Bootstrap et contactez la communauté avec ces ressources utiles.</p>
+
+<p>Contactez les humains de la <a href="mailto:design.fab@sncf.fr">Fab Design</a> pour plus d&rsquo;informations et d&rsquo;aide.</p>
+
+<ul>
+<li>Partagez et apprenez avec les autres développeurs de SNCF sur <a href="https://github.com/SNCFdevelopers/bootstrap-sncf">GitHub</a></li>
+</ul>
+
+<p>Pour le Bootstrap original :</p>
+
+<ul>
+<li>Suivez <a href="https://twitter.com/getbootstrap">@getbootstrap sur Twitter</a>.</li>
+<li>Lisez et inscrivez-vous au <a href="{{ site.blog }}">blog officiel de Bootstrap</a>.</li>
+<li>Rejoignez <a href="{{ site.slack }}">le canal officiel sur Slack</a>.</li>
+<li>Discutez avec la compagnie des Bootstrappers sur IRC. Sur le serveur <code>irc.freenode.net</code> dans le canal <code>##bootstrap</code>.</li>
+<li>Une aide à l&rsquo;implémentation peut être trouvée sur <em>Stack Overflow</em> (cherchez les tags <a href="https://stackoverflow.com/questions/tagged/bootstrap-4"><code>bootstrap-4</code></a>).</li>
+<li>Les développeurs devraient utiliser le mot-clef <code>bootstrap</code> sur les paquets qui modifient ou ajoutent des fonctionnalités à Bootstrap au moment de les redistribuer avec <a href="https://www.npmjs.com/browse/keyword/bootstrap">npm</a> ou alors des techniques ou mécaniques similaires pour permettre une découvrabilité maximale.</li>
+</ul>
+
+<p>Vous pouvez enfin suivre également <a href="https://twitter.com/getbootstrap">@getbootstrap sur Twitter</a> pour les dernières nouvelles ou des clips musicaux géniaux.</p>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

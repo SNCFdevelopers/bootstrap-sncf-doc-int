@@ -1,0 +1,274 @@
+
+
+
+
+
+<html lang="<no value>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Forms template</title>
+
+    <script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+  </head>
+  <body class="bd-content">
+    <main class="container-fluid">
+      <div class="row justify-content-center pt-5 pb-5">
+        <div class="col-12 col-md-7">
+          <h1 class="display-1 pt-5">Formulaire empilé (e.g. E-isolement : Ajouter un agent)</h1>
+          <div class="form-error mb-5">
+            <span class="h2 text-uppercase">Oouups ! Vous avez une erreur</span>
+            <ul class="mt-1 mb-0">
+              <li>Veuillez vérifier l'adresse email saisie</li>
+            </ul>
+          </div>
+          <div class="form-group">
+            <label for="zip">N° de CP</label>
+            
+            
+            <div class="form-control-container ">
+  <input type="text" class="form-control " id="zip" title="" placeholder="" ZgotmplZ>
+  <span class="form-control-state"></span>
+</div>
+
+          </div>
+          <div class="form-group">
+            <label for="firstname">Prénom</label>
+            
+            
+            <div class="form-control-container ">
+  <input type="email" class="form-control " id="firstname" title="" placeholder="" ZgotmplZ>
+  <span class="form-control-state"></span>
+</div>
+
+          </div>
+          <div class="form-group">
+            <label for="lastname">Nom</label>
+            
+            
+            <div class="form-control-container ">
+  <input type="email" class="form-control " id="lastname" title="" placeholder="" ZgotmplZ>
+  <span class="form-control-state"></span>
+</div>
+
+          </div>
+          <div class="form-group">
+            <label for="profile">Profil</label>
+            
+            
+            
+            
+            <div class="select-improved" data-component="select-exclusive">
+  <div class="select-control">
+    <div class="input-group" data-role="select-toggle">
+      <p class="form-control is-placeholder  d-flex align-items-center" data-role="placeholder" data-selected-prefix="Sélection actuelle">Sélectionner un profil</p>
+      <select class="sr-only" id="profile" data-role="input" tabindex="-1" aria-hidden="true">
+        <option ZgotmplZ data-role="default-hidden-option" disabled hidden>Sélectionner un profil</option>
+        
+            <option data-id="0" ZgotmplZ>Agent de secteur</option>
+        
+            <option data-id="1" ZgotmplZ>Autre</option>
+        
+      </select>
+      <div class="input-group-append input-group-last">
+        <button class="btn btn-primary btn-only-icon " data-role="btn" type="button" aria-expanded="false" aria-controls="profileselecttoggle">
+          <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+          <span class="sr-only">Sélectionner</span>
+        </button>
+      </div>
+    </div>
+    <div class="select-menu" id="profile-selecttoggle">
+      <div class="d-flex flex-column">
+        <div class="flex-fluid overflow-y" role="list" data-role="menu">
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="0">Agent de secteur</button></span>
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="1">Autre</button></span>
+          
+        </div></div>
+    </div>
+  </div>
+</div>
+
+          </div>
+          <div class="form-group">
+            <label>Droit d'admin</label>
+            
+            
+            
+            
+            <div class="custom-control custom-checkbox mb-2">
+  <input type="checkbox" name="" class="custom-control-input" id="alert" checked>
+  <label class="custom-control-label" for="alert">Réception des alertes</label>
+</div>
+
+
+            
+            
+            <div class="custom-control custom-checkbox mb-2">
+  <input type="checkbox" name="" class="custom-control-input" id="nfc" checked>
+  <label class="custom-control-label" for="nfc">Initialisation de cartes NFC</label>
+</div>
+
+
+            
+            
+            
+            <div class="custom-control custom-checkbox mb-2">
+  <input type="checkbox" name="" class="custom-control-input" id="history" ZgotmplZ>
+  <label class="custom-control-label" for="history">Saisie de l&#39;historique</label>
+</div>
+
+          </div>
+          <div class="form-group mt-2">
+            <label for="email">Email</label>
+            
+            
+            
+            
+            <div class="form-control-container is-invalid">
+  <input type="email" class="form-control " id="email" title="" placeholder="" ZgotmplZ>
+  <span class="form-control-state"></span>
+</div>
+
+            <div class="invalid-feedback">
+              Veuillez vérifier l'adresse email saisie
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Téléphone</label>
+            
+            
+            
+            
+            
+            <div class="form-control-container ">
+  <input type="tel" class="form-control " id="phones_pattern2" title="" placeholder="" ZgotmplZ>
+  <span class="form-control-state"></span>
+</div>
+
+          </div>
+          <div class="form-group">
+            <label for="profile">Unité</label>
+            
+            
+            
+            
+            
+            
+            <div class="select-improved" data-component="select-exclusive">
+  <div class="select-control">
+    <div class="input-group" data-role="select-toggle">
+      <p class="form-control is-placeholder  d-flex align-items-center" data-role="placeholder" data-selected-prefix="Sélection actuelle">Sélectionner une unité</p>
+      <select class="sr-only" id="unit1" data-role="input" tabindex="-1" aria-hidden="true">
+        <option ZgotmplZ data-role="default-hidden-option" disabled hidden>Sélectionner une unité</option>
+        
+            <option data-id="0" selected>Unité 1</option>
+        
+            <option data-id="1" ZgotmplZ>Unité 2</option>
+        
+            <option data-id="2" ZgotmplZ>Unité 3</option>
+        
+      </select>
+      <div class="input-group-append input-group-last">
+        <button class="btn btn-primary btn-only-icon " data-role="btn" type="button" aria-expanded="false" aria-controls="unit1selecttoggle">
+          <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+          <span class="sr-only">Sélectionner</span>
+        </button>
+      </div>
+    </div>
+    <div class="select-menu" id="unit1-selecttoggle">
+      <div class="d-flex flex-column">
+        <div class="flex-fluid overflow-y" role="list" data-role="menu">
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="0">Unité 1</button></span>
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="1">Unité 2</button></span>
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="2">Unité 3</button></span>
+          
+        </div></div>
+    </div>
+  </div>
+</div>
+
+          </div>
+          <div class="form-group">
+            <label for="profile">Secteur</label>
+            
+            
+            
+            <div class="select-improved" data-component="select-exclusive">
+  <div class="select-control">
+    <div class="input-group" data-role="select-toggle">
+      <p class="form-control is-placeholder  d-flex align-items-center" data-role="placeholder" data-selected-prefix="Sélection actuelle">Sélectionner un secteur</p>
+      <select class="sr-only" id="unit2" data-role="input" tabindex="-1" aria-hidden="true">
+        <option ZgotmplZ data-role="default-hidden-option" disabled hidden>Sélectionner un secteur</option>
+        
+            <option data-id="0" ZgotmplZ>Secteur 100</option>
+        
+            <option data-id="1" ZgotmplZ>Secteur 101</option>
+        
+            <option data-id="2" ZgotmplZ>Secteur 102</option>
+        
+            <option data-id="3" selected>Secteur 103</option>
+        
+      </select>
+      <div class="input-group-append input-group-last">
+        <button class="btn btn-primary btn-only-icon " data-role="btn" type="button" aria-expanded="false" aria-controls="unit2selecttoggle">
+          <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+          <span class="sr-only">Sélectionner</span>
+        </button>
+      </div>
+    </div>
+    <div class="select-menu" id="unit2-selecttoggle">
+      <div class="d-flex flex-column">
+        <div class="flex-fluid overflow-y" role="list" data-role="menu">
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="0">Secteur 100</button></span>
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="1">Secteur 101</button></span>
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="2">Secteur 102</button></span>
+          
+            <span class="select-menu-item" role="listitem"><button data-role="value" data-target="3">Secteur 103</button></span>
+          
+        </div></div>
+    </div>
+  </div>
+</div>
+
+          </div>
+          <div class="form-group pt-2">
+            <button type="button" class="btn btn-primary mr-2">Ajouter</button>
+            <button type="button" class="btn btn-secondary">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/bootstrap-sncf.js"></script>
+    </body>
+</html>
+
+

@@ -1,0 +1,1448 @@
+<!doctype html>
+<html lang="en" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Examples and usage guidelines for icons.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="4.3">
+
+<title>Icons Generator · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/en/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Examples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Settings</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Dark mode</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Disabled</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Enabled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Source code</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Show</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Hide</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Language</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="en" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> English</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="en" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> French</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Download</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Search for..." aria-label="Search for..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/getting-started/introduction/">
+          <div>Getting started</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/download/">Download</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/accessibility/">Accessibility</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/how-to-contribute/">How to contribute</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/layout/overview/">
+          <div>Layout</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/layout/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/layout/grid/">Grid</a>
+            </li><li>
+              <a href="/docs/4.3/layout/dark-mode/">Dark mode</a>
+            </li><li>
+              <a href="/docs/4.3/layout/utilities-for-layout/">Utilities for layout</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navbars/">Navbars</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navs/">Navs</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/content/reboot/">
+          <div>Content</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/docs/4.3/content/typography/">Typography</a>
+            </li><li>
+              <a href="/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/components/alerts/">
+          <div>Components</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/components/alerts/">Alerts</a>
+            </li><li>
+              <a href="/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/docs/4.3/components/breadcrumb/">Breadcrumb</a>
+            </li><li>
+              <a href="/docs/4.3/components/buttons/">Buttons</a>
+            </li><li>
+              <a href="/docs/4.3/components/cards/">Cards</a>
+            </li><li>
+              <a href="/docs/4.3/components/charts/">Charts</a>
+            </li><li>
+              <a href="/docs/4.3/components/checkboxes-and-radios/">Checkboxes and radios</a>
+            </li><li>
+              <a href="/docs/4.3/components/dropdowns/">Dropdowns</a>
+            </li><li>
+              <a href="/docs/4.3/components/forms/">Forms</a>
+            </li><li>
+              <a href="/docs/4.3/components/icons/">Icons</a>
+            </li><li>
+              <a href="/docs/4.3/components/input-group/">Input group</a>
+            </li><li>
+              <a href="/docs/4.3/components/list-group/">List group</a>
+            </li><li>
+              <a href="/docs/4.3/components/modal/">Modal</a>
+            </li><li>
+              <a href="/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/docs/4.3/components/picker/">Picker</a>
+            </li><li>
+              <a href="/docs/4.3/components/popovers/">Popovers</a>
+            </li><li>
+              <a href="/docs/4.3/components/progress/">Progress</a>
+            </li><li>
+              <a href="/docs/4.3/components/sami/">Sami</a>
+            </li><li>
+              <a href="/docs/4.3/components/select/">Select</a>
+            </li><li>
+              <a href="/docs/4.3/components/tooltips/">Tooltips</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/utilities/clearfix/">
+          <div>Utilities</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/close-icon/">Close icon</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/colors/">Colors</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/display/">Display</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/embed/">Embed</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/image-replacement/">Image replacement</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/position/">Position</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/screenreaders/">Screenreaders</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/sizing/">Sizing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/spacing/">Spacing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/text/">Text</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/vertical-align/">Vertical align</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/visibility/">Visibility</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/extend/approach/">
+          <div>Extend</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/extend/approach/">Approach</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/about/overview/">
+          <div>About</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/about/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/about/versions/">Versions</a>
+            </li><li>
+              <a href="/docs/4.3/about/license/">License</a>
+            </li><li>
+              <a href="/docs/4.3/about/translations/">Translations</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Icons Generator</h1>
+          <p class="bd-lead">Examples and usage guidelines for icons.</p>
+
+          <div class="bd-content pr-5" data-component="icons-generator">
+  <span></span>
+  <h2>Configuration</h2>
+  <div class="row justify-content-between mt-3">
+    <div class="col-4">
+      <div class="row">
+      
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#0088ce">
+          <div class="p-3 mb-2 bg-primary"></div>
+        </div>
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#4d4f53">
+          <div class="p-3 mb-2 bg-secondary"></div>
+        </div>
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#82be00">
+          <div class="p-3 mb-2 bg-success"></div>
+        </div>
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#cd0037">
+          <div class="p-3 mb-2 bg-danger"></div>
+        </div>
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#ffb612">
+          <div class="p-3 mb-2 bg-warning"></div>
+        </div>
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#009aa6">
+          <div class="p-3 mb-2 bg-info"></div>
+        </div>
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#f2f2f2">
+          <div class="p-3 mb-2 bg-light"></div>
+        </div>
+      
+        <div class="ig-color col-1 mb-3" data-role="color" data-color="#343a40">
+          <div class="p-3 mb-2 bg-dark"></div>
+        </div>
+      
+      
+      </div>
+    </div>
+    <div class="col col-2">
+      <div class="form-group">
+        <div class="form-control-container ">
+  <input type="number" class="form-control " id="withSize" title="Taille des png/svg" placeholder="Taille des png/svg" value="" id >
+  <span class="form-control-state"></span></div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="withFont" class="custom-control-input" id="withFont" id>
+  <label class="custom-control-label" for="withFont">FONT</label>
+</div>
+
+        </div>
+        <div class="col">
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="withPng" class="custom-control-input" id="withPng" id>
+  <label class="custom-control-label" for="withPng">PNG</label>
+</div>
+
+        </div>
+        <div class="col">
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="withSvg" class="custom-control-input" id="withSvg" id>
+  <label class="custom-control-label" for="withSvg">SVG</label>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <div>
+        <button type="button" disabled="true" class="btn btn-primary" data-role="download">Download</button>
+      </div>
+    </div>
+  </div>
+
+<p>
+  <h2>Icons</h2>
+  <div class="ig-container row mt-4" data-role="container">
+    <div class="col-12 pb-5">
+      <button type="button" class="btn btn-primary" data-role="selectall" data-values="[add,admin,alert-notification,ambulant-sales,arrow-double,arrow-down,arrow-next,arrow-prev,arrow-real,arrow-up,booking,bookmark-off,bookmark,bypass,calendar-time,calendar,checked,circle-account-connected,circle-arrow,circle-back-top,circle-cancelled,circle-delay,circle-delete,circle-disruption,circle-facebook,circle-flux-rss,circle-google-plus,circle-information,circle-instagram,circle-linkedin,circle-mail,circle-pinterest,circle-print,circle-reverse,circle-tooltip,circle-twitter,circle-works,clock,close,disabled-service,distribution,document,document2,download,eco-consumption,external-link,facebook,file,filters,free-bike,instagram,itinerary-bike,itinerary-bullet,itinerary-bus-2,itinerary-bus,itinerary-car,itinerary-line-idf-a,itinerary-line-idf-b,itinerary-line-idf-c,itinerary-line-idf-d,itinerary-line-idf-e,itinerary-line-idf-h,itinerary-line-idf-j,itinerary-line-idf-k,itinerary-line-idf-l,itinerary-line-idf-n,itinerary-line-idf-p,itinerary-line-idf-r,itinerary-line-idf-u,itinerary-line-metro-1,itinerary-line-metro-2,itinerary-line-metro-3,itinerary-line-metro-3bis,itinerary-line-metro-4,itinerary-line-metro-5,itinerary-line-metro-6,itinerary-line-metro-7,itinerary-line-metro-7bis,itinerary-line-metro-8,itinerary-line-metro-9,itinerary-line-metro-10,itinerary-line-metro-11,itinerary-line-metro-12,itinerary-line-metro-13,itinerary-line-metro-14,itinerary-line-tram-1,itinerary-line-tram-2,itinerary-line-tram-3,itinerary-line-tram-3a,itinerary-line-tram-3b,itinerary-line-tram-3est,itinerary-line-tram-4,itinerary-line-tram-5,itinerary-line-tram-6,itinerary-line-tram-7,itinerary-line-tram-8,itinerary-line-tram-9,itinerary-line-tram-10,itinerary-line-tram-11,itinerary-line-tram-12,itinerary-line-tram-13,itinerary-metro,itinerary-pedestrian,itinerary-rer,itinerary-train-station,itinerary-train,itinerary-tram,itinerary-tramway,label,large-building,large-clock,large-conversation,large-creditcard,large-france,large-group,large-headphones,large-information,large-itinerary-bike,large-itinerary-bus-2,large-itinerary-bus,large-itinerary-car,large-itinerary-metro,large-itinerary-pedestrian,large-itinerary-rer,large-itinerary-train-station,large-itinerary-train,large-itinerary-tram,large-itinerary-tramway,large-lightbulb,large-luggage,large-mail,large-phone,large-search-recent,large-seat,large-skateboard,large-smartphone,large-sncf,large-stroller,large-suitcase,large-swipecard,large-ticket,large-truck,large-warning,list,localisation-pin,lounge-car,menu-account,menu-burger,menu-searchbar,message,mosaic,nursery-service,options,pause,pencil,play-area,play,position,print,professionnal-area,quiet-area,refresh,rent-bike,sami-confused,sami-grin,sami-sad,sami-smile,search-recent,search,share,slider-off,slider-on,sort,support,tag,tgv-family,toolbar-bold,toolbar-center,toolbar-italic,toolbar-left,toolbar-list,toolbar-underline,twitter,volume-down,volume-up,warning,wifi-area,young-service]">Tout sélectionner</button>
+    </div><div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="add">
+          <i class="icons-add ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="admin">
+          <i class="icons-admin ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="alert-notification">
+          <i class="icons-alert-notification ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="ambulant-sales">
+          <i class="icons-ambulant-sales ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="arrow-double">
+          <i class="icons-arrow-double ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="arrow-down">
+          <i class="icons-arrow-down ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="arrow-next">
+          <i class="icons-arrow-next ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="arrow-prev">
+          <i class="icons-arrow-prev ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="arrow-real">
+          <i class="icons-arrow-real ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="arrow-up">
+          <i class="icons-arrow-up ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="booking">
+          <i class="icons-booking ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="bookmark-off">
+          <i class="icons-bookmark-off ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="bookmark">
+          <i class="icons-bookmark ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="bypass">
+          <i class="icons-bypass ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="calendar-time">
+          <i class="icons-calendar-time ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="calendar">
+          <i class="icons-calendar ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="checked">
+          <i class="icons-checked ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-account-connected">
+          <i class="icons-circle-account-connected ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-arrow">
+          <i class="icons-circle-arrow ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-back-top">
+          <i class="icons-circle-back-top ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-cancelled">
+          <i class="icons-circle-cancelled ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-delay">
+          <i class="icons-circle-delay ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-delete">
+          <i class="icons-circle-delete ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-disruption">
+          <i class="icons-circle-disruption ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-facebook">
+          <i class="icons-circle-facebook ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-flux-rss">
+          <i class="icons-circle-flux-rss ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-google-plus">
+          <i class="icons-circle-google-plus ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-information">
+          <i class="icons-circle-information ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-instagram">
+          <i class="icons-circle-instagram ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-linkedin">
+          <i class="icons-circle-linkedin ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-mail">
+          <i class="icons-circle-mail ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-pinterest">
+          <i class="icons-circle-pinterest ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-print">
+          <i class="icons-circle-print ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-reverse">
+          <i class="icons-circle-reverse ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-tooltip">
+          <i class="icons-circle-tooltip ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-twitter">
+          <i class="icons-circle-twitter ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="circle-works">
+          <i class="icons-circle-works ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="clock">
+          <i class="icons-clock ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="close">
+          <i class="icons-close ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="disabled-service">
+          <i class="icons-disabled-service ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="distribution">
+          <i class="icons-distribution ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="document">
+          <i class="icons-document ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="document2">
+          <i class="icons-document2 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="download">
+          <i class="icons-download ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="eco-consumption">
+          <i class="icons-eco-consumption ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="external-link">
+          <i class="icons-external-link ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="facebook">
+          <i class="icons-facebook ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="file">
+          <i class="icons-file ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="filters">
+          <i class="icons-filters ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="free-bike">
+          <i class="icons-free-bike ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="instagram">
+          <i class="icons-instagram ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-bike">
+          <i class="icons-itinerary-bike ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-bullet">
+          <i class="icons-itinerary-bullet ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-bus-2">
+          <i class="icons-itinerary-bus-2 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-bus">
+          <i class="icons-itinerary-bus ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-car">
+          <i class="icons-itinerary-car ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-a">
+          <i class="icons-itinerary-line-idf-a ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-b">
+          <i class="icons-itinerary-line-idf-b ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-c">
+          <i class="icons-itinerary-line-idf-c ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-d">
+          <i class="icons-itinerary-line-idf-d ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-e">
+          <i class="icons-itinerary-line-idf-e ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-h">
+          <i class="icons-itinerary-line-idf-h ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-j">
+          <i class="icons-itinerary-line-idf-j ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-k">
+          <i class="icons-itinerary-line-idf-k ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-l">
+          <i class="icons-itinerary-line-idf-l ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-n">
+          <i class="icons-itinerary-line-idf-n ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-p">
+          <i class="icons-itinerary-line-idf-p ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-r">
+          <i class="icons-itinerary-line-idf-r ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-idf-u">
+          <i class="icons-itinerary-line-idf-u ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-1">
+          <i class="icons-itinerary-line-metro-1 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-2">
+          <i class="icons-itinerary-line-metro-2 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-3">
+          <i class="icons-itinerary-line-metro-3 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-3bis">
+          <i class="icons-itinerary-line-metro-3bis ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-4">
+          <i class="icons-itinerary-line-metro-4 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-5">
+          <i class="icons-itinerary-line-metro-5 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-6">
+          <i class="icons-itinerary-line-metro-6 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-7">
+          <i class="icons-itinerary-line-metro-7 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-7bis">
+          <i class="icons-itinerary-line-metro-7bis ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-8">
+          <i class="icons-itinerary-line-metro-8 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-9">
+          <i class="icons-itinerary-line-metro-9 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-10">
+          <i class="icons-itinerary-line-metro-10 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-11">
+          <i class="icons-itinerary-line-metro-11 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-12">
+          <i class="icons-itinerary-line-metro-12 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-13">
+          <i class="icons-itinerary-line-metro-13 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-metro-14">
+          <i class="icons-itinerary-line-metro-14 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-1">
+          <i class="icons-itinerary-line-tram-1 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-2">
+          <i class="icons-itinerary-line-tram-2 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-3">
+          <i class="icons-itinerary-line-tram-3 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-3a">
+          <i class="icons-itinerary-line-tram-3a ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-3b">
+          <i class="icons-itinerary-line-tram-3b ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-3est">
+          <i class="icons-itinerary-line-tram-3est ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-4">
+          <i class="icons-itinerary-line-tram-4 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-5">
+          <i class="icons-itinerary-line-tram-5 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-6">
+          <i class="icons-itinerary-line-tram-6 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-7">
+          <i class="icons-itinerary-line-tram-7 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-8">
+          <i class="icons-itinerary-line-tram-8 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-9">
+          <i class="icons-itinerary-line-tram-9 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-10">
+          <i class="icons-itinerary-line-tram-10 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-11">
+          <i class="icons-itinerary-line-tram-11 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-12">
+          <i class="icons-itinerary-line-tram-12 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-line-tram-13">
+          <i class="icons-itinerary-line-tram-13 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-metro">
+          <i class="icons-itinerary-metro ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-pedestrian">
+          <i class="icons-itinerary-pedestrian ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-rer">
+          <i class="icons-itinerary-rer ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-train-station">
+          <i class="icons-itinerary-train-station ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-train">
+          <i class="icons-itinerary-train ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-tram">
+          <i class="icons-itinerary-tram ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="itinerary-tramway">
+          <i class="icons-itinerary-tramway ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="label">
+          <i class="icons-label ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-building">
+          <i class="icons-large-building ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-clock">
+          <i class="icons-large-clock ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-conversation">
+          <i class="icons-large-conversation ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-creditcard">
+          <i class="icons-large-creditcard ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-france">
+          <i class="icons-large-france ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-group">
+          <i class="icons-large-group ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-headphones">
+          <i class="icons-large-headphones ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-information">
+          <i class="icons-large-information ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-bike">
+          <i class="icons-large-itinerary-bike ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-bus-2">
+          <i class="icons-large-itinerary-bus-2 ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-bus">
+          <i class="icons-large-itinerary-bus ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-car">
+          <i class="icons-large-itinerary-car ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-metro">
+          <i class="icons-large-itinerary-metro ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-pedestrian">
+          <i class="icons-large-itinerary-pedestrian ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-rer">
+          <i class="icons-large-itinerary-rer ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-train-station">
+          <i class="icons-large-itinerary-train-station ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-train">
+          <i class="icons-large-itinerary-train ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-tram">
+          <i class="icons-large-itinerary-tram ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-itinerary-tramway">
+          <i class="icons-large-itinerary-tramway ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-lightbulb">
+          <i class="icons-large-lightbulb ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-luggage">
+          <i class="icons-large-luggage ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-mail">
+          <i class="icons-large-mail ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-phone">
+          <i class="icons-large-phone ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-search-recent">
+          <i class="icons-large-search-recent ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-seat">
+          <i class="icons-large-seat ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-skateboard">
+          <i class="icons-large-skateboard ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-smartphone">
+          <i class="icons-large-smartphone ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-sncf">
+          <i class="icons-large-sncf ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-stroller">
+          <i class="icons-large-stroller ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-suitcase">
+          <i class="icons-large-suitcase ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-swipecard">
+          <i class="icons-large-swipecard ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-ticket">
+          <i class="icons-large-ticket ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-truck">
+          <i class="icons-large-truck ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="large-warning">
+          <i class="icons-large-warning ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="list">
+          <i class="icons-list ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="localisation-pin">
+          <i class="icons-localisation-pin ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="lounge-car">
+          <i class="icons-lounge-car ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="menu-account">
+          <i class="icons-menu-account ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="menu-burger">
+          <i class="icons-menu-burger ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="menu-searchbar">
+          <i class="icons-menu-searchbar ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="message">
+          <i class="icons-message ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="mosaic">
+          <i class="icons-mosaic ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="nursery-service">
+          <i class="icons-nursery-service ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="options">
+          <i class="icons-options ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="pause">
+          <i class="icons-pause ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="pencil">
+          <i class="icons-pencil ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="play-area">
+          <i class="icons-play-area ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="play">
+          <i class="icons-play ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="position">
+          <i class="icons-position ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="print">
+          <i class="icons-print ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="professionnal-area">
+          <i class="icons-professionnal-area ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="quiet-area">
+          <i class="icons-quiet-area ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="refresh">
+          <i class="icons-refresh ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="rent-bike">
+          <i class="icons-rent-bike ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="sami-confused">
+          <i class="icons-sami-confused ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="sami-grin">
+          <i class="icons-sami-grin ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="sami-sad">
+          <i class="icons-sami-sad ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="sami-smile">
+          <i class="icons-sami-smile ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="search-recent">
+          <i class="icons-search-recent ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="search">
+          <i class="icons-search ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="share">
+          <i class="icons-share ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="slider-off">
+          <i class="icons-slider-off ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="slider-on">
+          <i class="icons-slider-on ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="sort">
+          <i class="icons-sort ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="support">
+          <i class="icons-support ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="tag">
+          <i class="icons-tag ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="tgv-family">
+          <i class="icons-tgv-family ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="toolbar-bold">
+          <i class="icons-toolbar-bold ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="toolbar-center">
+          <i class="icons-toolbar-center ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="toolbar-italic">
+          <i class="icons-toolbar-italic ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="toolbar-left">
+          <i class="icons-toolbar-left ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="toolbar-list">
+          <i class="icons-toolbar-list ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="toolbar-underline">
+          <i class="icons-toolbar-underline ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="twitter">
+          <i class="icons-twitter ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="volume-down">
+          <i class="icons-volume-down ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="volume-up">
+          <i class="icons-volume-up ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="warning">
+          <i class="icons-warning ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="wifi-area">
+          <i class="icons-wifi-area ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    <div class="col mb-3">
+        <button type="button" class="ig-button btn-rounded text-center mb-2" data-role="icon" data-icon="young-service">
+          <i class="icons-young-service ig-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    
+  </div>  
+  
+</div></p>
+
+
+          
+            <div class="mt-5">
+    Did you find what you’re looking for ? If not, <a class="btn btn-link" href="/docs/4.3/getting-started/how-to-contribute/">please tell us <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

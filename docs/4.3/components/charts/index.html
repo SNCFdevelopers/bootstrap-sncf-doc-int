@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="fr" href="/fr/docs/4.3/components/charts/" title="Français">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Charts">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="4.3">
+
+<title>Charts · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/en/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Examples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Settings</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Dark mode</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Disabled</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Enabled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Source code</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Show</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Hide</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Language</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="en" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> English</label>
+                                </a>
+                                <a class="options-item option-language" href="/fr/docs/4.3/components/charts/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="en" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> French</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Download</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Search for..." aria-label="Search for..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/getting-started/introduction/">
+          <div>Getting started</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/download/">Download</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/accessibility/">Accessibility</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/docs/4.3/getting-started/how-to-contribute/">How to contribute</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/layout/overview/">
+          <div>Layout</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/layout/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/layout/grid/">Grid</a>
+            </li><li>
+              <a href="/docs/4.3/layout/dark-mode/">Dark mode</a>
+            </li><li>
+              <a href="/docs/4.3/layout/utilities-for-layout/">Utilities for layout</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navbars/">Navbars</a>
+            </li><li>
+              <a href="/docs/4.3/layout/navs/">Navs</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/content/reboot/">
+          <div>Content</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/docs/4.3/content/typography/">Typography</a>
+            </li><li>
+              <a href="/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/components/alerts/">
+          <div>Components</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/components/alerts/">Alerts</a>
+            </li><li>
+              <a href="/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/docs/4.3/components/breadcrumb/">Breadcrumb</a>
+            </li><li>
+              <a href="/docs/4.3/components/buttons/">Buttons</a>
+            </li><li>
+              <a href="/docs/4.3/components/cards/">Cards</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/docs/4.3/components/charts/">Charts</a>
+            </li><li>
+              <a href="/docs/4.3/components/checkboxes-and-radios/">Checkboxes and radios</a>
+            </li><li>
+              <a href="/docs/4.3/components/dropdowns/">Dropdowns</a>
+            </li><li>
+              <a href="/docs/4.3/components/forms/">Forms</a>
+            </li><li>
+              <a href="/docs/4.3/components/icons/">Icons</a>
+            </li><li>
+              <a href="/docs/4.3/components/input-group/">Input group</a>
+            </li><li>
+              <a href="/docs/4.3/components/list-group/">List group</a>
+            </li><li>
+              <a href="/docs/4.3/components/modal/">Modal</a>
+            </li><li>
+              <a href="/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/docs/4.3/components/picker/">Picker</a>
+            </li><li>
+              <a href="/docs/4.3/components/popovers/">Popovers</a>
+            </li><li>
+              <a href="/docs/4.3/components/progress/">Progress</a>
+            </li><li>
+              <a href="/docs/4.3/components/sami/">Sami</a>
+            </li><li>
+              <a href="/docs/4.3/components/select/">Select</a>
+            </li><li>
+              <a href="/docs/4.3/components/tooltips/">Tooltips</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/utilities/clearfix/">
+          <div>Utilities</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/close-icon/">Close icon</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/colors/">Colors</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/display/">Display</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/embed/">Embed</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/image-replacement/">Image replacement</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/position/">Position</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/screenreaders/">Screenreaders</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/sizing/">Sizing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/spacing/">Spacing</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/text/">Text</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/vertical-align/">Vertical align</a>
+            </li><li>
+              <a href="/docs/4.3/utilities/visibility/">Visibility</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/extend/approach/">
+          <div>Extend</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/extend/approach/">Approach</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/docs/4.3/about/overview/">
+          <div>About</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/docs/4.3/about/overview/">Overview</a>
+            </li><li>
+              <a href="/docs/4.3/about/versions/">Versions</a>
+            </li><li>
+              <a href="/docs/4.3/about/license/">License</a>
+            </li><li>
+              <a href="/docs/4.3/about/translations/">Translations</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#radar-charts">Radar charts</a></li>
+<li><a href="#pie-charts">Pie charts</a></li>
+<li><a href="#donut-charts">Donut charts</a></li>
+<li><a href="#bar-charts">Bar charts</a></li>
+<li><a href="#line-charts">Line charts</a>
+<ul>
+<li><a href="#single-line">Single line</a></li>
+<li><a href="#multi-line">Multi line</a></li>
+<li><a href="#dashed-line">Dashed line</a></li>
+<li><a href="#custom-colors">Custom colors</a></li>
+<li><a href="#area">Area</a></li>
+<li><a href="#with-border">With border</a></li>
+<li><a href="#custom-colors-1">Custom colors</a></li>
+</ul></li>
+<li><a href="#maps">Maps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Charts</h1>
+          <p class="bd-lead">Charts</p>
+
+          
+
+<p>Our SNCF design system has 7 types of charts:</p>
+
+<ul>
+<li>curved line charts</li>
+<li>area charts</li>
+<li>line charts</li>
+<li>bar graphs</li>
+<li>pie charts</li>
+<li>ring charts</li>
+<li>progress charts</li>
+</ul>
+
+<div class="bd-callout bd-callout-info">
+<h3 id="how-to-use-programmatic-access">How to use programmatic access ?</h3>
+
+<p>Our charts are based upon <a href="http://www.chartjs.org/docs/latest/">ChartJS library</a> and you can use all the fonctions included and described in their documentation.
+Please note that <strong>you don&rsquo;t</strong> have to load <code>chart.js</code> since it&rsquo;s already included in bootstrap&rsquo;s <code>bootstrap-sncf.min.js</code>.
+</div>
+
+<div class="bd-callout bd-callout-warning">
+<h3 id="using-darkmode">Using darkmode ?</h3>
+
+<p>Global colors will be adjusted but not gridcolor. This one is a parameter <code>data-gridcolor=&quot;rgb(215,215,215,1)&quot;</code> you should change when changing from classic mode to <a href="/docs/4.3/layout/dark-mode/">darkmode</a>. <br />
+Corrects values are gray levels from <a href="/docs/4.3/utilities/colors/">colors</a>, for example :</p>
+
+<ul>
+<li><code>rgb(215,215,215,1)</code> for classic, original mode</li>
+<li><code>rgb(51,51,51,1)</code> for darkmode</li>
+</ul>
+</div>
+
+<h2 id="radar-charts">Radar charts</h2>
+
+<p>Radar charts show the values of different variables.</p>
+
+<div class="bd-example">
+<div class="position-relative"
+    data-component="radar-chart"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin"]'
+    data-values='[[580, 400, 500, 600, 700, 800]]'
+    data-gridcolor="rgb(215,215,215,1)">
+    <canvas>Graphique A</canvas>
+    <a href="#">Description détaillée du graphique A</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;radar-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#39;[[580, 400, 500, 600, 700, 800]]&#39;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique A<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique A<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="pie-charts">Pie charts</h2>
+
+<p>Pie charts show the relative distribution of items in a group.</p>
+
+<div class="bd-example">
+<div class="position-relative" style="width: 500px; height: 500px"
+    data-component="pie-chart"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin"]'
+    data-values='[580, 400, 500, 600, 700, 800]'>
+    <canvas width="500px" height="500px">Graphique B</canvas>
+    <a href="#">Description détaillée du graphique B</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 500px; height: 500px&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;pie-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#39;[580, 400, 500, 600, 700, 800]&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;500px&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;500px&#34;</span><span class="p">&gt;</span>Graphique B<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique B<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="donut-charts">Donut charts</h2>
+
+<div class="bd-example">
+<div class="position-relative" style="width: 340px; height: 340px"
+    data-component="pie-chart"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin"]'
+    data-values='[580, 400, 500, 600, 700, 800]'
+    data-cutoutpercentage="78">
+    <canvas width="340px" height="340px">Graphique C</canvas>
+    <a href="#">Description détaillée du graphique C</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 340px; height: 340px&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;pie-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#39;[580, 400, 500, 600, 700, 800]&#39;</span>
+    <span class="na">data-cutoutpercentage</span><span class="o">=</span><span class="s">&#34;78&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;340px&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;340px&#34;</span><span class="p">&gt;</span>Graphique C<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique C<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="bar-charts">Bar charts</h2>
+
+<p>Bar graphs show changes in a quantity over time. We use them to display quantities measured periodically. There are three types of bar graphs: simple, cumulative and proportional. Simple bar graphs display a single measurement, while cumulative bar graphs display two to thr
+ee measurements per bar. In proportional bar graphs, all bars are the same size but have different proportions for the indicators measured within them.</p>
+
+<div class="bd-example">
+<div class="position-relative"
+    data-component="bar-chart"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août"]'
+    data-values="[[400, 500, 250, 300, 700, 600, 100, 200]]"
+    data-gridcolor="rgb(215,215,215,1)">
+    <div class="chart-head mb-4">
+        <h2 class="font-weight-normal mb-0">Titre de la courbe</h2>
+        <ul class="chart-caption">
+            <li class="chart-caption-item">Libellé 1</li>
+        </ul>
+    </div>
+    <canvas>Graphique D</canvas>
+    <a href="#">Description détaillée du graphique D</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;bar-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[400, 500, 250, 300, 700, 600, 100, 200]]&#34;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-head mb-4&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-normal mb-0&#34;</span><span class="p">&gt;</span>Titre de la courbe<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption-item&#34;</span><span class="p">&gt;</span>Libellé 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique D<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique D<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<div class="position-relative"
+    data-component="bar-chart"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août"]'
+    data-values="[[400, 500, 250, 300, 700, 600, 100, 200],[400, 300, 550, 500, 100, 200, 700, 600]]"
+    data-gridcolor="rgb(215,215,215,1)">
+    <canvas>Graphique E</canvas>
+    <a href="#">Description détaillée du graphique E</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;bar-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[400, 500, 250, 300, 700, 600, 100, 200],[400, 300, 550, 500, 100, 200, 700, 600]]&#34;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique E<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique E<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="line-charts">Line charts</h2>
+
+<p>Line charts represent changes in a specific piece of data over time. We use them to display pieces of data that are measured periodically.</p>
+
+<p>Options:</p>
+
+<ul>
+<li>data-styles : &lsquo;unfilled&rsquo; (by default) or &lsquo;dashed&rsquo;</li>
+<li>data-colors : Array of rgb colors</li>
+</ul>
+
+<h3 id="single-line">Single line</h3>
+
+<div class="bd-example">
+<div class="charts position-relative"
+    data-component="line-chart"
+    data-labels='["Janvier", "Février", "Mars"]'
+    data-values="[[280, 400, 550]]"
+    data-gridcolor="rgb(215,215,215,1)">
+    <div class="chart-head mb-4">
+        <h2 class="font-weight-normal mb-0">Titre de la courbe</h2>
+        <ul class="chart-caption">
+            <li class="chart-caption-item line">Libellé 1</li>
+        </ul>
+    </div>
+    <canvas>Graphique F</canvas>
+    <a href="#">Description détaillée du graphique F</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;charts position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[280, 400, 550]]&#34;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-head mb-4&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-normal mb-0&#34;</span><span class="p">&gt;</span>Titre de la courbe<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption-item line&#34;</span><span class="p">&gt;</span>Libellé 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique F<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique F<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="multi-line">Multi line</h3>
+
+<div class="bd-example">
+<div class="charts position-relative"
+    data-component="line-chart"
+    data-labels='["Janvier", "Février", "Mars"]'
+    data-values="[[280, 400, 550],[200, 380, 430]]"
+    data-gridcolor="rgb(215,215,215,1)">
+    <div class="chart-head mb-4">
+        <h2 class="font-weight-normal mb-0">Titre de la courbe</h2>
+        <ul class="chart-caption">
+            <li class="chart-caption-item line">Libellé 1</li>
+            <li class="chart-caption-item line">Libellé 2</li>
+        </ul>
+    </div>
+    <canvas>Graphique G</canvas>
+    <a href="#">Description détaillée du graphique G</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;charts position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[280, 400, 550],[200, 380, 430]]&#34;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-head mb-4&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-normal mb-0&#34;</span><span class="p">&gt;</span>Titre de la courbe<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption-item line&#34;</span><span class="p">&gt;</span>Libellé 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption-item line&#34;</span><span class="p">&gt;</span>Libellé 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique G<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique G<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="dashed-line">Dashed line</h3>
+
+<div class="bd-example">
+<div class="charts position-relative"
+    data-component="line-chart"
+    data-straightlines="true"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août"]'
+    data-values="[[500, 380, 460, 520, 650, 700, 380, 400],[580, 400, 500, 600, 700, 800, 480, 400]]"
+    data-styles='["unfilled", "dashed"]'
+    data-gridcolor="rgb(215,215,215,1)">
+    <div class="chart-head mb-4">
+        <h2 class="font-weight-normal mb-0">Titre de la courbe</h2>
+        <ul class="chart-caption">
+            <li class="chart-caption-item line">Libellé 1</li>
+            <li class="chart-caption-item dashed">Libellé 2</li>
+        </ul>
+    </div>
+    <canvas>Graphique H</canvas>
+    <a href="#">Description détaillée du graphique H</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;charts position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-straightlines</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[500, 380, 460, 520, 650, 700, 380, 400],[580, 400, 500, 600, 700, 800, 480, 400]]&#34;</span>
+    <span class="na">data-styles</span><span class="o">=</span><span class="s">&#39;[&#34;unfilled&#34;, &#34;dashed&#34;]&#39;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-head mb-4&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-weight-normal mb-0&#34;</span><span class="p">&gt;</span>Titre de la courbe<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption-item line&#34;</span><span class="p">&gt;</span>Libellé 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;chart-caption-item dashed&#34;</span><span class="p">&gt;</span>Libellé 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique H<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique H<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="custom-colors">Custom colors</h3>
+
+<p>Warning : don&rsquo;t forget to update the legend with your own color</p>
+
+<div class="bd-example">
+<div class="charts position-relative"
+    data-component="line-chart"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août"]'
+    data-values="[[580, 400, 500, 600, 700, 800, 480, 400],[500, 380, 460, 520, 650, 700, 380, 300]]"
+    data-colors='["rgb(203, 2, 11)", "rgb(199, 87, 147)"]'
+    data-gridcolor="rgb(215,215,215,1)">
+    <canvas>Graphique I</canvas>
+    <a href="#">Description détaillée du graphique I</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;charts position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[580, 400, 500, 600, 700, 800, 480, 400],[500, 380, 460, 520, 650, 700, 380, 300]]&#34;</span>
+    <span class="na">data-colors</span><span class="o">=</span><span class="s">&#39;[&#34;rgb(203, 2, 11)&#34;, &#34;rgb(199, 87, 147)&#34;]&#39;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique I<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique I<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="area">Area</h3>
+
+<p>Area charts represent changes in a figure calculated over time, e.g., changes in passenger numbers on a rail line over time.</p>
+
+<p>Use data-fill=&ldquo;true&rdquo;</p>
+
+<div class="bd-example">
+<div class="position-relative"
+    data-component="line-chart"
+    data-fill="true"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]'
+    data-values="[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280]]"
+    data-gridcolor="rgb(215,215,215,1)">
+    <canvas> Graphique J</canvas>
+    <a href="#">Description détaillée du graphique J</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-fill</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;, &#34;Septembre&#34;, &#34;Octobre&#34;, &#34;Novembre&#34;, &#34;Décembre&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280]]&#34;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span> Graphique J<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique J<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="with-border">With border</h3>
+
+<p>Use data-straightlines=&ldquo;true&rdquo;</p>
+
+<div class="bd-example">
+<div class="position-relative"
+    data-component="line-chart"
+    data-straightlines="true"
+    data-fill="true"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]'
+    data-values="[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280]]"
+    data-gridcolor="rgb(215,215,215,1)">
+    <canvas>Graphique K</canvas>
+    <a href="#">Description détaillée du graphique K</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-straightlines</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">data-fill</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;, &#34;Septembre&#34;, &#34;Octobre&#34;, &#34;Novembre&#34;, &#34;Décembre&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280]]&#34;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique K<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique K<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="custom-colors-1">Custom colors</h3>
+
+<div class="bd-example">
+<div class="position-relative"
+    data-component="line-chart"
+    data-fill="true"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]'
+    data-values="[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280],[580, 400, 500, 600, 700, 800, 480, 400, 520, 580, 500, 480]]"
+    data-colors='["rgb(203, 2, 11)", "rgb(199, 87, 147)"]'
+    data-gridcolor="rgb(215,215,215,1)">
+    <canvas>Graphique L</canvas>
+    <a href="#">Description détaillée du graphique L</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-fill</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;, &#34;Septembre&#34;, &#34;Octobre&#34;, &#34;Novembre&#34;, &#34;Décembre&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280],[580, 400, 500, 600, 700, 800, 480, 400, 520, 580, 500, 480]]&#34;</span>
+    <span class="na">data-colors</span><span class="o">=</span><span class="s">&#39;[&#34;rgb(203, 2, 11)&#34;, &#34;rgb(199, 87, 147)&#34;]&#39;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique L<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique L<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example">
+<div class="position-relative"
+    data-component="line-chart"
+    data-straightlines="true"
+    data-fill="true"
+    data-labels='["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]'
+    data-values="[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280],[580, 400, 500, 600, 700, 800, 480, 400, 520, 580, 500, 480]]"
+    data-line-colors = '["rgb(7, 138, 206)", "rgb(67, 167, 219)"]'
+    data-gridcolor="rgb(215,215,215,1)">
+    <canvas>Graphique M</canvas>
+    <a href="#">Description détaillée du graphique M</a>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;position-relative&#34;</span>
+    <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;line-chart&#34;</span>
+    <span class="na">data-straightlines</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">data-fill</span><span class="o">=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">data-labels</span><span class="o">=</span><span class="s">&#39;[&#34;Janvier&#34;, &#34;Février&#34;, &#34;Mars&#34;, &#34;Avril&#34;, &#34;Mai&#34;, &#34;Juin&#34;, &#34;Juillet&#34;, &#34;Août&#34;, &#34;Septembre&#34;, &#34;Octobre&#34;, &#34;Novembre&#34;, &#34;Décembre&#34;]&#39;</span>
+    <span class="na">data-values</span><span class="o">=</span><span class="s">&#34;[[500, 380, 460, 520, 650, 700, 380, 300, 480, 460, 400, 280],[580, 400, 500, 600, 700, 800, 480, 400, 520, 580, 500, 480]]&#34;</span>
+    <span class="na">data-line-colors </span><span class="o">=</span> <span class="s">&#39;[&#34;rgb(7, 138, 206)&#34;, &#34;rgb(67, 167, 219)&#34;]&#39;</span>
+    <span class="na">data-gridcolor</span><span class="o">=</span><span class="s">&#34;rgb(215,215,215,1)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span><span class="p">&gt;</span>Graphique M<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Description détaillée du graphique M<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="maps">Maps</h2>
+
+<p>This “map” component can be used for any type of map. Examples include geolocation, zooming, moving around a map, map search features and filtering.</p>
+
+
+          
+            <div class="mt-5">
+    Did you find what you’re looking for ? If not, <a class="btn btn-link" href="/docs/4.3/getting-started/how-to-contribute/">please tell us <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

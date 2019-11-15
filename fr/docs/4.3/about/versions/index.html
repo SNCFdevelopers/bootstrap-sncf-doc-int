@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/about/versions/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Liste des versions et changements specifiques au fork SNCF de Bootstrap.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Versions, changelog · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/about/versions/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#v4-3-1">v4.3.1</a>
+<ul>
+<li><a href="#révision-5-15-11-2019">Révision 5 <em>15/11/2019</em></a></li>
+<li><a href="#révision-4-28-10-2019">Révision 4 <em>28/10/2019</em></a></li>
+<li><a href="#revision-3-15-10-2019">Revision 3 <em>15/10/2019</em></a></li>
+<li><a href="#revision-2-26-09-2019">Revision 2 <em>26/09/2019</em></a></li>
+<li><a href="#revision-1-18-07-2019">Revision 1 <em>18/07/2019</em></a></li>
+<li><a href="#revision-0-08-07-2019">Revision 0 <em>08/07/2019</em></a></li>
+<li><a href="#bootstrap-original-patches">Bootstrap original patches</a></li>
+</ul></li>
+<li><a href="#v4-0-0">v4.0.0</a>
+<ul>
+<li><a href="#revision-6-06-06-2019">Revision 6 <em>06/06/2019</em></a></li>
+<li><a href="#revision-5-24-05-2019">Revision 5 <em>24/05/2019</em></a>
+<ul>
+<li><a href="#migration-guide">Migration guide</a></li>
+</ul></li>
+<li><a href="#revision-4-09-05-2019">Revision 4 <em>09/05/2019</em></a></li>
+<li><a href="#revision-3-02-04-2019">Revision 3 <em>02/04/2019</em></a></li>
+<li><a href="#revision-2-18-03-2019">Revision 2 <em>18/03/2019</em></a></li>
+<li><a href="#revision-1-27-06-2018">Revision 1 <em>27/06/2018</em></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Versions, changelog</h1>
+          <p class="bd-lead">Liste des versions et changements specifiques au fork SNCF de Bootstrap.</p>
+
+          
+
+<div class="bd-callout bd-callout-info">
+<p>Les numéros de versions suivent les versions originales de Bootstrap, suivies du numéro de révision SNCF liée à cette version.
+  Par exemple, <strong>v4.3.1 r5</strong> donne :</p>
+
+<ul>
+<li>révision SNCF <strong>n°5</strong></li>
+<li>de Bootstrap en version <strong>v4.3.1</strong></li>
+</ul>
+
+<p>À chaque changement de version de Bootstrap, la révision SNCF repasse à r0.</p>
+
+</div>
+
+<h2 id="v4-3-1">v4.3.1</h2>
+
+<h3 id="révision-5-15-11-2019">Révision 5 <em>15/11/2019</em></h3>
+
+<ul>
+<li>Correction du format de data-default-date format pour le picker (devrait être jj/mm/yyyy)</li>
+<li>Correction des liens pour les favicons <strong>MIGRATION NÉCESSAIRE</strong> remplacez <code>docs</code> par <code>brand</code> dans le chemins des assets des favicons (consultez la documentation pour référence)</li>
+</ul>
+
+<h3 id="révision-4-28-10-2019">Révision 4 <em>28/10/2019</em></h3>
+
+<ul>
+<li>Correction bug Select Additionnal input</li>
+<li>Correction bug positionnement des checkbox <strong>MIGRATION NÉCESSAIRE</strong> List-group, tables : il faut ajouter la classe <code>custom-checkbox-alone</code> au parent de <code>&lt;input type=&quot;checkbox&quot;&gt;</code></li>
+<li>Ajout d&rsquo;un sélecteur de mois/année dans le picker</li>
+<li>Mise à jour documentation analytics</li>
+<li>La documentation est générée avec HUGO désormais</li>
+<li>Traduction française</li>
+</ul>
+
+<div class="bd-callout bd-callout-info">
+La traduction française du changelog antérieur à celle de la documentation ne nous a pas semblé pertinente.
+  Si jamais vous aviez néanmoins besoin que celle-ci soit réalisée, n&rsquo;hésitez pas à nous en parler.
+</div>
+
+<h3 id="revision-3-15-10-2019">Revision 3 <em>15/10/2019</em></h3>
+
+<ul>
+<li>Added Select Native (without javascript)</li>
+</ul>
+
+<h3 id="revision-2-26-09-2019">Revision 2 <em>26/09/2019</em></h3>
+
+<ul>
+<li>Added style &amp; main in package.json for NPM</li>
+</ul>
+
+<h3 id="revision-1-18-07-2019">Revision 1 <em>18/07/2019</em></h3>
+
+<ul>
+<li>Added SNCF&rsquo;s guidelines on <a href="/fr/docs/4.3/getting-started/accessibility">Accessibility page</a></li>
+<li>Added SNCF&rsquo;s guidelines on <a href="/fr/docs/4.3/getting-started/analytics-tracking">new Analytics page</a></li>
+<li>Added unminified versions of CSS &amp; JS in releases (zip, npm)</li>
+<li>Added &ldquo;no external&rdquo; version of JS bundle</li>
+<li>Corrected <code>.min.</code> filename for documentation&rsquo;s CSS &amp; JS</li>
+<li>Some other minor corrections</li>
+</ul>
+
+<h3 id="revision-0-08-07-2019">Revision 0 <em>08/07/2019</em></h3>
+
+<ul>
+<li>Added flags pictures (svg) for languages links (french, english &amp; german)</li>
+<li>Added switches for hiding source code + global switch</li>
+<li>Added new settings menu for darkmode &amp; hidesource</li>
+<li>Some very minors corrections &amp; adjustements</li>
+</ul>
+
+<h3 id="bootstrap-original-patches">Bootstrap original patches</h3>
+
+<p>Major overhaul with original Bootstrap&rsquo;s patches. Here is a non-exhaustive list with major features/corrections, only thoses compatibles with SNCF&rsquo;s Design (although all code is always present for compatibility issues).</p>
+
+<ul>
+<li>Security fixes (see ship lists below for more details)</li>
+<li>Added new <code>.flex-fill</code>, <code>.flex-grow-*</code>, and <code>.flex-shrink-*</code> utilities.</li>
+<li>Added new <code>.text-monospace</code> utility.</li>
+<li><code>.form-controls</code> now have a fixed height to compensate for differences in computed height across different types. This also fixes some IE alignment issues.</li>
+<li>Added new negative margin utility classes (e.g., <code>.mb-n3</code>). These rad new classes not only allow you more control over your general spacing needs, but also allow you to create responsive grid gutters at each breakpoint.</li>
+<li>Added <code>.modal-xl</code> modifier class for our modals.</li>
+<li>Added <code>.text-break</code> utility for applying <code>word-break: break-word</code></li>
+<li>Added <code>.modal-dialog-scrollable</code> modifier class for scrolling content within a modal.</li>
+<li>img-retina, invisible, float, and size mixins are now deprecated and will be removed in v5.</li>
+</ul>
+
+<p><strong>Original Bootstrap&rsquo;s incremental ship lists</strong></p>
+
+<ul>
+<li><a href="https://github.com/twbs/bootstrap/issues/27893">v4.3.1</a></li>
+<li><a href="https://github.com/twbs/bootstrap/issues/26952">v4.2.0</a></li>
+<li><a href="https://github.com/twbs/bootstrap/issues/26867">v4.1.3</a></li>
+<li><a href="https://github.com/twbs/bootstrap/issues/26423">v4.1.2</a></li>
+<li><a href="https://github.com/twbs/bootstrap/issues/25971">v4.1.1</a></li>
+<li><a href="https://github.com/twbs/bootstrap/issues/25375">v4.1.0</a></li>
+</ul>
+
+<h2 id="v4-0-0">v4.0.0</h2>
+
+<h3 id="revision-6-06-06-2019">Revision 6 <em>06/06/2019</em></h3>
+
+<p>General</p>
+
+<ul>
+<li>Added <a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/layout/navbars#use-metier-signature-logos">Métier&rsquo;s signatures</a> for navbar</li>
+<li>Added <a href="/fr/docs/4.3/components/icons#rotation">icons-rotate</a> for correct alignement of sort icon in table heading</li>
+<li>Updated <a href="/fr/docs/4.3/utilities/colors">colors page</a> with all variants</li>
+<li>Corrected lots of cursors issues</li>
+</ul>
+
+<h3 id="revision-5-24-05-2019">Revision 5 <em>24/05/2019</em></h3>
+
+<p>General</p>
+
+<ul>
+<li>Added <a href="/fr/docs/4.3/layout/dark-mode">Dark mode</a></li>
+</ul>
+
+<p>Documentation</p>
+
+<ul>
+<li>Communication&rsquo;s Footer is in layout tab</li>
+</ul>
+
+<h4 id="migration-guide">Migration guide</h4>
+
+<div class="bd-callout bd-callout-warning">
+<h4 id="please-apply-theses-modifications-in-your-project-if-you-re-coming-from-version-prior-to-v4-0-0-r5">Please apply theses modifications in your project if you&rsquo;re coming from version prior to v4.0.0-r5</h4>
+
+<p>Some of markup has to be changed, to ensure your project will correctly be displayed in dark mode style, please follow thoses simples indications (we&rsquo;ve essentially changed <code>bg-light</code> or <code>text-white</code> for some components to ensure that color will change with each of CSS files, so you won&rsquo;t have to change your HTML markup when going between light or dark modes)</p>
+
+<ul>
+<li><a href="/fr/docs/4.3/components/input-group">input-group</a> : remove <code>text-right</code> in <em>Button and select addons</em> section</li>
+<li><a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/components/popovers">popover</a> : add <code>class=&quot;btn btn-link&quot;</code></li>
+</ul>
+
+<p><strong>Design métier</strong></p>
+
+<ul>
+<li><a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/components/alerts">alert</a> : remove <code>text-white</code> from <code>&lt;h2&gt;</code></li>
+<li><a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/components/charts">charts</a> : add <code>data-gridcolor=&quot;rgb(51,51,51,1)&quot;</code> if you want to change grid color behind charts</li>
+<li><a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/components/list-group">list-double-columns</a> : replace <code>bg-light</code> by <code>list-group-double-panel-title</code></li>
+<li><a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/components/list-group">list-group</a> : remove <code>bg-light</code></li>
+<li><a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/components/sami">sami</a> : ordering colors have changed</li>
+<li><a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/content/tables#table-with-groups">table-group</a>, <a href="https://designmetier-bootstrap.sncf.fr/fr/docs/4.3/components/alerts">tables</a> : header first case should be <code>&lt;th&gt;</code> instead of <code>&lt;td&gt;</code> when checkbox inside</li>
+</ul>
+
+<p><strong>Design communication</strong></p>
+
+<ul>
+<li><a href="https://design-bootstrap.sncf.fr/fr/docs/4.3/components/carousel">carousel</a> : <code>bg-light</code> becomes <code>bg-carousel</code></li>
+<li><a href="https://design-bootstrap.sncf.fr/fr/docs/4.3/components/edito#contact">contact</a> : <code>bg-light</code> becomes <code>edito-contact-bg</code></li>
+<li><a href="https://design-bootstrap.sncf.fr/fr/docs/4.3/components/edito">edito</a> : <code>bg-light</code> becomes <code>edito-push-highlight-bg</code><br />
+remove <code>text-gray500</code> in header</li>
+<li><a href="https://design-bootstrap.sncf.fr/fr/docs/4.3/examples/navigation">navigation extern example</a> : remove <code>bg-white</code> in <code>mastcontent</code><br />
+remove <code>text-white</code> in <code>&lt;h3&gt;</code></li>
+<li><a href="https://design-bootstrap.sncf.fr/fr/docs/4.3/layout/navs#actionbar">navs/actionbar</a> : remove all <code>text-white</code> from <code>&lt;h3&gt;</code></li>
+<li><a href="https://design-bootstrap.sncf.fr/fr/docs/4.3/components/edito#packshot">packshot</a> : <code>bg-light</code> becomes <code>edito-packshot</code><br />
+remove <code>text-gray500</code> in header <code>&lt;h3&gt;</code></li>
+<li><a href="https://design-bootstrap.sncf.fr/fr/docs/4.3/components/vignette">vignette</a> : <code>bg-white</code> becomes <code>vignette-bg</code><br />
+remove <code>text-gray500</code> in header <code>&lt;h3&gt;</code></li>
+</ul>
+
+</div>
+
+<h3 id="revision-4-09-05-2019">Revision 4 <em>09/05/2019</em></h3>
+
+<p>General</p>
+
+<ul>
+<li>Added <a href="https://www.npmjs.com/org/sncf">NPM Package</a> automatic delivery</li>
+<li>Added <a href="https://github.com/SNCFdevelopers/bootstrap-sncf/releases">GitHub Release</a> automatic delivery</li>
+<li>End of accessibility corrections</li>
+</ul>
+
+<p>Corrections</p>
+
+<ul>
+<li>Restored datetimepicker native on portable devices</li>
+<li>Dropdown menu forced down on mobile breakpoints</li>
+<li>Some security corrections on dependencies</li>
+<li>As usual, lots of minor corrections and minor doc updates (see issues)</li>
+</ul>
+
+<h3 id="revision-3-02-04-2019">Revision 3 <em>02/04/2019</em></h3>
+
+<p>General</p>
+
+<ul>
+<li>Once again, lots of minors corrections &amp; enhancements for accessibility</li>
+<li>Minor cosmetics or docs updates</li>
+</ul>
+
+<p>Corrections</p>
+
+<ul>
+<li>Added IE11 compatibility fix and howto</li>
+<li>Vertical alignement of icons in Buttons Links</li>
+<li>Translation of Graphic Boards</li>
+</ul>
+
+<h3 id="revision-2-18-03-2019">Revision 2 <em>18/03/2019</em></h3>
+
+<p>General</p>
+
+<ul>
+<li>Lots (LOTS !) of minors corrections &amp; enhancements for accessibility</li>
+</ul>
+
+<p>Docs</p>
+
+<ul>
+<li>Search activated (by <a href="https://www.algolia.com/">Algolia</a>)</li>
+<li>Lots of minors corrections for accessibility</li>
+<li><a href="/fr/docs/4.3/content/favicon/">Favicon</a> &amp; how to use added</li>
+</ul>
+
+<p>Corrections</p>
+
+<ul>
+<li>Charts : vertical line on hover, and many others improvements</li>
+<li>DateTime Picker : Time is visible with date when popup fired</li>
+<li>Design Métier : Mastheader dropdown : mobile version corrected</li>
+<li>IE11 compatibility fixed</li>
+<li>Select : asynchrone loading fixed</li>
+<li>Design Métier : Tabs : mobile version fixed</li>
+</ul>
+
+<p>And many other minor corrections (please consult <a href="https://github.com/SNCFdevelopers/bootstrap-sncf/issues?q=is%3Aissue+is%3Aclosed">list of closed issues</a> or <a href="https://github.com/SNCFdevelopers/bootstrap-sncf/commits/master">commits</a> for more details).</p>
+
+<h3 id="revision-1-27-06-2018">Revision 1 <em>27/06/2018</em></h3>
+
+<p>Initial version forked from original Bootstrap.</p>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,691 @@
+
+
+<html lang="<no value>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tables Pagination</title>
+
+    <script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+  </head>
+  <body>
+    <nav role="navigation" class="mastnav">
+  <ul class="mastnav-top">
+    <li>
+      <a href="#" class="mastnav-item active">
+        <i class="icons-bookmark icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Favoris</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-file icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Collections</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-document icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Ma base documentaire</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-distribution icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Distribution</span>
+      </a>
+    </li>
+    <li class="d-none d-lg-flex">
+      <a href="#" class="mastnav-item">
+        <i class="icons-admin icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Admin</span>
+      </a>
+    </li>
+    <li class="d-lg-none">
+      <button type="button" class="mastnav-item options-menu-btn" data-component="state" data-state="active, active" data-behaviour="toggle, toggle" data-target=".options-menu-btn, .options-menu">
+        <i class="icons-options icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Plus</span>
+      </button>
+    </li>
+  </ul>
+  <div class="mastnav-bottom d-none d-lg-block">
+    <a href="#" class="mastnav-item mastnav-item-horizontal">
+      <i class="icons-support icons-size-1x5" aria-hidden="true"></i>
+      <span class="font-weight-medium">Support</span>
+    </a>
+  </div>
+</nav>
+    <div class="mastheader">
+  <div class="mastheader-logo">
+    <a href="/docs/4.3/examples">
+      <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" />
+    </a>
+  </div>
+  <header role="banner" class="mastheader-title d-none d-xl-block">
+    <h1 class="text-white text-uppercase pt-2 pl-3 mb-0">Nom application</h1>
+  </header>
+  <div class="mastheader-search pr-md-4 pl-md-4" data-component="searchbar">
+    <label class="font-weight-medium text-white pr-3 mb-0">Rechercher</label>
+    <div class="input-group align-items-center">
+      <div class="form-control-container" data-component="control" data-clear-option="true">
+        <input role="search" type="search" class="form-control clear-option" data-role="input" data-placeholder="Rechercher" />
+        <span class="form-control-state"></span>
+        <button type="button" class="btn-clear btn-primary d-none" data-btn="clear">
+          <span class="sr-only">Clear text</span>
+          <i class="icons-close" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="input-group-append input-group-last">
+        <button type="button" class="btn btn-primary btn-only-icon">
+            <span class="sr-only">Search</span>
+          <i class="icons-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <button type="button" class="btn btn-only-icon btn-white d-block d-md-none" data-role="close">
+        <span class="sr-only">Close search</span>
+        <i class="icons-close icons-size-1x25" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <ul class="mastheader-toolbar toolbar mb-0">
+    <li class="toolbar-item separator-gray-500 d-none d-md-flex">
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-transparent dropdown-toggle btn-notif toolbar-item-spacing" type="button" id="notifMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="-4, 0">
+          <span class="sr-only">Alert</span>
+          <i class="icons-alert-notification icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+          <span class="notif">1</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg" aria-labelledby="notifMenuButton">
+          <div class="d-flex justify-content-between gx-3 gy-2">
+            <div class="font-weight-medium text-uppercase">Notifications</div>
+            <a href="#">Paramètres</a>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </li>
+    <li class="toolbar-item separator-gray-500 no-separator d-flex d-md-none">
+      <button type="button" class="btn btn-only-icon toolbar-item-spacing" data-component="searchbar-toggle">
+        <span class="sr-only">Open search</span>
+        <i class="icons-search icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+      </button>
+    </li>
+    <li class="toolbar-item separator-gray-500">
+      <div class="btn-group dropdown">
+        <button class="btn btn-transparent dropdown-toggle toolbar-item-spacing" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="1, 5" aria-controls="mycontrol">
+          <i class="icons-menu-account icons-size-1x25 icons-md-size-1x5 mr-xl-2" aria-hidden="true"></i>
+          <span class="d-none d-xl-block">Pierre Dumont</span>
+          <i class="icons-arrow-down d-none d-xl-block" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownMenuButton" id="mycontrol">
+          <ul>
+            <li class="dropdown-item"><a href="#">Paramètre du compte</a></li>
+            <li class="dropdown-item"><a href="#">Préférences</a></li>
+            <li id="darkmode-btn" class="dropdown-item darkmode-btn"><a href="#">Mode sombre/clair</a></li>
+            <li class="dropdown-item"><a href="#">Se déconnecter</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="actionbar">
+      <div class="actionbar-head">
+        <h1 class="mb-0">Titre tableau</h1>
+        <ul class="toolbar mb-0">
+          <li class="toolbar-item">
+            <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing">
+              <span class="sr-only">Edit</span>
+              <i class="icons-pencil icons-size-1x25" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="toolbar-item">
+            <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing">
+              <span class="sr-only">List</span>
+              <i class="icons-list icons-size-1x25" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="toolbar-item d-none d-md-block">
+            <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing collapseFiltersButton" data-component="state" data-state="active, active" data-behaviour="toggle, toggle" data-target="#collapseFiltersMenu, .collapseFiltersButton" data-closeonclickoutside="true, true">
+              <span class="sr-only">Filters</span>
+              <i class="icons-filters icons-size-1x25" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="controlbar">
+      <div class="toolbar w-100">
+        <div class="w-50 toolbar-item separator-gray-200">
+          <button type="button" class="btn btn-block btn-link justify-content-center btn-color-gray collapseFiltersButton" data-component="state" data-state="active, active" data-behaviour="toggle, toggle" data-target="#collapseFiltersMenu, .collapseFiltersButton" data-closeonclickoutside="true, true">Filtrer</button>
+        </div>
+        <div class="w-50 toolbar-item separator-gray-200 w-50">
+          <button type="button" class="btn btn-block btn-link justify-content-center btn-color-gray collapseSortsButton" data-component="state" data-state="active, active" data-behaviour="toggle, toggle" data-target="#collapseSortsMenu, .collapseSortsButton">Trier</button>
+        </div>
+      </div>
+    </div>
+
+    <main role="main" class="mastcontainer">
+      <div class="table-wrapper has-footerbar" data-component="table">
+  <div class="table-scroller last-cell-fixed dragscroll">
+    <table class="table mb-0">
+      <caption class="sr-only">Titre</caption>
+      <thead class="thead thead-light">
+        <tr>
+          <th scope="col"><div class="cell-inner cell-inner-350">Nom</div></th>
+          <th scope="col"><div class="cell-inner">Type</div></th>
+          <th scope="col"><div class="cell-inner">Vers</div></th>
+          <th scope="col"><div class="cell-inner">Agent</div></th>
+          <th scope="col"><div class="cell-inner">Mise à jour</div></th>
+          <td class="cell-placeholder" aria-hidden="true"><span></span></td>
+          <th class="cell-fixed"><span class="sr-only">Actions</span></th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="0"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">1</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">4 Avril 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle0">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle0">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="1"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">2</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">18 Mars 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle1">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle1">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="2"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">1</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">4 Avril 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle2">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle2">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="3"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">2</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">18 Mars 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle3">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle3">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="4"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">2</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">18 Mars 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle4">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle4">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="5"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">2</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">18 Mars 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle5">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle5">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="6"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">2</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">18 Mars 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle6">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle6">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="7"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">2</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">18 Mars 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle7">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle7">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+            <tr class="trhead">
+              <td class="cell-350 cell-caret" data-role="toggle-group-btn" data-id="8"><div class="cell-inner">Aorem ipsum dolor sit amet</div></td>
+              <td><div class="cell-inner">Aenean commodo</div></td>
+              <td><div class="cell-inner">2</div></td>
+              <td><div class="cell-inner">Léon MICHEL</div></td>
+              <td><div class="cell-inner">18 Mars 2017</div></td>
+              <td class="cell-placeholder"><span></span></td>
+              <td class="cell-fixed">
+                <div class="cell-inner btn-group dropdown">
+                  <button class="btn btn-only-icon btn-transparent btn-color-gray" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" aria-controls="toggle8">
+                    <span class="sr-only">Actions</span>
+                    <i class="icons-options icons-size-1x75" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" id="toggle8">
+                    <button type="button" class="dropdown-item" href="#">Télécharger</button>
+                    <button type="button" class="dropdown-item" href="#">Imprimer</button>
+                    <button type="button" class="dropdown-item" href="#">Partager</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footerbar d-none d-md-flex align-items-center justify-content-end">
+    <div class="pr-3">
+      <div class="select-improved select-improved-up" data-component="select-exclusive">
+        <div class="select-control">
+          <div class="input-group" data-role="select-toggle">
+            <div class="form-control is-placeholder" data-role="placeholder">
+              Sélectionner un secteur
+            </div>
+            <select class="sr-only" id="exampleFormControlSelect1" data-role="input" tabindex="-1" aria-hidden="true">
+              <option data-id="1" selected>Afficher 50 lignes par page</option>
+              <option data-id="2">Sem Inceptos Tellus</option>
+              <option data-id="3">Sollicitudin Adipiscing Mattis</option>
+              <option data-id="4">Amet Porta</option>
+              <option data-id="5">Pharetra Fusce Venenatis</option>
+            </select>
+            <div class="input-group-append input-group-last">
+              <button class="btn btn-primary btn-only-icon" data-role="btn" type="button">
+                <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="select-menu" data-role="menu">
+            <button class="select-menu-item" data-role="value" data-target="1">Sem Inceptos Tellus</button>
+            <button class="select-menu-item" data-role="value" data-target="2">Sem Inceptos Tellus</button>
+            <button class="select-menu-item" data-role="value" data-target="3">Sollicitudin Adipiscing Mattis</button>
+            <button class="select-menu-item" data-role="value" data-target="4">Amet Porta</button>
+            <button class="select-menu-item" data-role="value" data-target="5">Pharetra Fusce Venenatis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination mb-0">
+        <li class="page-item page-skip">
+          <a class="page-link" href="#" aria-label="Previous">
+            <i class="icons-arrow-prev icons-size-x75" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item page-skip">
+          <a class="page-link" href="#" aria-label="Next">
+            <i class="icons-arrow-next icons-size-x75" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+    </main>
+
+    
+
+<div id="collapseFiltersMenu" class="table-filters">
+  <div class="table-filters-head">
+    <div class="table-filters-title">Filtrer par</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing">
+          <span class="sr-only">Restore</span>
+          <i class="icons-refresh icons-size-1x25" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-component="state" data-state="active, active" data-behaviour="remove, remove" data-target="#collapseFiltersMenu, .collapseFiltersButton">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="table-filters-menu">
+    <div class="filters-group">
+      <div class="filters-group-head" data-toggle="collapse" data-target="#collapseExample1">
+        <div class="filters-group-title text-uppercase">Catégorie 1</div>
+        <div class="filters-group-toggle text-primary">
+          <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div id="collapseExample1" class="collapse filters-group-content">
+        <div class="filters-menu-item has-hover">
+          
+          
+          
+          
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="filters" class="custom-control-input" id="filter1" ZgotmplZ>
+  <label class="custom-control-label" for="filter1">Filtre lorem ipsum (29)</label>
+</div>
+
+        </div>
+        <div class="filters-menu-item has-hover">
+          
+          
+          
+          
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="filters" class="custom-control-input" id="filter2" checked>
+  <label class="custom-control-label" for="filter2">Filtre lorem ipsum (16)</label>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="filters-group">
+      <div class="filters-group-head" data-toggle="collapse" data-target="#collapseExample2">
+        <div class="filters-group-title text-uppercase">Catégorie 2</div>
+        <div class="filters-group-toggle text-primary">
+          <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div id="collapseExample2" class="collapse filters-group-content">
+        <div class="filters-menu-item has-hover">
+          
+          
+          
+          
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="filters" class="custom-control-input" id="filter3" ZgotmplZ>
+  <label class="custom-control-label" for="filter3">Filtre lorem ipsum (10)</label>
+</div>
+
+        </div>
+        <div class="filters-menu-item has-hover">
+          
+          
+          
+          
+          <div class="custom-control custom-checkbox ">
+  <input type="checkbox" name="filters" class="custom-control-input" id="filter4" ZgotmplZ>
+  <label class="custom-control-label" for="filter4">Filtre lorem ipsum (6)</label>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+<div id="collapseSortsMenu" class="table-filters">
+  <div class="table-filters-head">
+    <div class="table-filters-title">Trier par</div>
+    <ul class="toolbar mb-0">
+      <li class="toolbar-item">
+        <button class="btn btn-sm btn-white toolbar-item-spacing" data-component="state" data-state="active, active" data-behaviour="remove, remove" data-target="#collapseSortsMenu, .collapseSortsButton">
+          <span class="sr-only">Close</span>
+          <i class="icons-close icons-size-1x" aria-hidden="true"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="table-filters-menu">
+    <div class="filters-group">
+      <div class="filters-menu-item">
+        
+        
+        
+        
+        <div class="custom-control custom-radio ">
+  <input type="radio" name="" class="custom-control-input" id="" ZgotmplZ>
+  <label class="custom-control-label" for=""></label>
+</div>
+
+      </div>
+      <div class="filters-menu-item">
+        
+        
+        
+        
+        <div class="custom-control custom-radio ">
+  <input type="radio" name="" class="custom-control-input" id="" ZgotmplZ>
+  <label class="custom-control-label" for=""></label>
+</div>
+
+      </div>
+      <div class="filters-menu-item">
+        
+        
+        
+        
+        <div class="custom-control custom-radio ">
+  <input type="radio" name="" class="custom-control-input" id="" ZgotmplZ>
+  <label class="custom-control-label" for=""></label>
+</div>
+
+      </div>
+      <div class="filters-menu-item">
+        
+        
+        
+        
+        <div class="custom-control custom-radio ">
+  <input type="radio" name="" class="custom-control-input" id="" ZgotmplZ>
+  <label class="custom-control-label" for=""></label>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="/bootstrap-sncf.js"></script>
+    </body>
+</html>
+
+

@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="fr" class="bd-docs">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="en" href="/docs/4.3/components/modal/" title="English">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Utilisez le plugin JavaScript modal de Bootstrap pour ajuster des boîtes de dialogue sur votre site pour les Lightbox, les notifications des utilisateurs ou un contenu entièrement personnalisé.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="fr">
+<meta name="docsearch:version" content="4.3">
+
+<title>Fenêtres modales · Bootstrap Métier</title>
+
+<!-- Documentation extras -->
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/fr/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/fr/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/fr/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Exemples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/fr/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Paramètres</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Mode sombre</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Inactif</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Actif</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Code source</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Afficher</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Masquer</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Langue</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="/docs/4.3/components/modal/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="fr" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> Anglais</label>
+                                </a>
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="fr" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> Français</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Télécharger</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <form class="form-control-container has-left-icon">
+    <input role="search" type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off">
+    <span class="form-control-state"></span>
+    <span class="form-control-icon"><i class="icons-search"></i></span>
+  </form>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><ul class="list-unstyled">
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/getting-started/introduction/">
+          <div>Bien démarrer</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/getting-started/introduction/">Introduction</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/download/">Téléchargement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/accessibility/">Accessibilité</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/analytics-tracking/">Analytics tracking</a>
+            </li><li>
+              <a href="/fr/docs/4.3/getting-started/how-to-contribute/">Comment contribuer</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/graphic-boards/">
+          <div>Graphic boards</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/layout/vue-densemble/">
+          <div>Mise en page</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/layout/overview/">Vue d&#39;ensemble</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navbars/">Barres de navigation</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/grid/">Grille</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/dark-mode/">Mode sombre</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/navs/">Navigation, onglets</a>
+            </li><li>
+              <a href="/fr/docs/4.3/layout/utilities-for-layout/">Utilitaires de mise en page</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/content/reboot/">
+          <div>Contenu</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/content/reboot/">Reboot</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/typography/">Typographie</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/code/">Code</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/images/">Images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/figures/">Figures</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/tables/">Tables</a>
+            </li><li>
+              <a href="/fr/docs/4.3/content/favicon/">Favicon</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group active js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/components/alertes/">
+          <div>Composants</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/components/alerts/">Alertes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/badges/">Badges</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/progress/">Barres de progression</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/buttons/">Boutons</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/popovers/">Bulles contextuelles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/cards/">Cartes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/checkboxes-and-radios/">Cases à cocher, boutons radio</a>
+            </li><li class="active bd-sidenav-active">
+              <a href="/fr/docs/4.3/components/modal/">Fenêtres modales</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/breadcrumb/">Fil d&#39;ariane</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/forms/">Formulaires</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/charts/">Graphiques</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/input-group/">Groupes de saisies</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/list-group/">Groupes de listes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/icons/">Icônes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/tooltips/">Infos-bulles</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/select/">Listes déroulantes</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/dropdowns/">Menus déroulants</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/pagination/">Pagination</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/picker/">Sélécteur de dates</a>
+            </li><li>
+              <a href="/fr/docs/4.3/components/sami/">Sami</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/utilities/affichage/">
+          <div>Utilitaires</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/utilities/display/">Affichage</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/vertical-align/">Alignement Vertical</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/clearfix/">Clearfix</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/colors/">Couleurs</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/sizing/">Dimensions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/spacing/">Espacement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/flex/">Flex</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/float/">Float</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/close-icon/">Icône de fermeture</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/embed/">Intégration</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/screenreaders/">Lecteurs d&#39;écrans</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/position/">Positionnement</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/image-replacement/">Remplacement d&#39;images</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/text/">Texte</a>
+            </li><li>
+              <a href="/fr/docs/4.3/utilities/visibility/">Visibilité</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/extend/approche/">
+          <div>Extension</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/extend/approach/">Approche</a>
+            </li>
+        </ul>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/migration/">
+          <div>Migration</div>
+        </a>
+      </li>
+
+      <li class="bd-sidenav-group  js-sidenav-group has-children">
+        <a class="d-inline-flex align-items-center bd-sidenav-group-link" href="/fr/docs/4.3/about/%C3%A9quipe-historique/">
+          <div>À propos</div>
+        </a>
+        <ul class="nav bd-sidenav flex-column mb-2"><li>
+              <a href="/fr/docs/4.3/about/overview/">Équipe, Historique</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/license/">Licence</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/translations/">Traductions</a>
+            </li><li>
+              <a href="/fr/docs/4.3/about/versions/">Versions</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#comment-ça-marche">Comment ça marche</a></li>
+<li><a href="#exemples">Exemples</a>
+<ul>
+<li><a href="#composants-fenêtres-modales-classiques">Composants fenêtres modales classiques</a></li>
+<li><a href="#démonstration">Démonstration</a></li>
+<li><a href="#télécharger-un-fichier">Télécharger un fichier</a></li>
+<li><a href="#formulaire-dans-une-fenêtre-modale">Formulaire dans une fenêtre modale</a></li>
+<li><a href="#utiliser-la-grille">Utiliser la grille</a></li>
+<li><a href="#variation-du-contenu-de-la-fenêtre-modale">Variation du contenu de la fenêtre modale</a></li>
+<li><a href="#supprimer-l-animation">Supprimer l&rsquo;animation</a></li>
+<li><a href="#hauteurs-dynamiques">Hauteurs dynamiques</a></li>
+<li><a href="#accessibilité">Accessibilité</a></li>
+<li><a href="#intégration-de-vidéos-youtube">Intégration de vidéos YouTube</a></li>
+</ul></li>
+<li><a href="#options-de-tailles">Options de tailles</a></li>
+<li><a href="#utilisation">Utilisation</a>
+<ul>
+<li><a href="#via-des-attributs-de-données">Via des attributs de données</a></li>
+<li><a href="#via-javascript">Via JavaScript</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#méthodes">Méthodes</a>
+<ul>
+<li><a href="#modal-options"><code>.modal(options)</code></a></li>
+<li><a href="#modal-toggle"><code>.modal('toggle')</code></a></li>
+<li><a href="#modal-show"><code>.modal('show')</code></a></li>
+<li><a href="#modal-hide"><code>.modal('hide')</code></a></li>
+<li><a href="#modal-handleupdate"><code>.modal('handleUpdate')</code></a></li>
+<li><a href="#modal-dispose"><code>.modal('dispose')</code></a></li>
+</ul></li>
+<li><a href="#évènements">Évènements</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Fenêtres modales</h1>
+          <p class="bd-lead">Utilisez le plugin JavaScript modal de Bootstrap pour ajuster des boîtes de dialogue sur votre site pour les Lightbox, les notifications des utilisateurs ou un contenu entièrement personnalisé.</p>
+
+          
+
+<h2 id="description">Description</h2>
+
+<p>Les alertes avec des fenêtres modales sont utilisées pour afficher des informations importantes au lecteur ou pour demander une confirmation de continuer une tâche. Le premier type d’alerte affiche un message et ne nécessite aucune prise de décision de la part de l&rsquo;utilisateur. La fenêtre peut être fermée en cliquant sur le x ou en dehors du modal. Le second type nécessite que l&rsquo;utilisateur réponde en choisissant de poursuivre ou non l&rsquo;action.</p>
+
+<h2 id="comment-ça-marche">Comment ça marche</h2>
+
+<p>Avant de commencer avec le composant modal de Bootstrap, veillez à lire les informations suivantes car nos options de menu ont récemment été modifiées.</p>
+
+<ul>
+<li>Les modaux sont construits avec HTML, CSS et JavaScript. Ils sont positionnés par-dessus tout le reste du document et suppriment le défilement du <code>&lt;body&gt;</code> afin que le contenu de la fenêtre modale défile à la place.</li>
+<li>Un clic sur le «fond» de la fenêtre modale la fermera automatiquement.</li>
+<li>Bootstrap ne prend en charge qu’une fenêtre modale à la fois. Les modaux imbriqués ne sont pas pris en charge car nous pensons qu’ils nuisent à l&rsquo;expérience utilisateur.</li>
+<li>Les fenêtres modales utilisent <code>position: fixed</code>, qui peut parfois rendre particulier le rendu. Dans la mesure du possible, placez votre code HTML modal au plus haut niveau pour éviter toute interférence éventuelle d&rsquo;autres éléments. Vous rencontrerez probablement des problèmes lors de l’imbrication d’un fichier <code>.modal</code> dans un autre élément fixe.</li>
+<li>Encore une fois, en raison de la classe <code>position: fixed</code>,  l&rsquo;utilisation de modaux sur des appareils mobiles pose certains problèmes.</li>
+<li>En raison de la manière dont HTML5 définit sa sémantique, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus">l&rsquo;attribut HTML <code>autofocus</code></a> n&rsquo;a aucun effet dans les fenêtres modales Bootstrap. Pour obtenir le même effet, utilisez du code JavaScript personnalisé :</li>
+</ul>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;shown.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myInput&#39;</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;focus&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div>
+
+<p>Continuez la lecture pour voir les démonstrations et les consignes d&rsquo;utilisation.</p>
+
+<h2 id="exemples">Exemples</h2>
+
+<h3 id="composants-fenêtres-modales-classiques">Composants fenêtres modales classiques</h3>
+
+<p>Vous trouverez ci-dessous un exemple de fenêtre modale <em>statique</em> (ce qui veut dire que <code>position</code> et <code>display</code> ont été surchargées). Sont inclus l&rsquo;en-tête de la fenêtre modale, son corps principal (requis pour <code>padding</code>), et le pied de page (optionnel). Nous vous demandons d&rsquo;inclure des en-têtes de mode avec des actions de rejet dès que possible ou de fournir une autre action explicite de renvoi.</p>
+
+<div class="bd-example bd-example-modal">
+  <div class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="h1 modal-title" id="exampleModalLabel1">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse incidunt officia accusantium facilis dolorem maxime, id numquam, nulla itaque velit quos fugit non placeat laboriosam, doloremque quo earum repellendus nesciunt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel2&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;h1 modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel2&#34;</span><span class="p">&gt;</span>Modal title<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Close&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Modal body text goes here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="bd-example bd-example-modal">
+  <div class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="h1 modal-title" id="exampleModalLabel3">Modal title</h5>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse incidunt officia accusantium facilis dolorem maxime, id numquam, nulla itaque velit quos fugit non placeat laboriosam, doloremque quo earum repellendus nesciunt.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <a href="#" class="btn btn-primary">Continuer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel4&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;h1 modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel4&#34;</span><span class="p">&gt;</span>Modal title<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Modal body text goes here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-footer&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span><span class="p">&gt;</span>Save changes<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span>Close<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="démonstration">Démonstration</h3>
+
+<p>Testez la démo de la fenêtre modale en cliquant sur le bouton ci-dessous. Il va glisser vers le bas et se fondre dans le haut de la page.</p>
+
+<div class="bd-callout bd-callout-warning">
+<h4 id="les-fenêtres-modales-doivent-être-centrées-verticalement-dans-les-guidelines-sncf">Les fenêtres modales doivent être centrées verticalement dans les guidelines SNCF.</h4>
+
+<p>Pour cela, vous devez ajouter <code>.modal-dialog-centered</code> à <code>.modal-dialog</code> pour centrer la fenêtre.
+</div>
+
+<div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="h1 modal-title" id="exampleModalLiveLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Woohoo, you're reading this text in a modal!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bd-example">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+    Launch demo modal
+  </button>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- Button trigger modal --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#exampleModal&#34;</span><span class="p">&gt;</span>
+  Launch demo modal
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Modal --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModal&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog modal-dialog-centered&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;h1 modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span><span class="p">&gt;</span>Modal title<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Close&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
+        ...
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-footer&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span>Close<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span><span class="p">&gt;</span>Save changes<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<p>Vous pouvez également créer des fenêtres modales scrollables permettant de faire défiler le corps de la modale en ajoutant <code>.modal-dialog-scrollable</code> à <code>.modal-dialog</code>.</p>
+
+<h3 id="télécharger-un-fichier">Télécharger un fichier</h3>
+
+<div class="bd-example bd-example-modal">
+  <div class="modal" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel5">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="h1 modal-title text-center mb-4"><i class="icons-download text-primary" aria-hidden="true"></i></div>
+          <h1 id="exampleModalLabel5" class="text-center mb-4">Glissez et déposez le fichier ici</h1>
+          <p class="text-center mb-4">ou</p>
+          <button type="button" class="btn btn-primary">Parcourir les fichiers</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel6&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog modal-dialog-centered&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body text-center&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;h1 modal-title text-center mb-4&#34;</span><span class="p">&gt;&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-download text-primary&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel6&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-center mb-4&#34;</span><span class="p">&gt;</span>Glissez et déposez le fichier ici<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-center mb-4&#34;</span><span class="p">&gt;</span>ou<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span><span class="p">&gt;</span>Parcourir les fichiers<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="formulaire-dans-une-fenêtre-modale">Formulaire dans une fenêtre modale</h3>
+
+<div class="bd-example bd-example-modal">
+  <div class="modal" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h5 class="h1 modal-title" id="exampleModalLabel4">Action lorem ipsum</h5>
+          <p>Détails pour paramétrer l'action</p>
+          <label for="inputEmail1">Titre</label>
+          <div class="form-control-container mb-4">
+            <input type="email" class="form-control " id="inputEmail1" placeholder="Renseignez le titre" >
+            <span class="form-control-state"></span>
+          </div>
+          <label for="select1">Secteur</label>
+          <div class="select-improved mb-4" data-component="select-exclusive">
+            <div class="select-control">
+              <div class="input-group" data-role="select-toggle">
+                <div class="form-control is-placeholder" data-role="placeholder">Sélectionnez le secteur</div>
+                <select class="sr-only" id="select1" data-role="input" tabindex="-1" aria-hidden="true">
+                  <option selected disabled hidden>Sélectionnez le secteur</option>
+                  <option data-id="1" >Sem Inceptos Tellus</option>
+                  <option data-id="2" >Sollicitudin Adipiscing Mattis</option>
+                  <option data-id="3" >Amet Porta</option>
+                  <option data-id="4" >Pharetra Fusce Venenatis</option>
+                </select>
+                <div class="input-group-append input-group-last">
+                  <button class="btn btn-primary btn-only-icon" data-role="btn" type="button">
+                  <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="select-menu" data-role="menu">
+                <button class="select-menu-item" data-role="value" data-target="1">Sem Inceptos Tellus</button>
+                <button class="select-menu-item" data-role="value" data-target="2">Sollicitudin Adipiscing Mattis</button>
+                <button class="select-menu-item" data-role="value" data-target="3">Amet Porta</button>
+                <button class="select-menu-item" data-role="value" data-target="4">Pharetra Fusce Venenatis</button>
+              </div>
+            </div>
+          </div>
+          <label for="select2">Localisation</label>
+          <div class="select-improved" data-component="select-exclusive">
+            <div class="select-control">
+              <div class="input-group" data-role="select-toggle">
+                <div class="form-control is-placeholder" data-role="placeholder">Sélectionnez le lieu</div>
+                <select class="sr-only" id="select2" data-role="input" tabindex="-1" aria-hidden="true">
+                  <option selected disabled hidden>Sélectionnez le lieu</option>
+                  <option data-id="1" >Sem Inceptos Tellus</option>
+                  <option data-id="2" >Sollicitudin Adipiscing Mattis</option>
+                  <option data-id="3" >Amet Porta</option>
+                  <option data-id="4" >Pharetra Fusce Venenatis</option>
+                </select>
+                <div class="input-group-append input-group-last">
+                  <button class="btn btn-primary btn-only-icon" data-role="btn" type="button">
+                  <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="select-menu" data-role="menu">
+                <button class="select-menu-item" data-role="value" data-target="1">Sem Inceptos Tellus</button>
+                <button class="select-menu-item" data-role="value" data-target="2">Sollicitudin Adipiscing Mattis</button>
+                <button class="select-menu-item" data-role="value" data-target="3">Amet Porta</button>
+                <button class="select-menu-item" data-role="value" data-target="4">Pharetra Fusce Venenatis</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="row no-gutters">
+            <div class="col-6 pr-1">
+              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Annuler</button>
+            </div>
+            <div class="col-6 pl-1">
+              <button type="button" class="btn btn-primary btn-block">Continuer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModal4&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel4&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog modal-dialog-centered modal-sm&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;h1 modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel4&#34;</span><span class="p">&gt;</span>Action lorem ipsum<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Détails pour paramétrer l&#39;action<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;inputEmail1&#34;</span><span class="p">&gt;</span>Titre<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-container mb-4&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;email&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control &#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;inputEmail1&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Renseignez le titre&#34;</span> <span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control-state&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;select1&#34;</span><span class="p">&gt;</span>Secteur<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-improved mb-4&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;select-exclusive&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-control&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-group&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;select-toggle&#34;</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control is-placeholder&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;placeholder&#34;</span><span class="p">&gt;</span>Sélectionnez le secteur<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;select1&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;input&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">selected</span> <span class="na">disabled</span> <span class="na">hidden</span><span class="p">&gt;</span>Sélectionnez le secteur<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="p">&gt;</span>Sem Inceptos Tellus<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="p">&gt;</span>Sollicitudin Adipiscing Mattis<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;3&#34;</span> <span class="p">&gt;</span>Amet Porta<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;4&#34;</span> <span class="p">&gt;</span>Pharetra Fusce Venenatis<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-group-append input-group-last&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary btn-only-icon&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;btn&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-arrow-down icons-size-x75&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;menu&#34;</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>Sem Inceptos Tellus<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>Sollicitudin Adipiscing Mattis<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;3&#34;</span><span class="p">&gt;</span>Amet Porta<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;</span>Pharetra Fusce Venenatis<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;select2&#34;</span><span class="p">&gt;</span>Localisation<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-improved&#34;</span> <span class="na">data-component</span><span class="o">=</span><span class="s">&#34;select-exclusive&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-control&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-group&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;select-toggle&#34;</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control is-placeholder&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;placeholder&#34;</span><span class="p">&gt;</span>Sélectionnez le lieu<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;select2&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;input&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">selected</span> <span class="na">disabled</span> <span class="na">hidden</span><span class="p">&gt;</span>Sélectionnez le lieu<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="p">&gt;</span>Sem Inceptos Tellus<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="p">&gt;</span>Sollicitudin Adipiscing Mattis<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;3&#34;</span> <span class="p">&gt;</span>Amet Porta<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">data-id</span><span class="o">=</span><span class="s">&#34;4&#34;</span> <span class="p">&gt;</span>Pharetra Fusce Venenatis<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-group-append input-group-last&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary btn-only-icon&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;btn&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icons-arrow-down icons-size-x75&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;menu&#34;</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>Sem Inceptos Tellus<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>Sollicitudin Adipiscing Mattis<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;3&#34;</span><span class="p">&gt;</span>Amet Porta<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;select-menu-item&#34;</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&#34;value&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;</span>Pharetra Fusce Venenatis<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-footer&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row no-gutters&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-6 pr-1&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary btn-block&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span>Annuler<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-6 pl-1&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary btn-block&#34;</span><span class="p">&gt;</span>Continuer<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="utiliser-la-grille">Utiliser la grille</h3>
+
+<p>Utilisez le système de grille Bootstrap dans une fenêtre modale en imbriquant <code>.container-fluid</code> dans le <code>.modal-body</code>. Ensuite, utilisez les classes normales du système de grille comme vous le feriez n&rsquo;importe où ailleurs.</p>
+
+<div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="h1 modal-title" id="gridModalLabel">Grids in modals</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid bd-example-row">
+          <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+            <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9">
+              Level 1: .col-sm-9
+              <div class="row">
+                <div class="col-8 col-sm-6">
+                  Level 2: .col-8 .col-sm-6
+                </div>
+                <div class="col-4 col-sm-6">
+                  Level 2: .col-4 .col-sm-6
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bd-example">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gridSystemModal">
+  Launch demo modal
+</button>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4&#34;</span><span class="p">&gt;</span>.col-md-4<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 ml-auto&#34;</span><span class="p">&gt;</span>.col-md-4 .ml-auto<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-3 ml-auto&#34;</span><span class="p">&gt;</span>.col-md-3 .ml-auto<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-2 ml-auto&#34;</span><span class="p">&gt;</span>.col-md-2 .ml-auto<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-6 ml-auto&#34;</span><span class="p">&gt;</span>.col-md-6 .ml-auto<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-sm-9&#34;</span><span class="p">&gt;</span>
+        Level 1: .col-sm-9
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-8 col-sm-6&#34;</span><span class="p">&gt;</span>
+            Level 2: .col-8 .col-sm-6
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-4 col-sm-6&#34;</span><span class="p">&gt;</span>
+            Level 2: .col-4 .col-sm-6
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="variation-du-contenu-de-la-fenêtre-modale">Variation du contenu de la fenêtre modale</h3>
+
+<p>Vous avez plusieurs boutons qui déclenchent tous la même fenêtre modale avec un contenu légèrement différent ? Utilisez <code>event.relatedTarget</code> et les <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">attributs HTML <code>data-*</code></a> (éventuellement <a href="https://api.jquery.com/data/">via jQuery</a>) pour modifier le contenu de la fenêtre modale en fonction du bouton sur lequel vous avez cliqué.</p>
+
+<p>Vous trouverez ci-dessous une démonstration suivie d&rsquo;un exemple HTML et JavaScript. Pour davantage d&rsquo;informations, <a href="#events">lisez la documentation relatifive aux événéments</a> pour des détails sur <code>relatedTarget</code>.</p>
+
+<div class="bd-example">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="h1 modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#exampleModal&#34;</span> <span class="na">data-whatever</span><span class="o">=</span><span class="s">&#34;@mdo&#34;</span><span class="p">&gt;</span>Open modal for @mdo<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#exampleModal&#34;</span> <span class="na">data-whatever</span><span class="o">=</span><span class="s">&#34;@fat&#34;</span><span class="p">&gt;</span>Open modal for @fat<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#exampleModal&#34;</span> <span class="na">data-whatever</span><span class="o">=</span><span class="s">&#34;@getbootstrap&#34;</span><span class="p">&gt;</span>Open modal for @getbootstrap<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModal&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;h1 modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span><span class="p">&gt;</span>New message<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Close&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;recipient-name&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-form-label&#34;</span><span class="p">&gt;</span>Recipient:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;recipient-name&#34;</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;message-text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-form-label&#34;</span><span class="p">&gt;</span>Message:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;message-text&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-footer&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-secondary&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span>Close<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span><span class="p">&gt;</span>Send message<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#exampleModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;show.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">relatedTarget</span><span class="p">)</span> <span class="c1">// Button that triggered the modal
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">recipient</span> <span class="o">=</span> <span class="nx">button</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;whatever&#39;</span><span class="p">)</span> <span class="c1">// Extract info from data-* attributes
+</span><span class="c1"></span>  <span class="c1">// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+</span><span class="c1"></span>  <span class="c1">// Update the modal&#39;s content. We&#39;ll use jQuery here, but you could use a data binding library or other methods instead.
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">modal</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+  <span class="nx">modal</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.modal-title&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;New message to &#39;</span> <span class="o">+</span> <span class="nx">recipient</span><span class="p">)</span>
+  <span class="nx">modal</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.modal-body input&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">recipient</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div>
+
+<h3 id="supprimer-l-animation">Supprimer l&rsquo;animation</h3>
+
+<p>Pour les fenêtres modales qui apparaissent simplement plutôt que d&rsquo;être fondu à l&rsquo;ouverture, supprimez la classe <code>fade</code>.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;...&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="hauteurs-dynamiques">Hauteurs dynamiques</h3>
+
+<p>Si la hauteur d&rsquo;une fenêtre modale change alors qu&rsquo;il est ouvert, vous devez appeler <code>$('#myModal').modal('handleUpdate')</code> pour réajuster sa position si une barre de défilement apparaît.</p>
+
+<h3 id="accessibilité">Accessibilité</h3>
+
+<p>Assurez-vous d&rsquo;ajouter <code>role=&quot;dialog&quot;</code> et <code>aria-labelledby=&quot;...&quot;</code>, en référençant le titre de la modale, à <code>.modal</code>, et <code>role=&quot;document&quot;</code> à la <code>.modal-dialog</code> même. De plus, vous pouvez décrire votre modale avec <code>aria-describedby</code> sur <code>.modal</code>.</p>
+
+<h3 id="intégration-de-vidéos-youtube">Intégration de vidéos YouTube</h3>
+
+<p>L&rsquo;intégration de vidéos YouTube dans des modaux nécessite du JavaScript supplémentaire, pas dans Bootstrap, pour arrêter automatiquement la lecture, etc. <a href="https://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">Voir cette publication Stack Overflow pour plus d&rsquo;informations</a>.</p>
+
+<h2 id="options-de-tailles">Options de tailles</h2>
+
+<p>Les modales ont deux tailles optionnelles, disponibles via des classes de modificateurs pour être placées dans un <code>.modal-dialog</code>. Ces tailles entrent en jeu à certains breakpoints, pour éviter les barres de défilement horizontales dans les fenêtres plus étroites (sur mobile par exemple).</p>
+
+<div class="bd-example">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Modale extra grande</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Grande modale</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Petite modale</button>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- Modale extra grande --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;.bd-example-modal-xl&#34;</span><span class="p">&gt;</span>Modale extra grande<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade bd-example-modal-xl&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;myLargeModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog modal-xl&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      ...
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Grande modal --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;.bd-example-modal-lg&#34;</span><span class="p">&gt;</span>Grande modale<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade bd-example-modal-lg&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;myLargeModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog modal-lg&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      ...
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Petite modal --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-primary&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;.bd-example-modal-sm&#34;</span><span class="p">&gt;</span>Petite modale<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade bd-example-modal-sm&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;mySmallModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog modal-sm&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+      ...
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="h1 modal-title" id="myLargeModalLabel">Modale extra grande</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="h1 modal-title" id="myLargeModalLabel">Grande modale</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="h1 modal-title" id="mySmallModalLabel">Petite modale</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="utilisation">Utilisation</h2>
+
+<p>Le plugin de la fenêtre modale bascule votre contenu caché à la demande, via des attributs de données data ou JavaScript. Il ajoute également <code>.modal-open</code> au <code>&lt;body&gt;</code> pour remplacer le comportement de défilement par défaut et génère un <code>.modal-backdrop</code> pour réaliser la zone de clic en fond, permettant la fermeture de la modale lorsque vous cliquez sur ce même fond.</p>
+
+<h3 id="via-des-attributs-de-données">Via des attributs de données</h3>
+
+<p>Activer une modale sans écrire de JavaScript. Définissez <code>data-toggle=&quot;modal&quot;</code> sur un élément du contrôleur, comme un bouton, avec <code>data-target=&quot;#foo&quot;</code> ou <code>href=&quot;#foo&quot;</code> pour cibler une modale spécifique à basculer.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#myModal&#34;</span><span class="p">&gt;</span>Launch modal<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
+
+<h3 id="via-javascript">Via JavaScript</h3>
+
+<p>Appelez une modale avec l&rsquo;id <code>myModal</code> avec une seule ligne de JavaScript:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="options">Options</h3>
+
+<p>Les options peuvent être passées via des attributs de données ou du JavaScript. Pour les attributs de données, ajoutez le nom de l&rsquo;option à <code>data-</code>, comme dans <code>data-backdrop=&quot;&quot;</code>.</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 100px;">Name</th>
+      <th scope="col" style="width: 50px;">Type</th>
+      <th scope="col" style="width: 50px;">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>backdrop</td>
+      <td>boolean or the string <code>'static'</code></td>
+      <td>true</td>
+      <td>Inclut un élément modal-backdrop. Vous pouvez également spécifier <code>static</code> pour un fond qui ne ferme pas la modale au clic.</td>
+    </tr>
+    <tr>
+      <td>keyboard</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Ferme la modale lorsque la touche Echap est pressée.</td>
+    </tr>
+    <tr>
+      <td>focus</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Met le focus sur la modale une fois initialisée.</td>
+    </tr>
+    <tr>
+      <td>show</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Affiche la modale une fois initialisée.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="méthodes">Méthodes</h3>
+
+<div class="bd-callout bd-callout-danger">
+<h4 id="méthodes-asynchrones-et-transitions">Méthodes asynchrones et transitions</h4>
+
+<p>Toutes les méthodes API sont <strong>asynchrones</strong> et démarrent une <strong>transition</strong>. Elles font un retour aussitôt que la transaction a démarré mais <strong>avant qu&rsquo;elle termine</strong>. De plus, un appel à une méthode sur un <strong>composant de transition sera ignorée</strong>.</p>
+
+<p><a href="/docs/4.3/getting-started/javascript/">Consultez la documentation JavaScript pour plus d&rsquo;informations</a>.</p>
+
+</div>
+
+<h4 id="modal-options"><code>.modal(options)</code></h4>
+
+<p>Active votre contenu en tant que fenêtre modale. Accepte les options <code>object</code>.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">({</span>
+  <span class="nx">keyboard</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">})</span>
+</code></pre></div>
+
+<h4 id="modal-toggle"><code>.modal('toggle')</code></h4>
+
+<p>Alterner l&rsquo;ouverture d&rsquo;une modale manuellement. <strong>Le retour de la méthode intervient avant que la modale ait été ouverte ou fermée</strong> (par exemple, avant les évènements <code>shown.bs.modal</code> ou <code>hidden.bs.modal</code>).</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">&#39;toggle&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="modal-show"><code>.modal('show')</code></h4>
+
+<p>Ouvre manuellement une modale. <strong>Le retour de la méthode intervient avant que la modale ait été ouverte</strong> (par exemple, avant l&rsquo;évènement <code>shown.bs.modal</code>).</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="modal-hide"><code>.modal('hide')</code></h4>
+
+<p>Ferme manuellement une modale. <strong>Le retour de la méthode intervient avant que la modale ait été fermée</strong> (par exemple, avant l&rsquo;évènement <code>hidden.bs.modal</code>).</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">&#39;hide&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="modal-handleupdate"><code>.modal('handleUpdate')</code></h4>
+
+<p>Ajuste manuellement la position de la modale si sa hauteur change pendant qu&rsquo;elle est visible (par exemple, si une barre de scroll apparaît).</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">&#39;handleUpdate&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="modal-dispose"><code>.modal('dispose')</code></h4>
+
+<p>Détruit un élément de type modale.</p>
+
+<h3 id="évènements">Évènements</h3>
+
+<p>Les classes des modales de Bootstrap exposent quelques évènements de façon à capturer certaines fonctionnalités. Tous ces évènements sont déclenchés au niveau de la modale elle-même (par exemple, à <code>&lt;div class=&quot;modal&quot;&gt;</code>).</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 150px;">Type d'évènement</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>show.bs.modal</td>
+      <td>Cet évènement est déclenché immédiatement quand l'instance <code>show</code> est appelée. Si c'est causé par un click, l'élément cliqué est disponible comme <code>relatedTarget</code>, propriété de l'évènement.</td>
+    </tr>
+    <tr>
+      <td>shown.bs.modal</td>
+      <td>Cet évènement est déclenché quand la modale a été rendue visible à l'utilisateur, transitions CSS terminées). Si c'est causé par un click, l'élément cliqué est disponible comme <code>relatedTarget</code>, propriété de l'évènement.</td>
+    </tr>
+    <tr>
+      <td>hide.bs.modal</td>
+      <td>Cet évènement est déclenché immédiatement quand l'instance <code>hide</code> est appelée.</td>
+    </tr>
+    <tr>
+      <td>hidden.bs.modal</td>
+      <td>Cet évènement est déclenché quand la modale a terminé d'être masquée à l'utilisateur, fermée, transitions CSS terminées.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// fait quelque chose...
+</span><span class="c1"></span><span class="p">})</span>
+</code></pre></div>
+
+
+          
+            <div class="mt-5">
+    Avez-vous trouvé ce que vous cherchiez ? si non, <a class="btn btn-link" href="/fr/docs/4.3/getting-started/how-to-contribute/">dites-le nous <i class="icons-arrow-next icons-size-x75 ml-1"></i></a>.
+</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+  </body>
+</html>

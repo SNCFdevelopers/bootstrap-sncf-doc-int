@@ -1,0 +1,285 @@
+
+
+<html lang="<no value>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Navigation template</title>
+
+    <script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    <nav role="navigation" class="mastnav">
+  <ul class="mastnav-top">
+    <li>
+      <a href="#" class="mastnav-item active">
+        <i class="icons-bookmark icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Favoris</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-file icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Collections</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-document icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Ma base documentaire</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="mastnav-item">
+        <i class="icons-distribution icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Distribution</span>
+      </a>
+    </li>
+    <li class="d-none d-lg-flex">
+      <a href="#" class="mastnav-item">
+        <i class="icons-admin icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Admin</span>
+      </a>
+    </li>
+    <li class="d-lg-none">
+      <button type="button" class="mastnav-item options-menu-btn" data-component="state" data-state="active, active" data-behaviour="toggle, toggle" data-target=".options-menu-btn, .options-menu">
+        <i class="icons-options icons-size-1x5" aria-hidden="true"></i>
+        <span class="font-weight-medium">Plus</span>
+      </button>
+    </li>
+  </ul>
+  <div class="mastnav-bottom d-none d-lg-block">
+    <a href="#" class="mastnav-item mastnav-item-horizontal">
+      <i class="icons-support icons-size-1x5" aria-hidden="true"></i>
+      <span class="font-weight-medium">Support</span>
+    </a>
+  </div>
+</nav>
+    <div class="mastheader">
+  <div class="mastheader-logo">
+    <a href="/docs/4.3/examples">
+      <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" />
+    </a>
+  </div>
+  <header role="banner" class="mastheader-title d-none d-xl-block">
+    <h1 class="text-white text-uppercase pt-2 pl-3 mb-0">Nom application</h1>
+  </header>
+  <div class="mastheader-search pr-md-4 pl-md-4" data-component="searchbar">
+    <label class="font-weight-medium text-white pr-3 mb-0">Rechercher</label>
+    <div class="input-group align-items-center">
+      <div class="form-control-container" data-component="control" data-clear-option="true">
+        <input role="search" type="search" class="form-control clear-option" data-role="input" data-placeholder="Rechercher" />
+        <span class="form-control-state"></span>
+        <button type="button" class="btn-clear btn-primary d-none" data-btn="clear">
+          <span class="sr-only">Clear text</span>
+          <i class="icons-close" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="input-group-append input-group-last">
+        <button type="button" class="btn btn-primary btn-only-icon">
+            <span class="sr-only">Search</span>
+          <i class="icons-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <button type="button" class="btn btn-only-icon btn-white d-block d-md-none" data-role="close">
+        <span class="sr-only">Close search</span>
+        <i class="icons-close icons-size-1x25" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <ul class="mastheader-toolbar toolbar mb-0">
+    <li class="toolbar-item separator-gray-500 d-none d-md-flex">
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-transparent dropdown-toggle btn-notif toolbar-item-spacing" type="button" id="notifMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="-4, 0">
+          <span class="sr-only">Alert</span>
+          <i class="icons-alert-notification icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+          <span class="notif">1</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg" aria-labelledby="notifMenuButton">
+          <div class="d-flex justify-content-between gx-3 gy-2">
+            <div class="font-weight-medium text-uppercase">Notifications</div>
+            <a href="#">Paramètres</a>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+          <div class="d-flex gt-4 gb-3 border-top">
+            <a href="#" class="d-flex text-gray500">
+              <div class="gt-1 gx-3">
+                <i class="icons-document icons-size-1x75" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit am consectetur adispicing</span><br/>
+                <span class="text-xs">Il y a 5 minutes</span>
+              </div>
+            </a>
+            <div class="gt-1 gx-3">
+              <i class="icons-circle-delete icons-size-1x25" aria-hidden="true"></i>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </li>
+    <li class="toolbar-item separator-gray-500 no-separator d-flex d-md-none">
+      <button type="button" class="btn btn-only-icon toolbar-item-spacing" data-component="searchbar-toggle">
+        <span class="sr-only">Open search</span>
+        <i class="icons-search icons-size-1x25 icons-md-size-1x5" aria-hidden="true"></i>
+      </button>
+    </li>
+    <li class="toolbar-item separator-gray-500">
+      <div class="btn-group dropdown">
+        <button class="btn btn-transparent dropdown-toggle toolbar-item-spacing" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="1, 5" aria-controls="mycontrol">
+          <i class="icons-menu-account icons-size-1x25 icons-md-size-1x5 mr-xl-2" aria-hidden="true"></i>
+          <span class="d-none d-xl-block">Pierre Dumont</span>
+          <i class="icons-arrow-down d-none d-xl-block" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownMenuButton" id="mycontrol">
+          <ul>
+            <li class="dropdown-item"><a href="#">Paramètre du compte</a></li>
+            <li class="dropdown-item"><a href="#">Préférences</a></li>
+            <li id="darkmode-btn" class="dropdown-item darkmode-btn"><a href="#">Mode sombre/clair</a></li>
+            <li class="dropdown-item"><a href="#">Se déconnecter</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="actionbar">
+      <div class="actionbar-head">
+        <h1 class="mb-0">Titre section</h1>
+        <ul class="toolbar mb-0">
+          <li class="toolbar-item">
+            <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing">
+              <span class="sr-only">Edit</span>
+              <i class="icons-pencil icons-size-1x25" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="toolbar-item toolbar-item-spacing">
+            <div class="btn-group dropdown">
+              <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                <span>Primary</span>
+                <i class="icons-arrow-down" aria-hidden="true"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" id="mycontrol">
+                <ul>
+                  <li class="dropdown-item"><a href="#">Action</a></li>
+                  <li class="dropdown-item"><a href="#">Another action</a></li>
+                  <li class="dropdown-item"><a href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="toolbar-item">
+            <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing">
+              <span class="sr-only">List</span>
+              <i class="icons-list icons-size-1x25" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="toolbar-item">
+            <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing">
+              <span class="sr-only">Search</span>
+              <i class="icons-search icons-size-1x25" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="toolbar-item">
+            <button class="btn btn-sm btn-transparent btn-color-gray toolbar-item-spacing">
+              <span class="sr-only">Filters</span>
+              <i class="icons-filters icons-size-1x25" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main role="main" class="mastcontainer">
+    </main>
+
+    <div class="options-menu">
+  <div class="options-menu-head">
+    <div class="options-menu-title">Filtrer par</div>
+  </div>
+  <div class="g-4">
+    <a href="#" class="d-flex justify-content-between pb-3 btn-color-gray">Programme<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i></a>
+    <a href="#" class="d-flex justify-content-between pb-3 btn-color-gray">Startup<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i></a>
+    <a href="#" class="d-flex justify-content-between pb-3 btn-color-gray">Store<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+    <script src="/bootstrap-sncf.js"></script>
+  </body>
+</html>
+
+

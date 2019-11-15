@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" class="bd-docs">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  
+<script>
+var dataLayer = [{ 
+  
+  'dimension1': 'bootstrap',
+  'dimension2': 'design metier'
+  
+}]; 
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBKM2DF');</script>
+
+
+
+
+
+
+	
+	<link rel="alternate" hreflang="fr" href="/fr/docs/4.3/examples/" title="Français">
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.">
+<meta name="author" content="SNCF Fab Design, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.56.3">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="4.3">
+
+<title>Examples · Bootstrap Métier</title>
+
+
+
+
+<script>
+
+  initDarkmode()
+
+  function initDarkmode() {
+    const mode = localStorage.getItem('bootstrap-sncf-css-name')
+    if (mode === 'dark') {
+      document.write('<link rel="stylesheet" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="inactivecss">')
+    }
+    else {
+      document.write('<link rel="stylesheet" type="text/css" title="Style classique" name="light" href="/bootstrap-sncf.css" id="activecss">')
+      document.write('<link rel="stylesheet alternate" type="text/css" title="Mode sombre" name="dark" href="/bootstrap-sncf.darkmode.css" id="inactivecss">')
+    }
+  }
+
+</script>
+
+
+
+
+<link rel="apple-touch-icon" href="/assets/img/brand/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/img/brand/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/assets/img/brand/favicons/manifest.json">
+<link rel="mask-icon" href="/assets/img/brand/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/assets/img/brand/favicons/favicon.ico">
+<meta name="msapplication-config" content="/assets/img/brand/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+</head>
+<body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-4" href="/en/" aria-label="Bootstrap">
+        <img alt="SNCF" src="/assets/img/brand/sncf-logo.png" width="70" />
+        <span class="ml-2">DESIGN MÉTIER</span>
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center " href="/docs/4.3/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">
+                    Documentation	<i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center active" href="/docs/4.3/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">
+                    Examples <i class="icons-arrow-next icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item">
+            <a class="nav-link text-nowrap" href="/docs/4.3/about/versions/" id="bd-versions">
+                v4.3.1 r5
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group dropdown dropdown-doc-navbar">
+                <a class="nav-link d-flex align-items-center dropdown-toggle toolbar-item-spacing" type="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="mycontrol">
+                    <i class="icons-admin icons-size-1x25 icons-md-size-1x5 mr-2" aria-hidden="true"></i>
+                    <span class="d-xl-block d-sm-block d-block d-lg-none d-md-none mr-2">Settings</span>
+                    <i class="icons-arrow-down icons-size-x5 ml-2" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-mastheader" aria-labelledby="dropdownSettings" id="dropdownSettingsMenu">
+                    <i class="dropdown-close icons-close icons-size-x5"></i>
+                    <div data-role="stop-propagation">
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Dark mode</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn-off">Disabled</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="darkmodeSwitch" id="darkmode-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium darkmode-btn" for="darkmode-btn">Enabled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="w-100 text-white font-weight-medium mb-2">Source code</label>
+                            <div class="options-control">
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn-off" class="sr-only" value="disabled" checked />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn-off">Show</label>
+                                </div>
+                                <div class="options-item">
+                                    <input type="radio" name="hidesourceSwitch" id="hidesource-btn" class="sr-only" value="enabled" />
+                                    <label class="options-btn font-weight-medium" for="hidesource-btn">Hide</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="w-100 text-white font-weight-medium mb-2">Language</label>
+                            <div class="options-control">
+                                <a class="options-item option-language" href="">
+                                    <input type="radio" name="languageSwitch" id="language-btn-en" data-lang="en" class="sr-only"  value="enabled" checked />
+                                    <label class="options-btn font-weight-medium" for="language-btn-en"><img src="/assets/img/flags/english.svg" class="gr-2"> English</label>
+                                </a>
+                                <a class="options-item option-language" href="/fr/docs/4.3/examples/">
+                                    <input type="radio" name="languageSwitch" id="language-btn-fr" data-lang="en" class="sr-only"  value="disabled" />
+                                    <label class="options-btn font-weight-medium" for="language-btn-fr"><img src="/assets/img/flags/french.svg" class="gr-2"> French</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/bootstrap-sncf.metier.v4.3.1-r5.zip">Download</a>
+</header>
+
+
+    <main id="content" role="main">
+        <header class="d-flex flex-column flex-md-row align-items-md-center px-5 py-1">
+            <div class="pt-md-3 pb-md-4">
+                <h1 class="bd-title mt-0">Examples</h1>
+                <p class="bd-lead">Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.</p>
+            </div>
+        </header>
+
+        <main class="bd-content px-5 py-1" role="main">
+            
+  <span></span>
+  <h2 class="mb-0">Navigation</h2>
+  <p class="mt-0">Navigation template</p>
+  <div class="row">
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="navigation/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Navigation" src="/docs/4.3/examples/navigation/navigation.png" />
+          <h5 class="mb-1">Navigation</h5>
+          <p class="text-muted">Demonstration of all responsive and container options for the navbar.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="navtabs/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Navtabs" src="/docs/4.3/examples/navtabs/navtabs.png" />
+          <h5 class="mb-1">Navtabs</h5>
+          <p class="text-muted">Actionbar with tabs navigation.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="mobile-menu/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Mobile menu" src="/docs/4.3/examples/mobile-menu/mobile-menu.png" />
+          <h5 class="mb-1">Mobile menu</h5>
+          <p class="text-muted">Mobile menu</p>
+        </a>
+      </div>
+  
+  </div>
+
+  <span></span>
+  <h2 class="mb-0">Modal</h2>
+  <p class="mt-0">Modal template</p>
+  <div class="row">
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="modal/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Modal" src="/docs/4.3/examples/modal/modal.png" />
+          <h5 class="mb-1">Modal</h5>
+          <p class="text-muted">Center modal</p>
+        </a>
+      </div>
+  
+  </div>
+
+  <span></span>
+  <h2 class="mb-0">Layouts</h2>
+  <p class="mt-0">Layout templates</p>
+  <div class="row">
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="table/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Table" src="/docs/4.3/examples/table/table.png" />
+          <h5 class="mb-1">Table</h5>
+          <p class="text-muted">Demonstration of all responsive and container options for the table.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="table-filters/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Table filters" src="/docs/4.3/examples/table-filters/table-filters.png" />
+          <h5 class="mb-1">Table filters</h5>
+          <p class="text-muted">Table with filters and sorts</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="table-fixed-head/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Table fixed head" src="/docs/4.3/examples/table-fixed-head/table-fixed-head.png" />
+          <h5 class="mb-1">Table fixed head</h5>
+          <p class="text-muted">Table with fixed head.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="table-fixed/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Table fixed" src="/docs/4.3/examples/table-fixed/table-fixed.png" />
+          <h5 class="mb-1">Table fixed</h5>
+          <p class="text-muted">Table with fixed column.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="table-pagination/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Table pagination" src="/docs/4.3/examples/table-pagination/table-pagination.png" />
+          <h5 class="mb-1">Table pagination</h5>
+          <p class="text-muted">Table with pagination.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="list-double-columns/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran List double columns" src="/docs/4.3/examples/list-double-columns/list-double-columns.png" />
+          <h5 class="mb-1">List double columns</h5>
+          <p class="text-muted">List with double columns.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="table-group/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Table group" src="/docs/4.3/examples/table-group/table-group.png" />
+          <h5 class="mb-1">Table group</h5>
+          <p class="text-muted">List with group and search menu</p>
+        </a>
+      </div>
+  
+  </div>
+
+  <span></span>
+  <h2 class="mb-0">Forms</h2>
+  <p class="mt-0">Form components</p>
+  <div class="row">
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="forms/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Forms" src="/docs/4.3/examples/forms/forms.png" />
+          <h5 class="mb-1">Forms</h5>
+          <p class="text-muted">Demonstration of all responsive and container options for forms.</p>
+        </a>
+      </div>
+  
+  </div>
+
+  <span></span>
+  <h2 class="mb-0">Calendars</h2>
+  <p class="mt-0">Calendar layouts</p>
+  <div class="row">
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="calendar-monthly/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Calendar monthly" src="/docs/4.3/examples/calendar-monthly/calendar-monthly.png" />
+          <h5 class="mb-1">Calendar monthly</h5>
+          <p class="text-muted">Weekly calendar layout.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="calendar-weekly/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Calendar weekly" src="/docs/4.3/examples/calendar-weekly/calendar-weekly.png" />
+          <h5 class="mb-1">Calendar weekly</h5>
+          <p class="text-muted">Monthly calendar layout.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="calendar-daily/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Calendar daily" src="/docs/4.3/examples/calendar-daily/calendar-daily.png" />
+          <h5 class="mb-1">Calendar daily</h5>
+          <p class="text-muted">Daily calendar layout.</p>
+        </a>
+      </div>
+  
+      <div class="col-sm-6 col-md-3 col-xl-2 mb-2"><a href="calendar-planning/" class="doc-example-link">
+          <img class="rounded img-fluid mb-3" alt="Exemple d'écran Calendar planning" src="/docs/4.3/examples/calendar-planning/calendar-planning.png" />
+          <h5 class="mb-1">Calendar planning</h5>
+          <p class="text-muted">Planning calendar layout.</p>
+        </a>
+      </div>
+  
+  </div>
+
+
+
+
+        </main>
+
+    </main>
+
+    <footer class="bd-footer">
+  <div class="container-fluid p-3 p-md-5">
+    <ul class="bd-footer-links">
+      <li>
+        <p>
+          <a class="btn btn-link" href="https://github.com/SNCFdevelopers/bootstrap-sncf" target="_blank"><span>GitHub</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>
+        </p>
+      </li>
+      <li><a class="btn btn-link" href="https://design-bootstrap.sncf.fr" target="_blank"><span>Link to Bootstrap Communication</span><i class="icons-external-link icons-size-x75 ml-2"></i></a></li>
+      <li><a class="btn btn-link" href="https://digital.sncf.com" target="_blank"><span>Digital SNCF</span><i class="icons-external-link icons-size-x75 ml-2"></i></a></li>
+    </ul>
+    <p>Forked by <a class="btn btn-link" target="_blank" href="https://www.digital.sncf.com"><span>Fab Design SNCF</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>, with all our love.</p>
+    <p>Designed and built with all the love in the world by, <a href="https://twitter.com/mdo" target="_blank" rel="noopener">@mdo</a> and <a href="https://twitter.com/fat" target="_blank" rel="noopener">@fat</a>. Maintained by the <a class="btn btn-link" href="https://github.com/orgs/twbs/people"><span>core team</span><i class="icons-external-link icons-size-x75 ml-2"></i></a> with the help of <a class="btn btn-link" href="https://github.com/twbs/bootstrap/graphs/contributors" target="_blank"><span>our contributors</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>.</p>
+    <p>Currently <a class="btn btn-link" href="/docs/4.3/about/versions"><span>v4.3.1 r5</span><i class="icons-arrow-next icons-size-x75 ml-2"></i></a>. Code licensed <a class="btn btn-link" href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener"><span>MIT</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>, docs <a class="btn btn-link" href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"><span>CC BY 3.0</span><i class="icons-external-link icons-size-x75 ml-2"></i></a>.</p>
+  </div>
+</footer>
+
+    <script src="/bootstrap-sncf.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+
+<script>
+$('header a.btn').on('click', function() {
+  dataLayer.push({
+    'event': 'telechargement',
+    'eventCategory': 'telechargement',
+    'eventAction': 'framework',
+    'eventLabel': 'header'
+  });
+});
+</script>
+
+</body>
+</html>
